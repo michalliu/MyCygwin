@@ -1,0 +1,404 @@
+2014/02/24 19:15:46 Starting cygwin install, version 2.831
+2014/02/24 19:15:46 User has backup/restore rights
+2014/02/24 19:15:46 Current Directory: F:\Data\Cygwin
+2014/02/24 19:15:46 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2014/02/24 19:15:50 source: network install
+2014/02/24 19:15:50 root: R:\cygwin64 binary system
+2014/02/24 19:15:51 Selected local directory: F:\Data\Cygwin
+2014/02/24 19:15:52 net: Proxy
+Loaded cached mirror list
+get_url_to_membuf http://cygwin.com/mirrors.lst
+getUrlToStream http://cygwin.com/mirrors.lst
+2014/02/24 19:15:58 site: http://mirrors.ustc.edu.cn/cygwin/
+get_url_to_membuf http://mirrors.ustc.edu.cn/cygwin/x86_64/setup.bz2
+getUrlToStream http://mirrors.ustc.edu.cn/cygwin/x86_64/setup.bz2
+get_url_to_membuf http://mirrors.ustc.edu.cn/cygwin/x86_64/setup.bz2.sig
+getUrlToStream http://mirrors.ustc.edu.cn/cygwin/x86_64/setup.bz2.sig
+2014/02/24 19:16:50 Adding required dependency csih: Selecting version 0.9.7-1 for installation.
+2014/02/24 19:16:50 Adding required dependency cygrunsrv: Selecting version 1.50-1 for installation.
+2014/02/24 19:16:50 Adding required dependency diffutils: Selecting version 3.3-1 for installation.
+2014/02/24 19:16:50 Adding required dependency libasn1_8: Selecting version 1.5.2-4 for installation.
+2014/02/24 19:16:50 Adding required dependency libcom_err2: Selecting version 1.42.7-1 for installation.
+2014/02/24 19:16:50 Adding required dependency libcrypt0: Selecting version 1.1-1 for installation.
+2014/02/24 19:16:50 Adding required dependency libedit0: Selecting version 20130712-1 for installation.
+2014/02/24 19:16:50 Adding required dependency libgssapi3: Selecting version 1.5.2-4 for installation.
+2014/02/24 19:16:50 Adding required dependency libheimbase1: Selecting version 1.5.2-4 for installation.
+2014/02/24 19:16:50 Adding required dependency libheimntlm0: Selecting version 1.5.2-4 for installation.
+2014/02/24 19:16:50 Adding required dependency libhx509_5: Selecting version 1.5.2-4 for installation.
+2014/02/24 19:16:50 Adding required dependency libkafs0: Selecting version 1.5.2-4 for installation.
+2014/02/24 19:16:50 Adding required dependency libkrb5_26: Selecting version 1.5.2-4 for installation.
+2014/02/24 19:16:50 Adding required dependency libroken18: Selecting version 1.5.2-4 for installation.
+2014/02/24 19:16:50 Adding required dependency libsqlite3_0: Selecting version 3.8.3.1-1 for installation.
+2014/02/24 19:16:50 Adding required dependency libssp0: Selecting version 4.8.2-3 for installation.
+2014/02/24 19:16:50 Adding required dependency libwind0: Selecting version 1.5.2-4 for installation.
+2014/02/24 19:16:50 Adding required dependency libwrap0: Selecting version 7.6-22 for installation.
+get_url_to_file http://mirrors.ustc.edu.cn/cygwin//x86_64/release/dos2unix/dos2unix-6.0.4-1.tar.xz F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/dos2unix/dos2unix-6.0.4-1.tar.xz.tmp
+2014/02/24 19:16:50 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/dos2unix/dos2unix-6.0.4-1.tar.xz
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/csih/csih-0.9.7-1.tar.bz2
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/csih/csih-0.9.7-1.tar.bz2 dfd37be6d7bc22aaac4eb9a45d453d3
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/cygrunsrv/cygrunsrv-1.50-1.tar.xz
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/cygrunsrv/cygrunsrv-1.50-1.tar.xz d3e78316c7db2ac2f7cb5cab148b988
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/diffutils/diffutils-3.3-1.tar.bz2
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/diffutils/diffutils-3.3-1.tar.bz2 deffd858fdda42ffe48f8a8d22379d
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/dos2unix/dos2unix-6.0.4-1.tar.xz
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/dos2unix/dos2unix-6.0.4-1.tar.xz 1da9ebef7a8753fb16ecf4ddcc3d081
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libasn1_8/libasn1_8-1.5.2-4.tar.bz2
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libasn1_8/libasn1_8-1.5.2-4.tar.bz2 31c15bbcab4c27ddab4a1f97f7ff5fee
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/e2fsprogs/libcom_err2/libcom_err2-1.42.7-1.tar.bz2
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/e2fsprogs/libcom_err2/libcom_err2-1.42.7-1.tar.bz2 4557596e8f86a53ef98a8a89d4e27b
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/crypt/libcrypt0/libcrypt0-1.1-1.tar.bz2
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/crypt/libcrypt0/libcrypt0-1.1-1.tar.bz2 86ebff75ede0473796caf5272e868bc
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libedit/libedit0/libedit0-20130712-1.tar.xz
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libedit/libedit0/libedit0-20130712-1.tar.xz 916df72de17abbd4cf95fb93551221
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libgssapi3/libgssapi3-1.5.2-4.tar.bz2
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libgssapi3/libgssapi3-1.5.2-4.tar.bz2 0e6f2fae265546239f4a9a2f4554961
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libheimbase1/libheimbase1-1.5.2-4.tar.bz2
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libheimbase1/libheimbase1-1.5.2-4.tar.bz2 dfe9c6d25bdcb9309a7573d44a67c339
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libheimntlm0/libheimntlm0-1.5.2-4.tar.bz2
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libheimntlm0/libheimntlm0-1.5.2-4.tar.bz2 18243ae0644d679ffc13e736309dc15
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libhx509_5/libhx509_5-1.5.2-4.tar.bz2
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libhx509_5/libhx509_5-1.5.2-4.tar.bz2 dca469e756f4e6c98ca147cd9aad73
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libkafs0/libkafs0-1.5.2-4.tar.bz2
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libkafs0/libkafs0-1.5.2-4.tar.bz2 d5634fbdccf0b199cc4c70362e166aa
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libkrb5_26/libkrb5_26-1.5.2-4.tar.bz2
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libkrb5_26/libkrb5_26-1.5.2-4.tar.bz2 7aa2dce6261ea7466a37c0d5141645
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libroken18/libroken18-1.5.2-4.tar.bz2
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libroken18/libroken18-1.5.2-4.tar.bz2 c84ff2623712ff52a23dfc107d5b61
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/sqlite3/libsqlite3_0/libsqlite3_0-3.8.3.1-1.tar.xz
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/sqlite3/libsqlite3_0/libsqlite3_0-3.8.3.1-1.tar.xz 5d56c2153761459da563939222d238cc
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/gcc/libssp0/libssp0-4.8.2-3.tar.xz
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/gcc/libssp0/libssp0-4.8.2-3.tar.xz a261dc28572748eea1b5abc1462d11
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libwind0/libwind0-1.5.2-4.tar.bz2
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libwind0/libwind0-1.5.2-4.tar.bz2 0bad6fc3f6d051ff584a7e6a254ff95
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/tcp_wrappers/libwrap0/libwrap0-7.6-22.tar.xz
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/tcp_wrappers/libwrap0/libwrap0-7.6-22.tar.xz c342809a397436f63e96dda97ac4127b
+Checking MD5 for file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/openssh/openssh-6.5p1-1.tar.xz
+MD5 verified OK: file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/openssh/openssh-6.5p1-1.tar.xz 925b17fdeb39a568f8114b71f37ad783
+2014/02/24 19:16:51 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/csih/csih-0.9.7-1.tar.bz2
+Installing file cygfile:///usr/
+Installing file cygfile:///usr/lib/
+Installing file cygfile:///usr/lib/csih/
+Installing file cygfile:///usr/lib/csih/getAccountName.exe
+Installing file cygfile:///usr/lib/csih/getVolInfo.exe
+Installing file cygfile:///usr/lib/csih/winProductName.exe
+Installing file cygfile:///usr/share/
+Installing file cygfile:///usr/share/csih/
+Installing file cygfile:///usr/share/csih/cygwin-service-installation-helper.sh
+Installing file cygfile:///usr/share/doc/
+Installing file cygfile:///usr/share/doc/csih/
+Installing file cygfile:///usr/share/doc/csih/AUTHORS
+Installing file cygfile:///usr/share/doc/csih/ChangeLog
+Installing file cygfile:///usr/share/doc/csih/COPYING
+Installing file cygfile:///usr/share/doc/csih/NEWS
+Installing file cygfile:///usr/share/doc/csih/TODO
+Installing file cygfile:///usr/share/doc/Cygwin/
+Installing file cygfile:///usr/share/doc/Cygwin/csih.README
+2014/02/24 19:16:51 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/cygrunsrv/cygrunsrv-1.50-1.tar.xz
+Installing file cygfile:///bin/
+Installing file cygfile:///bin/cygrunsrv.exe
+Installing file cygfile:///usr/
+Installing file cygfile:///usr/lib/
+Installing file cygfile:///usr/share/
+Installing file cygfile:///usr/share/doc/
+Installing file cygfile:///usr/share/doc/cygrunsrv/
+Installing file cygfile:///usr/share/doc/cygrunsrv/COPYING
+Installing file cygfile:///usr/share/doc/cygrunsrv/ChangeLog
+Installing file cygfile:///usr/share/doc/cygrunsrv/TODO
+Installing file cygfile:///usr/share/doc/Cygwin/
+Installing file cygfile:///usr/share/doc/Cygwin/cygrunsrv.README
+2014/02/24 19:16:51 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/diffutils/diffutils-3.3-1.tar.bz2
+Installing file cygfile:///usr/
+Installing file cygfile:///usr/bin/
+Installing file cygfile:///usr/bin/cmp.exe
+Installing file cygfile:///usr/bin/diff.exe
+Installing file cygfile:///usr/bin/diff3.exe
+Installing file cygfile:///usr/bin/sdiff.exe
+Installing file cygfile:///usr/lib/
+Installing file cygfile:///usr/share/
+Installing file cygfile:///usr/share/doc/
+Installing file cygfile:///usr/share/doc/diffutils/
+Installing file cygfile:///usr/share/doc/diffutils/AUTHORS
+Installing file cygfile:///usr/share/doc/diffutils/ChangeLog
+Installing file cygfile:///usr/share/doc/diffutils/COPYING
+Installing file cygfile:///usr/share/doc/diffutils/NEWS
+Installing file cygfile:///usr/share/doc/diffutils/README
+Installing file cygfile:///usr/share/doc/diffutils/THANKS
+Installing file cygfile:///usr/share/doc/diffutils/TODO
+Installing file cygfile:///usr/share/info/
+Installing file cygfile:///usr/share/info/diffutils.info.gz
+Installing file cygfile:///usr/share/locale/
+Installing file cygfile:///usr/share/locale/ca/
+Installing file cygfile:///usr/share/locale/ca/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/ca/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/cs/
+Installing file cygfile:///usr/share/locale/cs/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/cs/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/da/
+Installing file cygfile:///usr/share/locale/da/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/da/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/de/
+Installing file cygfile:///usr/share/locale/de/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/de/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/el/
+Installing file cygfile:///usr/share/locale/el/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/el/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/eo/
+Installing file cygfile:///usr/share/locale/eo/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/eo/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/es/
+Installing file cygfile:///usr/share/locale/es/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/es/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/fi/
+Installing file cygfile:///usr/share/locale/fi/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/fi/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/fr/
+Installing file cygfile:///usr/share/locale/fr/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/fr/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/ga/
+Installing file cygfile:///usr/share/locale/ga/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/ga/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/gl/
+Installing file cygfile:///usr/share/locale/gl/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/gl/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/he/
+Installing file cygfile:///usr/share/locale/he/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/he/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/hr/
+Installing file cygfile:///usr/share/locale/hr/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/hr/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/hu/
+Installing file cygfile:///usr/share/locale/hu/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/hu/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/id/
+Installing file cygfile:///usr/share/locale/id/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/id/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/it/
+Installing file cygfile:///usr/share/locale/it/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/it/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/ja/
+Installing file cygfile:///usr/share/locale/ja/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/ja/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/lv/
+Installing file cygfile:///usr/share/locale/lv/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/lv/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/ms/
+Installing file cygfile:///usr/share/locale/ms/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/ms/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/nl/
+Installing file cygfile:///usr/share/locale/nl/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/nl/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/pl/
+Installing file cygfile:///usr/share/locale/pl/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/pl/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/pt_BR/
+Installing file cygfile:///usr/share/locale/pt_BR/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/pt_BR/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/ro/
+Installing file cygfile:///usr/share/locale/ro/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/ro/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/ru/
+Installing file cygfile:///usr/share/locale/ru/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/ru/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/sr/
+Installing file cygfile:///usr/share/locale/sr/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/sr/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/sv/
+Installing file cygfile:///usr/share/locale/sv/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/sv/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/tr/
+Installing file cygfile:///usr/share/locale/tr/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/tr/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/uk/
+Installing file cygfile:///usr/share/locale/uk/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/uk/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/vi/
+Installing file cygfile:///usr/share/locale/vi/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/vi/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/zh_CN/
+Installing file cygfile:///usr/share/locale/zh_CN/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/zh_CN/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/locale/zh_TW/
+Installing file cygfile:///usr/share/locale/zh_TW/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/zh_TW/LC_MESSAGES/diffutils.mo
+Installing file cygfile:///usr/share/man/
+Installing file cygfile:///usr/share/man/man1/
+Installing file cygfile:///usr/share/man/man1/cmp.1.gz
+Installing file cygfile:///usr/share/man/man1/diff.1.gz
+Installing file cygfile:///usr/share/man/man1/diff3.1.gz
+Installing file cygfile:///usr/share/man/man1/sdiff.1.gz
+2014/02/24 19:16:52 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/dos2unix/dos2unix-6.0.4-1.tar.xz
+Installing file cygfile:///usr/
+Installing file cygfile:///usr/bin/
+Installing file cygfile:///usr/bin/d2u.exe
+Installing file cygfile:///usr/bin/dos2unix.exe
+io_stream::mklink (cygfile:///usr/bin/dos2unix.exe->cygfile:///usr/bin/d2u.exe)
+Installing file cygfile:///usr/bin/mac2unix.exe
+io_stream::mklink (cygfile:///usr/bin/mac2unix.exe->cygfile:///usr/bin/d2u.exe)
+Installing file cygfile:///usr/bin/u2d.exe
+Installing file cygfile:///usr/bin/unix2dos.exe
+io_stream::mklink (cygfile:///usr/bin/unix2dos.exe->cygfile:///usr/bin/u2d.exe)
+Installing file cygfile:///usr/bin/unix2mac.exe
+io_stream::mklink (cygfile:///usr/bin/unix2mac.exe->cygfile:///usr/bin/u2d.exe)
+Installing file cygfile:///usr/lib/
+Installing file cygfile:///usr/share/
+Installing file cygfile:///usr/share/doc/
+Installing file cygfile:///usr/share/doc/Cygwin/
+Installing file cygfile:///usr/share/doc/Cygwin/dos2unix.README
+Installing file cygfile:///usr/share/doc/dos2unix/
+Installing file cygfile:///usr/share/doc/dos2unix/BUGS.txt
+Installing file cygfile:///usr/share/doc/dos2unix/ChangeLog.txt
+Installing file cygfile:///usr/share/doc/dos2unix/COPYING.txt
+Installing file cygfile:///usr/share/doc/dos2unix/dos2unix.htm
+Installing file cygfile:///usr/share/doc/dos2unix/dos2unix.txt
+Installing file cygfile:///usr/share/doc/dos2unix/INSTALL.txt
+Installing file cygfile:///usr/share/doc/dos2unix/NEWS.txt
+Installing file cygfile:///usr/share/doc/dos2unix/README.txt
+Installing file cygfile:///usr/share/doc/dos2unix/TODO.txt
+Installing file cygfile:///usr/share/locale/
+Installing file cygfile:///usr/share/locale/de/
+Installing file cygfile:///usr/share/locale/de/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/de/LC_MESSAGES/dos2unix.mo
+Installing file cygfile:///usr/share/locale/eo/
+Installing file cygfile:///usr/share/locale/eo/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/eo/LC_MESSAGES/dos2unix.mo
+Installing file cygfile:///usr/share/locale/es/
+Installing file cygfile:///usr/share/locale/es/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/es/LC_MESSAGES/dos2unix.mo
+Installing file cygfile:///usr/share/locale/nl/
+Installing file cygfile:///usr/share/locale/nl/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/nl/LC_MESSAGES/dos2unix.mo
+Installing file cygfile:///usr/share/locale/ru/
+Installing file cygfile:///usr/share/locale/ru/LC_MESSAGES/
+Installing file cygfile:///usr/share/locale/ru/LC_MESSAGES/dos2unix.mo
+Installing file cygfile:///usr/share/man/
+Installing file cygfile:///usr/share/man/es/
+Installing file cygfile:///usr/share/man/es/man1/
+Installing file cygfile:///usr/share/man/es/man1/dos2unix.1.gz
+Installing file cygfile:///usr/share/man/es/man1/mac2unix.1.gz
+Installing file cygfile:///usr/share/man/es/man1/unix2dos.1.gz
+Installing file cygfile:///usr/share/man/es/man1/unix2mac.1.gz
+Installing file cygfile:///usr/share/man/man1/
+Installing file cygfile:///usr/share/man/man1/d2u.1.gz
+Installing file cygfile:///usr/share/man/man1/dos2unix.1.gz
+Installing file cygfile:///usr/share/man/man1/mac2unix.1.gz
+Installing file cygfile:///usr/share/man/man1/u2d.1.gz
+Installing file cygfile:///usr/share/man/man1/unix2dos.1.gz
+Installing file cygfile:///usr/share/man/man1/unix2mac.1.gz
+Installing file cygfile:///usr/share/man/nl/
+Installing file cygfile:///usr/share/man/nl/man1/
+Installing file cygfile:///usr/share/man/nl/man1/dos2unix.1.gz
+Installing file cygfile:///usr/share/man/nl/man1/mac2unix.1.gz
+Installing file cygfile:///usr/share/man/nl/man1/unix2dos.1.gz
+Installing file cygfile:///usr/share/man/nl/man1/unix2mac.1.gz
+2014/02/24 19:16:52 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libasn1_8/libasn1_8-1.5.2-4.tar.bz2
+Installing file cygfile:///usr/bin/cygasn1-8.dll
+2014/02/24 19:16:52 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/e2fsprogs/libcom_err2/libcom_err2-1.42.7-1.tar.bz2
+Installing file cygfile:///usr/bin/cygcom_err-2.dll
+2014/02/24 19:16:52 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/crypt/libcrypt0/libcrypt0-1.1-1.tar.bz2
+Installing file cygfile:///usr/bin/cygcrypt-0.dll
+2014/02/24 19:16:52 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libedit/libedit0/libedit0-20130712-1.tar.xz
+Installing file cygfile:///usr/bin/
+Installing file cygfile:///usr/bin/cygedit-0.dll
+Installing file cygfile:///usr/share/doc/
+Installing file cygfile:///usr/share/doc/libedit/
+Installing file cygfile:///usr/share/doc/libedit/THANKS
+Installing file cygfile:///usr/share/doc/libedit/COPYING
+Installing file cygfile:///usr/share/doc/libedit/ChangeLog
+Installing file cygfile:///usr/share/man/man5/
+Installing file cygfile:///usr/share/man/man5/editrc.5.gz
+2014/02/24 19:16:52 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libgssapi3/libgssapi3-1.5.2-4.tar.bz2
+Installing file cygfile:///usr/bin/cyggssapi-3.dll
+2014/02/24 19:16:52 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libheimbase1/libheimbase1-1.5.2-4.tar.bz2
+Installing file cygfile:///usr/bin/cygheimbase-1.dll
+2014/02/24 19:16:52 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libheimntlm0/libheimntlm0-1.5.2-4.tar.bz2
+Installing file cygfile:///usr/bin/cygheimntlm-0.dll
+2014/02/24 19:16:52 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libhx509_5/libhx509_5-1.5.2-4.tar.bz2
+Installing file cygfile:///usr/bin/cyghx509-5.dll
+2014/02/24 19:16:52 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libkafs0/libkafs0-1.5.2-4.tar.bz2
+Installing file cygfile:///usr/bin/cygkafs-0.dll
+2014/02/24 19:16:53 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libkrb5_26/libkrb5_26-1.5.2-4.tar.bz2
+Installing file cygfile:///usr/bin/cygkrb5-26.dll
+2014/02/24 19:16:53 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libroken18/libroken18-1.5.2-4.tar.bz2
+Installing file cygfile:///usr/bin/cygroken-18.dll
+2014/02/24 19:16:53 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/sqlite3/libsqlite3_0/libsqlite3_0-3.8.3.1-1.tar.xz
+Installing file cygfile:///usr/bin/cygsqlite3-0.dll
+2014/02/24 19:16:53 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/gcc/libssp0/libssp0-4.8.2-3.tar.xz
+Installing file cygfile:///usr/bin/cygssp-0.dll
+2014/02/24 19:16:53 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libwind0/libwind0-1.5.2-4.tar.bz2
+Installing file cygfile:///usr/bin/cygwind-0.dll
+2014/02/24 19:16:53 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/tcp_wrappers/libwrap0/libwrap0-7.6-22.tar.xz
+Installing file cygfile:///usr/bin/cygwrap-0.dll
+2014/02/24 19:16:53 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/openssh/openssh-6.5p1-1.tar.xz
+Installing file cygfile:///etc/
+Installing file cygfile:///etc/moduli
+Installing file cygfile:///etc/defaults/
+Installing file cygfile:///etc/defaults/etc/
+Installing file cygfile:///etc/defaults/etc/sshd_config
+Installing file cygfile:///etc/defaults/etc/ssh_config
+Installing file cygfile:///etc/defaults/etc/inetd.d/
+Installing file cygfile:///etc/defaults/etc/inetd.d/sshd-inetd
+Installing file cygfile:///usr/
+Installing file cygfile:///usr/bin/
+Installing file cygfile:///usr/bin/ssh-host-config
+Installing file cygfile:///usr/bin/scp.exe
+Installing file cygfile:///usr/bin/ssh-keyscan.exe
+Installing file cygfile:///usr/bin/sftp.exe
+Installing file cygfile:///usr/bin/slogin
+io_stream::mklink (cygfile:///usr/bin/slogin->cygfile://./ssh.exe)
+Installing file cygfile:///usr/bin/ssh-copy-id
+Installing file cygfile:///usr/bin/ssh-agent.exe
+Installing file cygfile:///usr/bin/ssh-keygen.exe
+Installing file cygfile:///usr/bin/ssh-user-config
+Installing file cygfile:///usr/bin/ssh.exe
+Installing file cygfile:///usr/bin/ssh-add.exe
+Installing file cygfile:///usr/sbin/
+Installing file cygfile:///usr/sbin/sshd.exe
+Installing file cygfile:///usr/sbin/ssh-keysign.exe
+Installing file cygfile:///usr/sbin/sftp-server.exe
+Installing file cygfile:///usr/sbin/ssh-pkcs11-helper.exe
+Installing file cygfile:///usr/lib/
+Installing file cygfile:///usr/share/
+Installing file cygfile:///usr/share/man/
+Installing file cygfile:///usr/share/man/man8/
+Installing file cygfile:///usr/share/man/man8/ssh-keysign.8.gz
+Installing file cygfile:///usr/share/man/man8/sshd.8.gz
+Installing file cygfile:///usr/share/man/man8/ssh-pkcs11-helper.8.gz
+Installing file cygfile:///usr/share/man/man8/sftp-server.8.gz
+Installing file cygfile:///usr/share/man/man1/
+Installing file cygfile:///usr/share/man/man1/ssh-add.1.gz
+Installing file cygfile:///usr/share/man/man1/scp.1.gz
+Installing file cygfile:///usr/share/man/man1/ssh-keygen.1.gz
+Installing file cygfile:///usr/share/man/man1/ssh.1.gz
+Installing file cygfile:///usr/share/man/man1/ssh-copy-id.1.gz
+Installing file cygfile:///usr/share/man/man1/ssh-agent.1.gz
+Installing file cygfile:///usr/share/man/man1/ssh-keyscan.1.gz
+Installing file cygfile:///usr/share/man/man1/sftp.1.gz
+Installing file cygfile:///usr/share/man/man1/slogin.1.gz
+Installing file cygfile:///usr/share/man/man5/
+Installing file cygfile:///usr/share/man/man5/sshd_config.5.gz
+Installing file cygfile:///usr/share/man/man5/moduli.5.gz
+Installing file cygfile:///usr/share/man/man5/ssh_config.5.gz
+Installing file cygfile:///usr/share/doc/
+Installing file cygfile:///usr/share/doc/Cygwin/
+Installing file cygfile:///usr/share/doc/Cygwin/openssh.README
+Installing file cygfile:///usr/share/doc/openssh/
+Installing file cygfile:///usr/share/doc/openssh/README.dns
+Installing file cygfile:///usr/share/doc/openssh/LICENCE
+Installing file cygfile:///usr/share/doc/openssh/PROTOCOL
+Installing file cygfile:///usr/share/doc/openssh/PROTOCOL.agent
+Installing file cygfile:///usr/share/doc/openssh/README
+Installing file cygfile:///usr/share/doc/openssh/OVERVIEW
+Installing file cygfile:///usr/share/doc/openssh/CREDITS
+Installing file cygfile:///usr/share/doc/openssh/ChangeLog
+Installing file cygfile:///usr/share/doc/openssh/README.tun
+Installing file cygfile:///usr/share/doc/openssh/PROTOCOL.mux
+Installing file cygfile:///usr/share/doc/openssh/PROTOCOL.certkeys
+Installing file cygfile:///usr/share/doc/openssh/TODO
+Installing file cygfile:///usr/share/doc/openssh/README.platform
+Installing file cygfile:///usr/share/doc/openssh/README.privsep
+2014/02/24 19:16:53 Changing gid back to original
+Visited: 80 nodes out of 2885 while creating dependency order.
+Dependency order of packages: libiconv2 libintl8 alternatives base-cygwin libattr1 libgmp10 libgcc1 libmpfr4 libstdc++6 terminfo libncursesw10 libreadline7 gawk tzcode coreutils bash findutils sed base-files libbz2_1 bzip2 libp11-kit0 libtasn1_6 p11-kit p11-kit-trust ca-certificates cygwin corkscrew editrights libpcre1 grep diffutils csih cygrunsrv popt libpopt0 cygutils dash dos2unix tcl expect zlib0 file libargp getent groff gzip hostname ipc-utils less libcom_err2 libcrypt0 libroken18 libasn1_8 libedit0 libheimbase1 libopenssl100 libwind0 libhx509_5 libsqlite3_0 libkrb5_26 libheimntlm0 libgssapi3 libkafs0 liblzma5 libssp0 libwrap0 login xz man mintty ncurses openssh rebase rsync run tar vim-minimal wget which 
+2014/02/24 19:16:53 Changing gid to Administrators
+2014/02/24 19:16:54 note: Installation Complete
+2014/02/24 19:16:54 Ending cygwin install
