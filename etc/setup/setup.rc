@@ -103,7 +103,7 @@ mirrors-lst
 	http://cygwin.petsads.us/;cygwin.petsads.us;United States;Missouri
 	ftp://ftp.is.co.za/mirrors/cygwin/;ftp.is.co.za;Africa;South Africa
 chooser_window_settings
-	44,0,1,4294967295,4294967295,4294967295,4294967295,460,326,1010,736
+	44,0,1,4294967295,4294967295,4294967295,4294967295,230,209,1010,736
 last-mirror
 	http://mirrors.ustc.edu.cn/cygwin/
 net-method
