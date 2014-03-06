@@ -100,8 +100,11 @@ tcl-tix tcl-tix-8.4.3-2.tar.bz2 0
 tcl-tk tcl-tk-8.5.11-1.tar.bz2 0
 terminfo terminfo-5.9-4.tar.bz2 0
 tzcode tzcode-2013c-1.tar.bz2 0
+vim vim-7.4.182-1.tar.bz2 0
+vim-common vim-common-7.4.182-1.tar.bz2 0
 vim-minimal vim-minimal-7.4.182-1.tar.bz2 0
 wget wget-1.13.4-1.tar.bz2 0
 which which-2.20-2.tar.bz2 0
+xxd xxd-7.4.182-1.tar.bz2 0
 xz xz-5.0.4-1.tar.bz2 0
 zlib0 zlib0-1.2.8-1.tar.bz2 0

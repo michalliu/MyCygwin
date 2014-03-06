@@ -226,3 +226,65 @@
 2014/02/24 19:33:08 Changing gid to Administrators
 2014/02/24 19:36:38 note: Installation Complete
 2014/02/24 19:36:38 Ending cygwin install
+2014/02/25 17:52:54 Starting cygwin install, version 2.831
+2014/02/25 17:52:54 User has backup/restore rights
+2014/02/25 17:52:54 io_stream_cygfile: fopen(/etc/setup/setup.rc) failed 2 No such file or directory
+2014/02/25 17:52:54 Current Directory: F:\Win32Binaries\MyCygwin
+2014/02/25 17:52:54 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2014/02/25 17:52:57 source: network install
+2014/02/25 17:53:06 root: F:\Win32Binaries\MyCygwin binary system
+2014/02/25 17:53:10 Selected local directory: F:\Win32Binaries\MyCygwin
+2014/02/25 17:53:30 net: Proxy
+2014/02/25 17:53:39 net: Proxy
+2014/02/25 17:53:44 net: Direct
+2014/02/25 17:53:49 Ending cygwin install
+2014/02/25 23:12:34 Starting cygwin install, version 2.831
+2014/02/25 23:12:35 User has backup/restore rights
+2014/02/25 23:12:35 io_stream_cygfile: fopen(/etc/setup/setup.rc) failed 2 No such file or directory
+2014/02/25 23:12:35 Current Directory: F:\Win32Binaries\MyCygwin
+2014/02/25 23:12:35 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2014/02/25 23:12:37 source: network install
+2014/02/25 23:12:47 root: F:\Win32Binaries\MyCygwin binary system
+2014/02/25 23:12:52 root: F:\Win32Binaries\MyCygwin binary system
+2014/02/25 23:12:56 Selected local directory: F:\Win32Binaries\MyCygwin
+2014/02/25 23:13:05 Selected local directory: F:\Data\Cygwin
+2014/02/25 23:13:14 net: Proxy
+2014/02/25 23:13:28 site: http://mirrors.ustc.edu.cn/cygwin/
+2014/02/25 23:18:08 Changing gid back to original
+2014/02/25 23:18:08 Changing gid to Administrators
+2014/02/25 23:18:10 note: Nothing needed to be installed
+2014/02/25 23:18:10 Ending cygwin install
+2014/03/06 16:31:48 Starting cygwin install, version 2.831
+2014/03/06 16:31:48 User has backup/restore rights
+2014/03/06 16:31:48 Current Directory: F:\Data\Cygwin
+2014/03/06 16:31:48 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2014/03/06 16:31:51 source: network install
+2014/03/06 16:31:52 root: F:\Win32Binaries\MyCygwin binary system
+2014/03/06 16:31:53 Selected local directory: F:\Data\Cygwin
+2014/03/06 16:31:54 net: Proxy
+2014/03/06 16:31:57 site: http://mirrors.ustc.edu.cn/cygwin/
+2014/03/06 16:32:02 mbox note: This setup is version 2.831, but setup.ini claims version 2.844 is available.
+You might want to upgrade to get the latest features and bug fixes.
+2014/03/06 16:33:05 Ending cygwin install
+2014/03/06 16:33:08 Starting cygwin install, version 2.831
+2014/03/06 16:33:08 User has backup/restore rights
+2014/03/06 16:33:08 Current Directory: F:\Data\Cygwin
+2014/03/06 16:33:08 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2014/03/06 16:33:10 source: network install
+2014/03/06 16:33:11 root: F:\Win32Binaries\MyCygwin binary system
+2014/03/06 16:33:11 Selected local directory: F:\Data\Cygwin
+2014/03/06 16:33:12 net: Proxy
+2014/03/06 16:33:14 site: http://mirrors.ustc.edu.cn/cygwin/
+2014/03/06 16:33:16 mbox note: This setup is version 2.831, but setup.ini claims version 2.844 is available.
+You might want to upgrade to get the latest features and bug fixes.
+2014/03/06 16:33:31 Adding required dependency xxd: Selecting version 7.4.182-1 for installation.
+2014/03/06 16:33:32 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/vim/vim-7.4.182-1.tar.xz
+2014/03/06 16:33:33 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/vim/vim-common/vim-common-7.4.182-1.tar.xz
+2014/03/06 16:33:33 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/vim/xxd/xxd-7.4.182-1.tar.xz
+2014/03/06 16:33:34 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/vim/vim-7.4.182-1.tar.xz
+2014/03/06 16:33:34 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/vim/vim-common/vim-common-7.4.182-1.tar.xz
+2014/03/06 16:33:47 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/vim/xxd/xxd-7.4.182-1.tar.xz
+2014/03/06 16:33:47 Changing gid back to original
+2014/03/06 16:33:48 Changing gid to Administrators
+2014/03/06 16:33:54 note: Installation Complete
+2014/03/06 16:33:54 Ending cygwin install
