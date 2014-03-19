@@ -18,4 +18,14 @@ ECHO cd /cygdrive/$drive/"$path" >> %BASHRC_NEW%
 
 %DOS2UNIX% %BASHRC_NEW% > nul 2>&1
 
+GOTO TTY
+
+:BASH
 %WORKING_DIR%bin\bash --login -i
+GOTO EXIT
+
+:TTY
+start %WORKING_DIR%bin\mintty -
+GOTO EXIT
+
+:EXIT
