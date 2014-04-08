@@ -288,3 +288,278 @@ You might want to upgrade to get the latest features and bug fixes.
 2014/03/06 16:33:48 Changing gid to Administrators
 2014/03/06 16:33:54 note: Installation Complete
 2014/03/06 16:33:54 Ending cygwin install
+2014/03/21 00:08:11 Starting cygwin install, version 2.831
+2014/03/21 00:08:11 User has backup/restore rights
+2014/03/21 00:08:11 Current Directory: F:\Data\Cygwin
+2014/03/21 00:08:11 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2014/03/21 00:08:14 source: network install
+2014/03/21 00:08:15 root: F:\Win32Binaries\MyCygwin binary system
+2014/03/21 00:08:16 Selected local directory: F:\Data\Cygwin
+2014/03/21 00:08:20 net: Direct
+2014/03/21 00:08:23 site: http://mirrors.ustc.edu.cn/cygwin/
+2014/03/21 00:08:27 mbox note: This setup is version 2.831, but setup.ini claims version 2.844 is available.
+You might want to upgrade to get the latest features and bug fixes.
+2014/03/21 00:13:36 Adding required dependency libaudiofile1: Selecting version 0.3.6-1 for installation.
+2014/03/21 00:13:36 Adding required dependency libmetalink3: Selecting version 0.1.2-1 for installation.
+2014/03/21 00:13:36 Adding required dependency _autorebase: Selecting version 000117-1 for installation.
+2014/03/21 00:13:36 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/_autorebase/_autorebase-000117-1.tar.bz2
+2014/03/21 00:13:38 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/bison/bison-2.7.1-1.tar.bz2
+2014/03/21 00:13:39 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/curl/curl-7.34.0-1.tar.xz
+2014/03/21 00:13:41 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/file/file-5.17-2.tar.xz
+2014/03/21 00:13:45 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/flex/flex-2.5.37-3.tar.bz2
+2014/03/21 00:13:50 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/gnupg/gnupg-1.4.16-1.tar.xz
+2014/03/21 00:13:51 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/audiofile/libaudiofile1/libaudiofile1-0.3.6-1.tar.bz2
+2014/03/21 00:13:51 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/esound/libesd0/libesd0-0.2.41-12.tar.bz2
+2014/03/21 00:13:51 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libmetalink/libmetalink3/libmetalink3-0.1.2-1.tar.bz2
+2014/03/21 00:13:56 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/ncurses/libncursesw-devel/libncursesw-devel-5.9-4.tar.bz2
+2014/03/21 00:13:58 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/sqlite3/libsqlite3_0/libsqlite3_0-3.8.4.1-1.tar.xz
+2014/03/21 00:13:59 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/make/make-4.0-2.tar.xz
+2014/03/21 00:14:02 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/openssh/openssh-6.6p1-1.tar.xz
+2014/03/21 00:14:03 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/unzip/unzip-6.0-1.tar.bz2
+2014/03/21 00:14:05 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/zip/zip-3.0-1.tar.bz2
+2014/03/21 00:14:05 Running preremove script for  file
+2014/03/21 00:14:05 Running preremove script for  libsqlite3_0
+2014/03/21 00:14:05 Running preremove script for  openssh
+2014/03/21 00:14:05 Uninstalling file
+2014/03/21 00:14:06 Uninstalling libsqlite3_0
+2014/03/21 00:14:06 Uninstalling openssh
+2014/03/21 00:14:06 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/_autorebase/_autorebase-000117-1.tar.bz2
+2014/03/21 00:14:06 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/bison/bison-2.7.1-1.tar.bz2
+2014/03/21 00:14:06 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/curl/curl-7.34.0-1.tar.xz
+2014/03/21 00:14:07 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/file/file-5.17-2.tar.xz
+2014/03/21 00:14:07 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/flex/flex-2.5.37-3.tar.bz2
+2014/03/21 00:14:07 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/gnupg/gnupg-1.4.16-1.tar.xz
+2014/03/21 00:14:08 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/audiofile/libaudiofile1/libaudiofile1-0.3.6-1.tar.bz2
+2014/03/21 00:14:08 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/esound/libesd0/libesd0-0.2.41-12.tar.bz2
+2014/03/21 00:14:08 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libmetalink/libmetalink3/libmetalink3-0.1.2-1.tar.bz2
+2014/03/21 00:14:08 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/ncurses/libncursesw-devel/libncursesw-devel-5.9-4.tar.bz2
+2014/03/21 00:14:13 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/sqlite3/libsqlite3_0/libsqlite3_0-3.8.4.1-1.tar.xz
+2014/03/21 00:14:13 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/make/make-4.0-2.tar.xz
+2014/03/21 00:14:14 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/openssh/openssh-6.6p1-1.tar.xz
+2014/03/21 00:14:14 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/unzip/unzip-6.0-1.tar.bz2
+2014/03/21 00:14:14 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/zip/zip-3.0-1.tar.bz2
+2014/03/21 00:14:14 Changing gid back to original
+2014/03/21 00:14:14 running: cmd.exe /c "F:\Win32Binaries\MyCygwin\etc\postinstall\autorebase.bat"
+2014/03/21 00:14:21 Changing gid to Administrators
+2014/03/21 00:14:25 note: Installation Complete
+2014/03/21 00:14:25 Ending cygwin install
+2014/03/21 00:24:50 Starting cygwin install, version 2.831
+2014/03/21 00:24:50 User has backup/restore rights
+2014/03/21 00:24:50 Current Directory: F:\Data\Cygwin
+2014/03/21 00:24:50 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2014/03/21 00:24:55 source: network install
+2014/03/21 00:24:56 root: F:\Win32Binaries\MyCygwin binary system
+2014/03/21 00:24:56 Selected local directory: F:\Data\Cygwin
+2014/03/21 00:24:57 net: Direct
+2014/03/21 00:25:00 site: http://mirrors.ustc.edu.cn/cygwin/
+2014/03/21 00:25:02 mbox note: This setup is version 2.831, but setup.ini claims version 2.844 is available.
+You might want to upgrade to get the latest features and bug fixes.
+2014/03/21 00:25:06 Changing gid back to original
+2014/03/21 00:25:06 Changing gid to Administrators
+2014/03/21 00:25:21 Adding required dependency python: Selecting already-installed version 2.7.5-3.
+2014/03/21 00:25:21 Changing gid back to original
+2014/03/21 00:25:21 Changing gid to Administrators
+2014/03/21 00:25:23 note: Nothing needed to be installed
+2014/03/21 00:25:23 Ending cygwin install
+2014/03/21 00:25:47 Starting cygwin install, version 2.831
+2014/03/21 00:25:47 User has backup/restore rights
+2014/03/21 00:25:47 Current Directory: F:\Data\Cygwin
+2014/03/21 00:25:47 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2014/03/21 00:25:49 source: network install
+2014/03/21 00:25:50 root: F:\Win32Binaries\MyCygwin binary system
+2014/03/21 00:25:51 Selected local directory: F:\Data\Cygwin
+2014/03/21 00:25:52 net: Direct
+2014/03/21 00:25:53 site: http://mirrors.ustc.edu.cn/cygwin/
+2014/03/21 00:25:56 mbox note: This setup is version 2.831, but setup.ini claims version 2.844 is available.
+You might want to upgrade to get the latest features and bug fixes.
+2014/03/21 00:26:52 Running preremove script for  git
+2014/03/21 00:26:52 Running preremove script for  python
+2014/03/21 00:26:52 Running preremove script for  python-tkinter
+2014/03/21 00:26:52 Uninstalling git
+2014/03/21 00:26:52 Uninstalling python
+2014/03/21 00:26:55 Uninstalling python-tkinter
+2014/03/21 00:26:55 Changing gid back to original
+2014/03/21 00:26:55 Changing gid to Administrators
+2014/03/21 00:26:56 note: Uninstalls complete.
+2014/03/21 00:26:56 Ending cygwin install
+2014/03/21 00:28:28 Starting cygwin install, version 2.831
+2014/03/21 00:28:28 User has backup/restore rights
+2014/03/21 00:28:28 Current Directory: F:\Data\Cygwin
+2014/03/21 00:28:28 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2014/03/21 00:28:30 source: network install
+2014/03/21 00:28:31 root: F:\Win32Binaries\MyCygwin binary system
+2014/03/21 00:28:32 Selected local directory: F:\Data\Cygwin
+2014/03/21 00:28:33 net: Direct
+2014/03/21 00:28:35 site: http://mirrors.ustc.edu.cn/cygwin/
+2014/03/21 00:28:38 mbox note: This setup is version 2.831, but setup.ini claims version 2.844 is available.
+You might want to upgrade to get the latest features and bug fixes.
+2014/03/21 00:28:54 Adding required dependency python: Selecting version 2.7.5-3 for installation.
+2014/03/21 00:28:54 Adding required dependency python-tkinter: Selecting version 2.7.5-3 for installation.
+2014/03/21 00:28:56 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/git/git-1.7.9-1.tar.bz2
+2014/03/21 00:28:58 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/python/python-2.7.5-3.tar.xz
+2014/03/21 00:29:15 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/python/python-tkinter/python-tkinter-2.7.5-3.tar.xz
+2014/03/21 00:29:15 Changing gid back to original
+2014/03/21 00:29:15 Changing gid to Administrators
+2014/03/21 00:29:16 note: Installation Complete
+2014/03/21 00:29:16 Ending cygwin install
+2014/03/21 00:38:22 Starting cygwin install, version 2.831
+2014/03/21 00:38:22 User has backup/restore rights
+2014/03/21 00:38:22 Current Directory: F:\Data\Cygwin
+2014/03/21 00:38:22 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2014/03/21 00:38:25 source: network install
+2014/03/21 00:38:26 root: F:\Win32Binaries\MyCygwin binary system
+2014/03/21 00:38:26 Selected local directory: F:\Data\Cygwin
+2014/03/21 00:38:27 net: Direct
+2014/03/21 00:38:29 site: http://mirrors.ustc.edu.cn/cygwin/
+2014/03/21 00:38:32 mbox note: This setup is version 2.831, but setup.ini claims version 2.844 is available.
+You might want to upgrade to get the latest features and bug fixes.
+2014/03/21 00:38:43 Running preremove script for  ca-certificates
+2014/03/21 00:38:43 Uninstalling ca-certificates
+2014/03/21 00:38:43 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/ca-certificates/ca-certificates-1.96-3.tar.xz
+2014/03/21 00:38:43 Changing gid back to original
+2014/03/21 00:38:43 running: F:\Win32Binaries\MyCygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/ca-certificates.sh"
+2014/03/21 00:38:47 Changing gid to Administrators
+2014/03/21 00:38:48 note: Installation Complete
+2014/03/21 00:38:48 Ending cygwin install
+2014/04/08 12:51:30 Starting cygwin install, version 2.831
+2014/04/08 12:51:30 User has backup/restore rights
+2014/04/08 12:51:30 Current Directory: F:\Data\Cygwin
+2014/04/08 12:51:30 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2014/04/08 12:51:32 source: network install
+2014/04/08 12:51:33 root: F:\Win32Binaries\MyCygwin binary system
+2014/04/08 12:51:34 Selected local directory: F:\Data\Cygwin
+2014/04/08 12:51:37 net: Proxy
+2014/04/08 12:51:44 Dropped selected mirror: http://mirrors.ustc.edu.cn/cygwin/
+2014/04/08 12:51:46 Dropped selected mirror: http://mirrors.ustc.edu.cn/cygwin/
+2014/04/08 12:51:47 Adding dropped mirrors to cache to warn again.
+2014/04/08 12:51:47 site: http://mirrors.ustc.edu.cn/cygwin/
+2014/04/08 12:51:50 mbox note: This setup is version 2.831, but setup.ini claims version 2.844 is available.
+You might want to upgrade to get the latest features and bug fixes.
+2014/04/08 12:52:41 Adding required dependency crypt: Selecting version 1.1-1 for installation.
+2014/04/08 12:52:41 Adding required dependency libapr1: Selecting version 1.4.8-1 for installation.
+2014/04/08 12:52:41 Adding required dependency libaprutil1: Selecting version 1.5.2-4 for installation.
+2014/04/08 12:52:41 Adding required dependency libiodbc2: Selecting version 3.52.8-2 for installation.
+2014/04/08 12:52:41 Adding required dependency libmysqlclient18: Selecting version 5.5.35-1 for installation.
+2014/04/08 12:52:41 Adding required dependency libneon27: Selecting version 0.29.6-1 for installation.
+2014/04/08 12:52:41 Adding required dependency libpng15: Selecting version 1.5.14-1 for installation.
+2014/04/08 12:52:41 Adding required dependency libpq5: Selecting version 9.3.2-2 for installation.
+2014/04/08 12:52:41 Adding required dependency libproxy1: Selecting version 0.4.11-2 for installation.
+2014/04/08 12:52:41 Adding required dependency libserf1_0: Selecting version 1.3.3-1 for installation.
+2014/04/08 12:52:41 Adding required dependency libuuid1: Selecting version 2.21.2-1 for installation.
+2014/04/08 12:52:41 Adding required dependency openssl: Selecting version 1.0.1f-3 for installation.
+2014/04/08 12:52:41 Adding required dependency perl-URI: Selecting version 1.60-1 for installation.
+2014/04/08 12:52:41 Adding required dependency subversion-perl: Selecting version 1.8.8-1 for installation.
+2014/04/08 12:52:41 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/_autorebase/_autorebase-000129-1.tar.bz2
+2014/04/08 12:52:41 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/ca-certificates/ca-certificates-1.97-1.tar.xz
+2014/04/08 12:52:41 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/crypt/crypt-1.1-1.tar.bz2
+2014/04/08 12:52:42 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/cygwin/cygwin-1.7.29-2.tar.xz
+2014/04/08 12:52:42 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/file/file-5.18-1.tar.xz
+2014/04/08 12:52:42 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libapr1/libapr1-1.4.8-1.tar.bz2
+2014/04/08 12:52:42 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libaprutil1/libaprutil1-1.5.2-4.tar.bz2
+2014/04/08 12:52:43 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libasn1_8/libasn1_8-1.5.3-1.tar.xz
+2014/04/08 12:52:43 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/freetype2/libfreetype6/libfreetype6-2.5.3-1.tar.xz
+2014/04/08 12:52:43 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/gmp/libgmp10/libgmp10-6.0.0a-1.tar.xz
+2014/04/08 12:52:43 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libgssapi3/libgssapi3-1.5.3-1.tar.xz
+2014/04/08 12:52:43 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libheimbase1/libheimbase1-1.5.3-1.tar.xz
+2014/04/08 12:52:43 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libheimntlm0/libheimntlm0-1.5.3-1.tar.xz
+2014/04/08 12:52:43 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libhx509_5/libhx509_5-1.5.3-1.tar.xz
+2014/04/08 12:52:44 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libiodbc/libiodbc2/libiodbc2-3.52.8-2.tar.bz2
+2014/04/08 12:52:44 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libkafs0/libkafs0-1.5.3-1.tar.xz
+2014/04/08 12:52:44 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libkrb5_26/libkrb5_26-1.5.3-1.tar.xz
+2014/04/08 12:52:44 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/mysql/libmysqlclient18/libmysqlclient18-5.5.35-1.tar.xz
+2014/04/08 12:52:44 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/neon/libneon27/libneon27-0.29.6-1.tar.bz2
+2014/04/08 12:52:44 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/p11-kit/libp11-kit0/libp11-kit0-0.20.2-1.tar.xz
+2014/04/08 12:52:45 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/pcre/libpcre1/libpcre1-8.34-1.tar.xz
+2014/04/08 12:52:45 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libpng/libpng15/libpng15-1.5.14-1.tar.bz2
+2014/04/08 12:52:45 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/postgresql/libpq5/libpq5-9.3.2-2.tar.xz
+2014/04/08 12:52:45 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libproxy/libproxy1/libproxy1-0.4.11-2.tar.bz2
+2014/04/08 12:52:45 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libroken18/libroken18-1.5.3-1.tar.xz
+2014/04/08 12:52:45 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/serf/libserf1_0/libserf1_0-1.3.3-1.tar.xz
+2014/04/08 12:52:45 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/util-linux/libuuid1/libuuid1-2.21.2-1.tar.bz2
+2014/04/08 12:52:46 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libwind0/libwind0-1.5.3-1.tar.xz
+2014/04/08 12:52:46 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/openssl/openssl-1.0.1f-3.tar.xz
+2014/04/08 12:52:46 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/p11-kit/p11-kit-0.20.2-1.tar.xz
+2014/04/08 12:52:46 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/p11-kit/p11-kit-trust/p11-kit-trust-0.20.2-1.tar.xz
+2014/04/08 12:52:46 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/perl-URI/perl-URI-1.60-1.tar.bz2
+2014/04/08 12:52:47 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/subversion/subversion-1.8.8-1.tar.xz
+2014/04/08 12:52:47 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/subversion/subversion-perl/subversion-perl-1.8.8-1.tar.xz
+2014/04/08 12:52:47 Downloaded F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/subversion/subversion-tools/subversion-tools-1.8.8-1.tar.xz
+2014/04/08 12:52:48 Running preremove script for  _autorebase
+2014/04/08 12:52:48 Running preremove script for  ca-certificates
+2014/04/08 12:52:48 Running preremove script for  cygwin
+2014/04/08 12:52:48 Running preremove script for  file
+2014/04/08 12:52:48 Running preremove script for  libasn1_8
+2014/04/08 12:52:48 Running preremove script for  libfreetype6
+2014/04/08 12:52:48 Running preremove script for  libgmp10
+2014/04/08 12:52:48 Running preremove script for  libgssapi3
+2014/04/08 12:52:48 Running preremove script for  libheimbase1
+2014/04/08 12:52:48 Running preremove script for  libheimntlm0
+2014/04/08 12:52:48 Running preremove script for  libhx509_5
+2014/04/08 12:52:48 Running preremove script for  libkafs0
+2014/04/08 12:52:48 Running preremove script for  libkrb5_26
+2014/04/08 12:52:48 Running preremove script for  libp11-kit0
+2014/04/08 12:52:48 Running preremove script for  libpcre1
+2014/04/08 12:52:48 Running preremove script for  libroken18
+2014/04/08 12:52:48 Running preremove script for  libwind0
+2014/04/08 12:52:48 Running preremove script for  p11-kit
+2014/04/08 12:52:48 Running preremove script for  p11-kit-trust
+2014/04/08 12:52:48 Uninstalling _autorebase
+2014/04/08 12:52:48 Uninstalling ca-certificates
+2014/04/08 12:52:49 Uninstalling cygwin
+2014/04/08 12:52:49 Uninstalling file
+2014/04/08 12:52:49 Uninstalling libasn1_8
+2014/04/08 12:52:49 Uninstalling libfreetype6
+2014/04/08 12:52:49 Uninstalling libgmp10
+2014/04/08 12:52:49 Uninstalling libgssapi3
+2014/04/08 12:52:49 Uninstalling libheimbase1
+2014/04/08 12:52:49 Uninstalling libheimntlm0
+2014/04/08 12:52:49 Uninstalling libhx509_5
+2014/04/08 12:52:49 Uninstalling libkafs0
+2014/04/08 12:52:49 Uninstalling libkrb5_26
+2014/04/08 12:52:49 Uninstalling libp11-kit0
+2014/04/08 12:52:49 Uninstalling libpcre1
+2014/04/08 12:52:49 Uninstalling libroken18
+2014/04/08 12:52:49 Uninstalling libwind0
+2014/04/08 12:52:49 Uninstalling p11-kit
+2014/04/08 12:52:49 Uninstalling p11-kit-trust
+2014/04/08 12:52:49 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/_autorebase/_autorebase-000129-1.tar.bz2
+2014/04/08 12:52:49 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/ca-certificates/ca-certificates-1.97-1.tar.xz
+2014/04/08 12:52:49 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/crypt/crypt-1.1-1.tar.bz2
+2014/04/08 12:52:49 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/cygwin/cygwin-1.7.29-2.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/file/file-5.18-1.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libapr1/libapr1-1.4.8-1.tar.bz2
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libaprutil1/libaprutil1-1.5.2-4.tar.bz2
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libasn1_8/libasn1_8-1.5.3-1.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/freetype2/libfreetype6/libfreetype6-2.5.3-1.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/gmp/libgmp10/libgmp10-6.0.0a-1.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libgssapi3/libgssapi3-1.5.3-1.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libheimbase1/libheimbase1-1.5.3-1.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libheimntlm0/libheimntlm0-1.5.3-1.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libhx509_5/libhx509_5-1.5.3-1.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libiodbc/libiodbc2/libiodbc2-3.52.8-2.tar.bz2
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libkafs0/libkafs0-1.5.3-1.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libkrb5_26/libkrb5_26-1.5.3-1.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/mysql/libmysqlclient18/libmysqlclient18-5.5.35-1.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/neon/libneon27/libneon27-0.29.6-1.tar.bz2
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/p11-kit/libp11-kit0/libp11-kit0-0.20.2-1.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/pcre/libpcre1/libpcre1-8.34-1.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libpng/libpng15/libpng15-1.5.14-1.tar.bz2
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/postgresql/libpq5/libpq5-9.3.2-2.tar.xz
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/libproxy/libproxy1/libproxy1-0.4.11-2.tar.bz2
+2014/04/08 12:52:50 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libroken18/libroken18-1.5.3-1.tar.xz
+2014/04/08 12:52:51 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/serf/libserf1_0/libserf1_0-1.3.3-1.tar.xz
+2014/04/08 12:52:51 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/util-linux/libuuid1/libuuid1-2.21.2-1.tar.bz2
+2014/04/08 12:52:51 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/heimdal/libwind0/libwind0-1.5.3-1.tar.xz
+2014/04/08 12:52:51 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/openssl/openssl-1.0.1f-3.tar.xz
+2014/04/08 12:52:51 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/p11-kit/p11-kit-0.20.2-1.tar.xz
+2014/04/08 12:52:51 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/p11-kit/p11-kit-trust/p11-kit-trust-0.20.2-1.tar.xz
+2014/04/08 12:52:51 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/perl-URI/perl-URI-1.60-1.tar.bz2
+2014/04/08 12:52:51 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/subversion/subversion-1.8.8-1.tar.xz
+2014/04/08 12:52:51 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/subversion/subversion-perl/subversion-perl-1.8.8-1.tar.xz
+2014/04/08 12:52:52 Extracting from file://F:\Data\Cygwin/http%3a%2f%2fmirrors.ustc.edu.cn%2fcygwin%2f/x86_64/release/subversion/subversion-tools/subversion-tools-1.8.8-1.tar.xz
+2014/04/08 12:52:52 Changing gid back to original
+2014/04/08 12:52:52 running: cmd.exe /c "F:\Win32Binaries\MyCygwin\etc\postinstall\autorebase.bat"
+2014/04/08 12:52:56 running: F:\Win32Binaries\MyCygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/ca-certificates.sh"
+2014/04/08 12:52:59 Changing gid to Administrators
+2014/04/08 12:53:10 note: Installation Complete
+2014/04/08 12:53:10 Ending cygwin install

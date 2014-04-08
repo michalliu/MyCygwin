@@ -43,7 +43,7 @@ details. */
 	 changes to the DLL and is mainly informative in nature. */
 
 #define CYGWIN_VERSION_DLL_MAJOR 1007
-#define CYGWIN_VERSION_DLL_MINOR 28
+#define CYGWIN_VERSION_DLL_MINOR 29
 
       /* Major numbers before CYGWIN_VERSION_DLL_EPOCH are
 	 incompatible. */
@@ -103,6 +103,9 @@ details. */
 
 #define CYGWIN_VERSION_USE_PSEUDO_RELOC_IN_DLL(u) \
   (CYGWIN_VERSION_PER_PROCESS_API_VERSION_COMBINED (u) >= 227)
+
+#define CYGWIN_VERSION_CHECK_FOR_EXTRA_TM_MEMBERS \
+  (CYGWIN_VERSION_USER_API_VERSION_COMBINED >= 272)
 
 #define CYGWIN_VERSION_CYGWIN_CONV 181
 
@@ -442,12 +445,13 @@ details. */
       270: Redefine mtget.mt_resid field to contain current partition as well
            as number of partitions on tape.
       271: Export posix_spawn, posix_spawnp, and helper functions.
+      272: Export tm_gmtoff and tm_zone members.
      */
 
      /* Note that we forgot to bump the api for ualarm, strtoll, strtoull */
 
 #define CYGWIN_VERSION_API_MAJOR 0
-#define CYGWIN_VERSION_API_MINOR 271
+#define CYGWIN_VERSION_API_MINOR 272
 
      /* There is also a compatibity version number associated with the
 	shared memory regions.  It is incremented when incompatible
