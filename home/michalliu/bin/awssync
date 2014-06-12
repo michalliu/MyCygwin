@@ -1,0 +1,53 @@
+#!/bin/bash
+set -e
+
+PWD="`pwd`"
+CWD=$(cd "$(dirname "$0")"; pwd)
+OBJECT=$(echo $1 | sed -e 's/^[^\/]*//g')
+AWS_BUCKET=$(echo $1 | cut -c1-$(expr ${#1} - ${#OBJECT}))
+AWS_OBJECT=${OBJECT}
+AWS_OBJECT_FINAL=
+ABS_FOLDER=$2
+
+if [ -z $AWS ];then
+	AWS='aws --curl="curl --insecure --socks localhost:11000" -vvv'
+fi
+
+if [[ "$ABS_FOLDER" != /* ]];then
+ABS_FOLDER="${PWD}/${ABS_FOLDER}"
+fi
+
+promptyn () {
+while true; do
+  read -p "$1 " yn
+  case $yn in
+    [Yy]* ) return 0;;
+    [Nn]* ) return 1;;
+    * ) echo "Please answer yes or no.";;
+  esac
+done
+}
+
+do_put(){
+for DIR in $(find ${ABS_FOLDER} -type d | grep -v ".git"); do
+	RELATIVE_DIR=${DIR/$ABS_FOLDER/}
+
+	for FILE in $(find ${DIR} -maxdepth 1 -type f);do
+		FILE_NAME=${FILE/$DIR/}
+		AWS_OBJECT_FINAL="${AWS_OBJECT}${RELATIVE_DIR}${FILE_NAME}"
+		if [ "$1" = "dryrun" ];then
+			echo ""
+			echo "$AWS put ${AWS_BUCKET}${AWS_OBJECT_FINAL} ${FILE}"
+			echo ""
+		else
+			eval "$AWS put ${AWS_BUCKET}${AWS_OBJECT_FINAL} ${FILE}"
+		fi
+	done
+done
+}
+
+do_put "dryrun"
+
+if promptyn "continue?";then
+	do_put
+fi
