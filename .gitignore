@@ -2,3 +2,4 @@ tmp/
 home/
 setup.log
 setup.log.full
+*.swp
