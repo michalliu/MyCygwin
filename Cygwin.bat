@@ -17,6 +17,28 @@ ECHO path=$(echo '%FULL_PATH%' ^| tr '\\' '/') >> %BASHRC_NEW%
 ECHO cd /cygdrive/$drive/"$path" >> %BASHRC_NEW%
 ECHO alias awsoa="aws --curl=\"curl --insecure --proxy http://web-proxy.oa.com:8080\" -vvv" >> %BASHRC_NEW%
 ECHO alias awssock="aws --curl=\"curl --insecure --socks localhost:11000\" -vvv" >> %BASHRC_NEW%
+ECHO alias useproxy="aws --curl=\"curl --insecure --socks localhost:11000\" -vvv" >> %BASHRC_NEW%
+ECHO # alias curl="curl --insecure --proxy http://web-proxy.oa.com:8080 -vvv" >> %BASHRC_NEW%
+ECHO # oa proxy >> %BASHRC_NEW%
+ECHO function oaproxy(){ >> %BASHRC_NEW%
+ECHO export http_proxy=http://web-proxy.oa.com:8080/>> %BASHRC_NEW%
+ECHO export https_proxy=$http_proxy>> %BASHRC_NEW%
+ECHO }>> %BASHRC_NEW%
+ECHO # hk proxy >> %BASHRC_NEW%
+ECHO function hkproxy(){ >> %BASHRC_NEW%
+ECHO export http_proxy=http://web-proxyhk.oa.com:8080/>> %BASHRC_NEW%
+ECHO export https_proxy=$http_proxy>> %BASHRC_NEW%
+ECHO }>> %BASHRC_NEW%
+ECHO # po proxy >> %BASHRC_NEW%
+ECHO function poproxy(){ >> %BASHRC_NEW%
+ECHO export http_proxy=http://127.0.0.1:8123/>> %BASHRC_NEW%
+ECHO export https_proxy=$http_proxy>> %BASHRC_NEW%
+ECHO }>> %BASHRC_NEW%
+ECHO # no proxy>> %BASHRC_NEW%
+ECHO function noproxy(){ >> %BASHRC_NEW%
+ECHO export http_proxy=>> %BASHRC_NEW%
+ECHO export https_proxy=>> %BASHRC_NEW%
+ECHO }>> %BASHRC_NEW%
 
 %DOS2UNIX% %BASHRC_NEW% > nul 2>&1
 
