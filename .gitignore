@@ -3,3 +3,4 @@ home/
 setup.log
 setup.log.full
 *.swp
+/var/log/*
