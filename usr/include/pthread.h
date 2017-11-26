@@ -1,7 +1,7 @@
 /* pthread.h: POSIX pthread interface
 
    Copyright 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006,
-   2007, 2011, 2012, 2013 Red Hat, Inc.
+   2007, 2011, 2012, 2013, 2014 Red Hat, Inc.
 
    Written by Marco Fuykschot <marco@ddi.nl>
 
@@ -49,7 +49,7 @@ extern "C"
 #define PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP (pthread_mutex_t)18
 #define PTHREAD_NORMAL_MUTEX_INITIALIZER_NP (pthread_mutex_t)19
 #define PTHREAD_ERRORCHECK_MUTEX_INITIALIZER_NP (pthread_mutex_t)20
-#define PTHREAD_MUTEX_INITIALIZER PTHREAD_ERRORCHECK_MUTEX_INITIALIZER_NP
+#define PTHREAD_MUTEX_INITIALIZER PTHREAD_NORMAL_MUTEX_INITIALIZER_NP
 #define PTHREAD_ONCE_INIT { PTHREAD_MUTEX_INITIALIZER, 0 }
 #if defined(_POSIX_THREAD_PRIO_INHERIT) && _POSIX_THREAD_PRIO_INHERIT >= 0
 #define PTHREAD_PRIO_NONE 0
@@ -75,7 +75,8 @@ int pthread_attr_getschedparam (const pthread_attr_t *, struct sched_param *);
 int pthread_attr_getschedpolicy (const pthread_attr_t *, int *);
 int pthread_attr_getscope (const pthread_attr_t *, int *);
 int pthread_attr_getstack (const pthread_attr_t *, void **, size_t *);
-int pthread_attr_getstackaddr (const pthread_attr_t *, void **);
+int pthread_attr_getstackaddr (const pthread_attr_t *, void **)
+    __attribute__ ((__deprecated__));
 int pthread_attr_init (pthread_attr_t *);
 int pthread_attr_setdetachstate (pthread_attr_t *, int);
 int pthread_attr_setguardsize (pthread_attr_t *, size_t);
@@ -85,12 +86,9 @@ int pthread_attr_setschedpolicy (pthread_attr_t *, int);
 int pthread_attr_setscope (pthread_attr_t *, int);
 
 #ifdef _POSIX_THREAD_ATTR_STACKADDR
-/* These functions may be implementable via some low level trickery. For now they are
- * Not supported or implemented. The prototypes are here so if someone greps the
- * source they will see these comments
- */
 int pthread_attr_setstack (pthread_attr_t *, void *, size_t);
-int pthread_attr_setstackaddr (pthread_attr_t *, void *);
+int pthread_attr_setstackaddr (pthread_attr_t *, void *)
+    __attribute__ ((__deprecated__));
 #endif
 
 #ifdef _POSIX_THREAD_ATTR_STACKSIZE
@@ -139,7 +137,7 @@ int pthread_create (pthread_t *, const pthread_attr_t *,
 		    void *(*)(void *), void *);
 int pthread_detach (pthread_t);
 int pthread_equal (pthread_t, pthread_t);
-void pthread_exit (void *) __attribute__ ((noreturn));
+void pthread_exit (void *) __attribute__ ((__noreturn__));
 int pthread_getcpuclockid (pthread_t, clockid_t *);
 int pthread_getschedparam (pthread_t, int *, struct sched_param *);
 void *pthread_getspecific (pthread_key_t);

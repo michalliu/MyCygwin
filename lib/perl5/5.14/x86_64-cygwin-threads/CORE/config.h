@@ -8,10 +8,10 @@
  */
 
 /* Package name      : perl5
- * Source directory  : /home/Yaakov/src/perl/perl-5.14.4-1/src/perl-5.14.4
- * Configuration time: Mon Mar 11 18:16:36 CDT 2013
- * Configured by     : Yaakov
- * Target system     : cygwin_nt-6.1 yaakov04 1.7.18(0.26353) 2013-03-07 19:25 x86_64 cygwin 
+ * Source directory  : /mnt/share/maint/perl.x86_64/src/perl-5.14.4
+ * Configuration time: Tue Feb 17 21:32:05 CET 2015
+ * Configured by     : ASSI
+ * Target system     : cygwin_nt-6.3 cygwin 1.7.35(0.28653) 2015-02-16 13:03 x86_64 cygwin 
  */
 
 #ifndef _config_h_
@@ -1999,8 +1999,8 @@
 /*#define I_TIME		/ **/
 #define I_SYS_TIME		/**/
 /*#define I_SYS_TIME_KERNEL		/ **/
-/*#define HAS_TM_TM_ZONE		/ **/
-/*#define HAS_TM_TM_GMTOFF		/ **/
+#define HAS_TM_TM_ZONE		/**/
+#define HAS_TM_TM_GMTOFF		/**/
 
 /* PERL_INC_VERSION_LIST:
  *	This variable specifies the list of subdirectories in over
@@ -2246,7 +2246,7 @@
  *	feature tests from Configure are generally more reliable.
  */
 #define OSNAME "cygwin"		/**/
-#define OSVERS "1.7.18(0.26353)"		/**/
+#define OSVERS "1.7.35(0.28653)"		/**/
 
 /* CAT2:
  *	This macro concatenates 2 tokens together.
@@ -2360,9 +2360,9 @@
 /* CSH:
  *	This symbol, if defined, contains the full pathname of csh.
  */
-/*#define HAS_CSH		/ **/
+#define HAS_CSH		/**/
 #ifdef HAS_CSH
-#define CSH "csh"	/**/
+#define CSH "/usr/bin/csh"	/**/
 #endif
 
 /* SETUID_SCRIPTS_ARE_SECURE_NOW:
@@ -3727,7 +3727,7 @@
  *	This symbol, if defined, indicates that the sockatmark routine is
  *	available to test whether a socket is at the out-of-band mark.
  */
-/*#define HAS_SOCKATMARK		/ **/
+#define HAS_SOCKATMARK		/**/
 
 /* HAS_SOCKATMARK_PROTO:
  *	This symbol, if defined, indicates that the system provides
@@ -3818,7 +3818,7 @@
  *	This symbol, if defined, indicates that the strtold routine is
  *	available to convert strings to long doubles.
  */
-/*#define HAS_STRTOLD		/ **/
+#define HAS_STRTOLD		/**/
 
 /* HAS_STRTOLL:
  *	This symbol, if defined, indicates that the strtoll routine is
@@ -4392,8 +4392,8 @@
  */
 #define GMTIME_MAX		67767976233532799	/**/
 #define GMTIME_MIN		-62167219200	/**/
-#define LOCALTIME_MAX	67767976233532799	/**/
-#define LOCALTIME_MIN	-62167195884	/**/
+#define LOCALTIME_MAX	67768036191673199	/**/
+#define LOCALTIME_MIN	-62167222408	/**/
 
 /* USE_64_BIT_INT:
  *	This symbol, if defined, indicates that 64-bit integers should

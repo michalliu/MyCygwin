@@ -1,3 +1,30 @@
+2015-01-28  Corinna Vinschen <corinna@vinschen.de>
+
+	* cygrunsrv.README: Fix typo.
+
+2015-01-28  Corinna Vinschen <corinna@vinschen.de>
+
+	* cygrunsrv.cc: Bump version to 1.62.
+	(service_main): Forcefully exit from service_main in neverexits case
+	even when receiving a signal other than the termination or shutdown
+	signal.
+
+2014-08-21  Corinna Vinschen <corinna@vinschen.de>
+
+	* cygrunsrv.cc: Bump version to 1.61.
+	(service_fork_thread): Append /bin if explicit PATH value got loaded
+	from registry.  Prepend /bin otherwise.
+	* utils.cc (uprint): Delete.
+	(usage): Convert to a single fprintf call.
+
+2014-08-14  Corinna Vinschen <corinna@vinschen.de>
+
+	* cygrunsrv.cc: Bump version to 1.60.  Drop all special exception
+	handling code since it's disabled in newer Cygwin versions (actually,
+	since 2005 *blush*) anyway.
+	(service_fork_thread): Prepend /bin to $PATH, rather than appending,
+	as it has been claimed in the README forever.  Duh.
+
 2013-10-30  Corinna Vinschen <corinna@vinschen.de>
 
 	* cygrunsrv.cc: Bump version to 1.50.

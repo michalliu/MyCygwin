@@ -8,13 +8,44 @@ TODO:
     * Ask zsh mantainer to put /etc/zprofile and /etc/zshrc in place during
       installation.
     * Should users with GID 544/0 have /usr/bin/sbin in their paths?
+    * Enhance admins' prompt (ideas include the known # sign and using another
+      color, red?).
 
 Change Log
 ----------
+4.2-3 (intermediate release)
+    * remove MANPATH from /etc/profile
+      see cygwin.com/ml/cygwin/2014-05/msg00352.html
+4.2-2 (bugfix release)
+    * LC_ALL is set to "C" during profile.d execution so it can't be
+      used for testing whether or not to set LANG
+      see cygwin.com/ml/cygwin/2014-04/msg00550.html
+4.2-1
+    * remove permission/ACL settings and corresponding files.
+      see cygwin.com/ml/cygwin-apps/2014-03/msg00011.html
+4.1-3 (unreleased)
+    * Eliminate Windows PATH from default PATH if CYGWIN_NOWINPATH is
+      set.  Record the Windows PATH in ORIGINAL_PATH unless that
+      variable is already set.
+    * Better guard for non-existent /etc/skel.
+    * Improve profile_d function.
+      cygwin.com/ml/cygwin/2012-08/msg00488.html
+    * Add /etc/shells.
+      cygwin.com/ml/cygwin/2014-03/msg00039.html
+    * Use full path for tools and avoid DOS file warning when creating
+      service files.
+      cygwin.com/ml/cygwin/2013-07/msg00114.html
+4.1-2
+    * Enforce a secure ACL in /home /tmp /usr/tmp /var/log /var/run
+      using new files /etc/profile.d/1777fix.* written by Corinna Vinschen.
+      See cygwin.com/ml/cygwin/2012-03/msg00103.html
+    * Setting CYG_SYS_BASHRC in bash.bashrc has no effect because it is run
+      in a subshell environment. Reported by Christian Franke. See
+      cygwin.com/ml/cygwin/2012-02/msg00832.html
 4.1-1
     * Setting a system locale and a per-user locale breaks some configs
       and doesn't play well with mintty. Changed to a user-defined setting in
-      /etc/profile/lang.* Reported by Peter Rosin and Andy Koppe. See
+      /etc/profile.d/lang.* Reported by Peter Rosin and Andy Koppe. See
       cygwin.com/ml/cygwin/2012-02/msg00448.html
 4.0-9
     * Bug fix release.
@@ -68,15 +99,15 @@ Change Log
     * Never released.
     * Reordered /etc/profile to properly initialise PS1 - Cyrille Lefevre
     * Supressed a fork in /etc/profile routine for copying skeletal files and
-      added a test to `cd' command - Cyrille Lefevre 
+      added a test to `cd' command - Cyrille Lefevre
     * Removed /bin from path, as it is included via /usr/bin.
 4.0-2
     * Never released.
-    * A modified version of a case switch to run shell dependent stuff based 
+    * A modified version of a case switch to run shell dependent stuff based
       on ENV variables detection is back in /etc/profile, as proposed in
       cygwin.com/ml/cygwin/2010-11/msg00464.html - Daniel Colascione
     * Since SYS_BASHRC and SYS_BASH_LOGOUT will be enabled in bash-4.1
-      .bash_logout (added in 4.0-1) has been deprecated in favour of 
+      .bash_logout (added in 4.0-1) has been deprecated in favour of
       /etc/bash.bash_logout.
       cygwin.com/ml/cygwin-apps/2010-12/msg00075.html
     * Added tests to /etc/profile, /etc/bash.bashrc, .bash_profile, .bashrc
@@ -93,11 +124,11 @@ Change Log
     * New file skel/.profile set HOSTNAME for dash & posh.
     * New file skel/.mkshrc source /etc/mkshrc.
     * Updated the manifest.lst to include new files.
-    * Moved the command for setting /tmp perms to 
+    * Moved the command for setting /tmp perms to
       postinstall/base-files-mketc.sh.
       cygwin.com/ml/cygwin/2010-11/msg00464.html - Daniel Colascione
     * Modified the PRINTER setting in /etc/profile. No case switch
-      now. 
+      now.
       cygwin.com/ml/cygwin/2010-11/msg00464.html - Daniel Colascione
     * Added a WARNING in the conditional loop that creates $HOME for
       already existing homes that don't belong to the user.
@@ -109,10 +140,10 @@ Change Log
     * Backtick command substitution notation replaced with $(...)
     * All variable expansion is written within curly braces.
     * Case switch to detect which shell is running taken out of /etc/profile.
-    * Bug regarding PS1 unset in interactive shells with a non-interactive 
+    * Bug regarding PS1 unset in interactive shells with a non-interactive
       ancestor solved. cygwin.com/ml/cygwin/2010-02/msg00503.html -
       Reported by Jon Turney
-    * Bug regarding mksh a well-defined PS1 solved. 
+    * Bug regarding mksh a well-defined PS1 solved.
       sourceware.org/ml/cygwin/2010-05/msg00000.html - Reported by
       Chris Sutcliffe
 3.9-3
@@ -125,7 +156,7 @@ Change Log
 3.9-1
     * Set LANG scripts in /etc/profile.d/
       - Corinna Vinschen, Thomas Wolff, Christopher Faylor
-    * Unset TMP and TEMP in ~/.bashrc 
+    * Unset TMP and TEMP in ~/.bashrc
       - Angelo Graziosi, Robert Pendell, Ken Brown, Corinna Vinschen
 3.8-4
     * Fixed permissions - Corinna Vinschen
@@ -189,7 +220,7 @@ Change Log
 3.1-2
     * Fix for zsh/ksh - Tero Niemela
 3.1-1
-    * Never released - fixed spelling errors 
+    * Never released - fixed spelling errors
 3.0-3
     * Fix not required for cp - Pierre A. Humblet
 3.0-2

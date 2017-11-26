@@ -1,5 +1,5 @@
 /****************************************************************************
- * Copyright (c) 1998-2010,2011 Free Software Foundation, Inc.              *
+ * Copyright (c) 1998-2011,2013 Free Software Foundation, Inc.              *
  *                                                                          *
  * Permission is hereby granted, free of charge, to any person obtaining a  *
  * copy of this software and associated documentation files (the            *
@@ -32,7 +32,7 @@
 /*    and: Thomas E. Dickey                        1995-on                  */
 /****************************************************************************/
 
-/* $Id: MKterm.h.awk.in,v 1.60 2011/06/25 20:51:00 tom Exp $ */
+/* $Id: MKterm.h.awk.in,v 1.62 2013/08/17 19:21:56 tom Exp $ */
 
 /*
 **	term.h -- Definition of struct term
@@ -59,6 +59,12 @@ extern "C" {
 
 #undef  NCURSES_SBOOL
 #define NCURSES_SBOOL char
+
+#undef  NCURSES_USE_DATABASE
+#define NCURSES_USE_DATABASE 1
+
+#undef  NCURSES_USE_TERMCAP
+#define NCURSES_USE_TERMCAP 0
 
 #undef  NCURSES_XNAMES
 #define NCURSES_XNAMES 1
@@ -719,6 +725,7 @@ extern NCURSES_EXPORT(int) _nc_set_tty_mode (TTY *buf);
 extern NCURSES_EXPORT(int) _nc_get_tty_mode (TTY *buf);
 extern NCURSES_EXPORT(int) _nc_read_entry (const char * const, char * const, TERMTYPE *const);
 extern NCURSES_EXPORT(int) _nc_read_file_entry (const char *const, TERMTYPE *);
+extern NCURSES_EXPORT(void) _nc_init_termtype (TERMTYPE *const);
 extern NCURSES_EXPORT(int) _nc_read_termtype (TERMTYPE *, char *, int);
 extern NCURSES_EXPORT(char *) _nc_first_name (const char *const);
 extern NCURSES_EXPORT(int) _nc_name_match (const char *const, const char *const, const char *const);

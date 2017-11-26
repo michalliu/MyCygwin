@@ -26,10 +26,10 @@ MODLIBS=        $(LOCALMODLIBS) $(BASEMODLIBS)
 
 # === Variables set by configure
 VERSION=	2.7
-srcdir=		/usr/src/ports/python/python-2.7.5-3/src/Python-2.7.5
-VPATH=		/usr/src/ports/python/python-2.7.5-3/src/Python-2.7.5
-abs_srcdir=	/usr/src/ports/python/python-2.7.5-3/src/Python-2.7.5
-abs_builddir=	/usr/src/ports/python/python-2.7.5-3/build
+srcdir=		/usr/src/ports/python/python-2.7.10-1.x86_64/src/Python-2.7.10
+VPATH=		/usr/src/ports/python/python-2.7.10-1.x86_64/src/Python-2.7.10
+abs_srcdir=	/usr/src/ports/python/python-2.7.10-1.x86_64/src/Python-2.7.10
+abs_builddir=	/usr/src/ports/python/python-2.7.10-1.x86_64/build
 build=		x86_64-unknown-cygwin
 host=		x86_64-unknown-cygwin
 
@@ -69,11 +69,11 @@ MAKESETUP=      $(srcdir)/Modules/makesetup
 # Compiler options
 OPT=		-DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes
 BASECFLAGS=	 -fno-strict-aliasing
-CFLAGS=		$(BASECFLAGS) -ggdb -O2 -pipe -fdebug-prefix-map=/usr/src/ports/python/python-2.7.5-3/build=/usr/src/debug/python-2.7.5-3 -fdebug-prefix-map=/usr/src/ports/python/python-2.7.5-3/src/Python-2.7.5=/usr/src/debug/python-2.7.5-3 $(OPT) $(EXTRA_CFLAGS)
+CFLAGS=		$(BASECFLAGS) -ggdb -O2 -pipe -Wimplicit-function-declaration -fdebug-prefix-map=/usr/src/ports/python/python-2.7.10-1.x86_64/build=/usr/src/debug/python-2.7.10-1 -fdebug-prefix-map=/usr/src/ports/python/python-2.7.10-1.x86_64/src/Python-2.7.10=/usr/src/debug/python-2.7.10-1 $(OPT) $(EXTRA_CFLAGS)
 # Both CPPFLAGS and LDFLAGS need to contain the shell's value for setup.py to
 # be able to build extension modules using the directories specified in the
 # environment variables
-CPPFLAGS=	-I. -IInclude -I$(srcdir)/Include  -I/usr/include/ncursesw
+CPPFLAGS=	-I. -IInclude -I$(srcdir)/Include 
 LDFLAGS=	 -L.
 LDLAST=		
 SGI_ABI=	
@@ -99,11 +99,11 @@ prefix=		/usr
 exec_prefix=	/usr
 
 # Install prefix for data files
-datarootdir=    /usr/share
+datarootdir=    ${prefix}/share
 
 # Expanded directories
-BINDIR=		/usr/bin
-LIBDIR=		/usr/lib
+BINDIR=		${exec_prefix}/bin
+LIBDIR=		${exec_prefix}/lib
 MANDIR=		${datarootdir}/man
 INCLUDEDIR=	${prefix}/include
 CONFINCLUDEDIR=	$(exec_prefix)/include
@@ -145,6 +145,9 @@ OTHER_LIBTOOL_OPT=
 # Environment to run shared python without installed libraries
 RUNSHARED=       
 
+# ensurepip options
+ENSUREPIP=      no
+
 # Modes for directories, executables and data files created by the
 # install process.  Default to user-only-writable for all file types.
 DIRMODE=	755
@@ -152,7 +155,7 @@ EXEMODE=	755
 FILEMODE=	644
 
 # configure script arguments
-CONFIG_ARGS=	 '--srcdir=/usr/src/ports/python/python-2.7.5-3/src/Python-2.7.5' '--prefix=/usr' '--exec-prefix=/usr' '--bindir=/usr/bin' '--sbindir=/usr/sbin' '--libexecdir=/usr/libexec' '--datadir=/usr/share' '--localstatedir=/var' '--sysconfdir=/etc' '--libdir=/usr/lib' '--datarootdir=/usr/share' '--docdir=/usr/share/doc/python' '--htmldir=/usr/share/doc/python/html' '-C' '--enable-shared' '--enable-ipv6' '--with-dbmliborder=gdbm' '--with-libc=' '--with-libm=' '--with-system-ffi' '--with-system-expat' 'ac_cv_func_bind_textdomain_codeset=yes' 'CC=gcc' 'CFLAGS=-ggdb -O2 -pipe -fdebug-prefix-map=/usr/src/ports/python/python-2.7.5-3/build=/usr/src/debug/python-2.7.5-3 -fdebug-prefix-map=/usr/src/ports/python/python-2.7.5-3/src/Python-2.7.5=/usr/src/debug/python-2.7.5-3' 'LDFLAGS= -L.' 'LIBS=' 'CPPFLAGS= -I/usr/include/ncursesw'
+CONFIG_ARGS=	 '--srcdir=/usr/src/ports/python/python-2.7.10-1.x86_64/src/Python-2.7.10' '--prefix=/usr' '--exec-prefix=/usr' '--localstatedir=/var' '--sysconfdir=/etc' '--docdir=/usr/share/doc/python' '--htmldir=/usr/share/doc/python/html' '-C' '--enable-shared' '--enable-ipv6' '--with-dbmliborder=gdbm' '--with-libc=' '--with-libm=' '--with-system-ffi' '--with-system-expat' 'ac_cv_func_bind_textdomain_codeset=yes' 'CC=gcc' 'CFLAGS=-ggdb -O2 -pipe -Wimplicit-function-declaration -fdebug-prefix-map=/usr/src/ports/python/python-2.7.10-1.x86_64/build=/usr/src/debug/python-2.7.10-1 -fdebug-prefix-map=/usr/src/ports/python/python-2.7.10-1.x86_64/src/Python-2.7.10=/usr/src/debug/python-2.7.10-1' 'LDFLAGS= -L.' 'LIBS=' 'CPPFLAGS='
 
 
 # Subdirectories with code
@@ -197,6 +200,10 @@ PYTHON_FOR_BUILD=./$(BUILDPYTHON) -E
 _PYTHON_HOST_PLATFORM=
 HOST_GNU_TYPE=  x86_64-unknown-cygwin
 
+# Tcl and Tk config info from --with-tcltk-includes and -libs options
+TCLTK_INCLUDES=	
+TCLTK_LIBS=	
+
 # The task to run while instrument when building the profile-opt target
 PROFILE_TASK=	$(srcdir)/Tools/pybench/pybench.py -n 2 --with-gc --with-syscheck
 #PROFILE_TASK=	$(srcdir)/Lib/test/regrtest.py
@@ -211,7 +218,7 @@ COREPYTHONPATH=$(DESTPATH)$(SITEPATH)$(TESTPATH)$(MACHDEPPATH)$(EXTRAMACHDEPPATH
 OLDPATH=:lib-old
 TKPATH=:lib-tk
 EXTRAMACHDEPPATH=
-MACHDEPPATH=:plat-$(MACHDEP)
+MACHDEPPATH=:$(PLATDIR)
 TESTPATH=
 SITEPATH=
 DESTPATH=
@@ -239,7 +246,7 @@ GRAMMAR_C=	Python/graminit.c
 GRAMMAR_INPUT=	$(srcdir)/Grammar/Grammar
 
 
-LIBFFI_INCLUDEDIR=	/usr/lib/libffi-3.0.13/include
+LIBFFI_INCLUDEDIR=	
 
 ##########################################################################
 # Parser
@@ -460,8 +467,18 @@ platform: $(BUILDPYTHON) pybuilddir.txt
 # Create build directory and generate the sysconfig build-time data there.
 # pybuilddir.txt contains the name of the build dir and is used for
 # sys.path fixup -- see Modules/getpath.c.
+# Since this step runs before shared modules are built, try to avoid bootstrap
+# problems by creating a dummy pybuilddir.txt just to allow interpreter
+# initialization to succeed.  It will be overwritten by generate-posix-vars
+# or removed in case of failure.
 pybuilddir.txt: $(BUILDPYTHON)
-		$(RUNSHARED) $(PYTHON_FOR_BUILD) -S -m sysconfig --generate-posix-vars
+	@echo "none" > ./pybuilddir.txt
+	$(RUNSHARED) $(PYTHON_FOR_BUILD) -S -m sysconfig --generate-posix-vars ;\
+	if test $$? -ne 0 ; then \
+		echo "generate-posix-vars failed" ; \
+		rm -f ./pybuilddir.txt ; \
+		exit 1 ; \
+	fi
 
 # Build the shared modules
 # Under GNU make, MAKEFLAGS are sorted and normalized; the 's' for
@@ -473,6 +490,7 @@ sharedmods: $(BUILDPYTHON) pybuilddir.txt
 	    *) quiet="";; \
 	esac; \
 	$(RUNSHARED) CC='$(CC)' LDSHARED='$(BLDSHARED)' OPT='$(OPT)' \
+		_TCLTK_INCLUDES='$(TCLTK_INCLUDES)' _TCLTK_LIBS='$(TCLTK_LIBS)' \
 		$(PYTHON_FOR_BUILD) $(srcdir)/setup.py $$quiet build
 
 # Build static library
@@ -762,7 +780,8 @@ PYTHON_HEADERS= \
 		Include/warnings.h \
 		Include/weakrefobject.h \
 		pyconfig.h \
-		$(PARSER_HEADERS)
+		$(PARSER_HEADERS) \
+		$(AST_H)
 
 $(LIBRARY_OBJS) $(MODOBJS) Modules/python.o: $(PYTHON_HEADERS)
 
@@ -830,12 +849,31 @@ memtest:	all platform
 		$(TESTPYTHON) $(TESTPROG) $(MEMTESTOPTS)
 
 # Install everything
-install:	 altinstall bininstall maninstall 
+install:	 commoninstall bininstall maninstall 
+	if test "x$(ENSUREPIP)" != "xno"  ; then \
+		case $(ENSUREPIP) in \
+			upgrade) ensurepip="--upgrade" ;; \
+			install|*) ensurepip="" ;; \
+		esac; \
+		$(RUNSHARED) $(PYTHON_FOR_BUILD) -m ensurepip \
+			$$ensurepip --root=$(DESTDIR)/ ; \
+	fi
 
 # Install almost everything without disturbing previous versions
-altinstall:	 altbininstall libinstall inclinstall \
-				libainstall altmaninstall \
-                sharedinstall oldsharedinstall 
+altinstall:	commoninstall
+	if test "x$(ENSUREPIP)" != "xno"  ; then \
+		case $(ENSUREPIP) in \
+			upgrade) ensurepip="--altinstall --upgrade --no-default-pip" ;; \
+			install|*) ensurepip="--altinstall --no-default-pip" ;; \
+		esac; \
+		$(RUNSHARED) $(PYTHON_FOR_BUILD) -m ensurepip \
+			$$ensurepip --root=$(DESTDIR)/ ; \
+	fi
+
+commoninstall:	 \
+		altbininstall libinstall inclinstall libainstall \
+		sharedinstall oldsharedinstall altmaninstall \
+		
 
 # Install shared libraries enabled by Setup
 DESTDIRS=	$(exec_prefix) $(LIBDIR) $(BINLIBDEST) $(DESTSHARED)
@@ -925,7 +963,7 @@ maninstall:	altmaninstall
 	(cd $(DESTDIR)$(MANDIR)/man1; $(LN) -s python2.1 python.1)
 
 # Install the library
-PLATDIR=	plat-$(MACHDEP)
+PLATDIR=	plat-cygwin
 EXTRAPLATDIR= 
 EXTRAMACHDEPPATH=
 MACHDEPS=	$(PLATDIR) $(EXTRAPLATDIR)
@@ -941,17 +979,21 @@ PLATMACDIRS= plat-mac plat-mac/Carbon plat-mac/lib-scriptpackages \
 	plat-mac/lib-scriptpackages/Terminal
 PLATMACPATH=:plat-mac:plat-mac/lib-scriptpackages
 LIBSUBDIRS=	lib-tk lib-tk/test lib-tk/test/test_tkinter \
-		lib-tk/test/test_ttk site-packages test test/data \
-		test/cjkencodings test/decimaltestdata test/xmltestdata test/subprocessdata \
+		lib-tk/test/test_ttk site-packages test test/audiodata test/capath \
+		test/data test/cjkencodings test/decimaltestdata test/xmltestdata \
+		test/imghdrdata \
+		test/subprocessdata \
 		test/tracedmodules \
 		encodings compiler hotshot \
 		email email/mime email/test email/test/data \
+		ensurepip ensurepip/_bundled \
 		json json/tests \
 		sqlite3 sqlite3/test \
 		logging bsddb bsddb/test csv importlib wsgiref \
 		lib2to3 lib2to3/fixes lib2to3/pgen2 lib2to3/tests \
 		lib2to3/tests/data lib2to3/tests/data/fixers lib2to3/tests/data/fixers/myfixes \
-		ctypes ctypes/test ctypes/macholib idlelib idlelib/Icons \
+		ctypes ctypes/test ctypes/macholib \
+		idlelib idlelib/Icons idlelib/idle_test \
 		distutils distutils/command distutils/tests $(XMLLIBSUBDIRS) \
 		multiprocessing multiprocessing/dummy \
 		unittest unittest/test \
@@ -1275,6 +1317,7 @@ TAGS::
 
 # Touch generated files
 touch:
+	cd $(srcdir); \
 	touch Include/Python-ast.h Python/Python-ast.c
 
 # Sanitation targets -- clean leaves libraries, executables and tags
@@ -1312,11 +1355,11 @@ distclean: clobber
 		Modules/ld_so_aix Modules/python.exp Misc/python.pc
 	-rm -f python*-gdb.py
 	-rm -f pybuilddir.txt
-	find $(srcdir) '(' -name '*.fdc' -o -name '*~' \
-			   -o -name '[@,#]*' -o -name '*.old' \
-			   -o -name '*.orig' -o -name '*.rej' \
-			   -o -name '*.bak' ')' \
-			   -exec rm -f {} ';'
+	find $(srcdir)/[a-zA-Z]* '(' -name '*.fdc' -o -name '*~' \
+				     -o -name '[@,#]*' -o -name '*.old' \
+				     -o -name '*.orig' -o -name '*.rej' \
+				     -o -name '*.bak' ')' \
+				     -exec rm -f {} ';'
 
 # Check for smelly exported symbols (not starting with Py/_Py)
 smelly: all
@@ -1367,7 +1410,7 @@ Python/thread.o:  $(srcdir)/Python/thread_atheos.h $(srcdir)/Python/thread_beos.
 .PHONY: frameworkinstall frameworkinstallframework frameworkinstallstructure
 .PHONY: frameworkinstallmaclib frameworkinstallapps frameworkinstallunixtools
 .PHONY: frameworkaltinstallunixtools recheck autoconf clean clobber distclean
-.PHONY: smelly funny patchcheck touch altmaninstall
+.PHONY: smelly funny patchcheck touch altmaninstall commoninstall
 .PHONY: gdbhooks
 
 # IF YOU PUT ANYTHING HERE IT WILL GO AWAY

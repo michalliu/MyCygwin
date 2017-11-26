@@ -28,8 +28,6 @@
 #
 # Thus, we pass -U to groff(1), and everything else to convert(1).
 #
-# $Id: grap2graph.sh,v 1.5 2010/02/25 20:17:13 wl Exp $
-#
 groff_opts=""
 convert_opts=""
 format="png"
@@ -43,7 +41,7 @@ do
 	format=$2
 	shift;;
     -v | --version)
-	echo "GNU grap2graph (groff) version 1.22.2"
+	echo "GNU grap2graph (groff) version 1.22.3"
 	exit 0;;
     --help)
 	echo "usage: grap2graph [ option ...] < in > out"

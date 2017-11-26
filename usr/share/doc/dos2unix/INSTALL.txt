@@ -8,32 +8,42 @@ PREREQUISITES
             * sh           : POSIX type shell
             * GNU coreutils: Core utilities package (chmod, install, mkdir,
                              mv, rm, uname)
-            * perl         : Practical Extraction and Report Language (perlpod)
-                             For manuals in non-Latin1 (non-Western-European)
-                             languages perl >= 5.10.1 is required.
 
         Optional (depending on build targets):
-            * gettext     : Framework to help GNU packages produce multi-
-                            lingual messages.
-            * groff       : GNU troff text formatting system.
-            * ghostscript : An interpreter for the PostScript language and
-                            for PDF (ps2pdf)
-            * iconv       : Character set conversion utility.
+            * perl         : Practical Extraction and Report Language
+                             perl >= 5.10.1 is required for rebuilding the
+                             manual pages with pod2man.
+                             perl >= 5.18 is required for rebuilding the
+                             international manual pages correctly in HTML with pod2html.
+                             Self-tests require module perl-Test-Simple.
+            * gettext      : Framework to help GNU packages produce multi-
+                             lingual messages.
+            * po4a         : PO for anything, for rebuilding manuals.
+            * groff        : GNU troff text formatting system, for
+                             international messages and manuals.
+            * ghostscript  : An interpreter for the PostScript language and
+                             for PDF (ps2pdf)
+
+
+    Using LLVM CLANG:
+        Clang can be used as a drop-in replacement for gcc. Just add CC=clang to the make
+        command line.
 
 
     Using Watcom C:
         Required
-            * Open Watcom  : http://www.openwatcom.org/
-            * perl         : Practical Extraction and Report Language (perlpod)
-                             http://strawberryperl.com/
+            * Open Watcom     : http://www.openwatcom.org/
+            * Open Watcom V2  : http://open-watcom.github.io/open-watcom/    (git repo)
+                                http://sourceforge.net/projects/openwatcom/  (binaries download)
 
 
     Using Microsoft Visual C++:
         Required
             * Visual C++   : You can get a free express version via this web page:
-                             http://www.microsoft.com/visualstudio/eng/downloads#d-2010-express
-            * perl         : Practical Extraction and Report Language (perlpod)
-                             http://strawberryperl.com/
+                             http://www.visualstudio.com/products/visual-studio-express-vs
+                             Download Visual Studio for Windows Desktop. Visual C++ is part
+                             of Visual Studio. Out of the box compilation for 64-bit
+                             applications is supported since version 2012.
 
 
 
@@ -42,6 +52,11 @@ BASIC INSTALLATION
     To build the program type:
 
         make
+
+
+    To run the self-tests type:
+
+        make check
 
 
     To strip the executables:
@@ -59,12 +74,13 @@ BASIC INSTALLATION
         make clean
 
 
-    Mostly clean.
+SELF-TESTS
 
-        The target mostlyclean will preserve the generated documentation files.
+    To run the self-tests you need a Perl installation including
+    module perl-Test-Simple.
 
-        make mostlyclean
-
+    To check the native Windows ports you need to run the tests in
+    the MSYS2 shell.
 
 INSTALLATION NAMES
 
@@ -99,56 +115,35 @@ NATIVE LANGUAGE SUPPORT
 
 INTERNATIONAL MAN PAGES
 
-    Man pages for Latin1 (Western European) scripts are supported
-    on all systems.
+    Since dos2unix 6.0.5 all man pages are encoded in UTF-8, because even
+    Western-European man pages may contain Unicode characters not supported by
+    the Latin-1 (ISO-8859-1) character set.
 
-    Man pages for non-Latin1 scripts are only supported on modern
-    Unix (like) systems. This is controlled via the make variable
-    MAN_NONLATIN. When the value of MAN_NONLATIN is equal to 1
-    (default for Unix) non-Latin manual pages are built. For DOS,
-    Windows, OS/2 this variable is default empty.
+    Originally the Unix man system supported only man pages in Latin1 format.
+    Although the world is moving to Unicode format (UTF-8) there is still a lot
+    of Latin1 legacy around.
 
-    Enable non-Latin man pages:
+    The English man page is a pure ASCII file and is readable on all platforms.
 
-        make install MAN_NONLATIN=1
+    Non-English man pages are encoded in UTF-8. These do not show properly on
+    old systems.  Man pages in UTF-8 format are shown properly on Linux. Not
+    all roff implementations support UTF-8.
 
-    Disable non-Latin man pages:
-
-        make install MAN_NONLATIN=
-
-    Generation of non-Latin1 manuals requires Perl >= 5.10.1.
-
-
-    Originally the Unix man system supported only man pages in Latin1
-    format (ISO-8859-1). Although the world is moving to Unicode format
-    (UTF-8) there is still a lot of Latin1 legacy around.
-
-    The English man page is a pure ASCII file and is readable on all
-    platforms.
-
-    The non-English Latin script man pages are ASCII files and use GNU
-    groff extension codes (see man groff_char) for the non-ASCII Latin1
-    characters. This way the man pages show properly in UTF-8 environments
-    (modern Linuxes) and legacy Latin1 (DJGPP, MinGW, Cygwin, old Unixes).
-    GNU groff is wide spread, but there are also roff implementations
-    around that don't support the GNU extensions.
-
-    Man pages for non-Latin1 scripts are encoded in UTF-8. These do not
-    show properly on old systems. Therefore these are not built for DOS,
-    and Windows by default. Man pages in UTF-8 format are shown properly
-    on Linux. Not all roff implementations support UTF-8.
-
-    In order to show UTF-8 man pages properly on Cygwin you need to do the
-    following:
+    In order to show UTF-8 man pages properly on Cygwin with traditional man
+    you need to do the following:
 
     In /etc/man.conf, change the NROFF definition to use 'preconv'.
 
         NROFF        /usr/bin/preconv | /usr/bin/nroff -c -mandoc 2>/dev/null
 
-    To view the man page set the correct locale. E.g. for Russian:
+    To view the man page set the correct locale. E.g. for Ukrainian:
 
-        export LANG=ru_RU.UTF-8
+        export LANG=uk_UA.UTF-8
         man dos2unix
+
+    With man-db the manpages show correctly out of the box. Cygwin changed to
+    use man-db in June 2014.
+    Man-db is the default man system on the major Linux distributions.
 
 
 LARGE FILE SUPPORT
@@ -178,19 +173,15 @@ UNICODE SUPPORT
     Unicode UTF-16 is not supported by the DOS and OS/2 versions.
 
 
-ESPERANTO X-NOTATION
-
-    For systems that don't support the Unicode or Latin-3 character set,
-    Esperanto messages in ASCII x-notation format can be selected. Add
-    EO_XNOTATION=1 to the make command-line.  It will change the format of the
-    normal dos2unix 'eo' locale from Unicode to ASCII x-notation.
-
-        make clean install EO_XNOTATION=1
-
-
 DOCUMENTATION
 
     Manual pages are generated from Perl POD files.
+    To rebuild the man pages from POD type:
+
+        make maintainer-clean
+        make man
+
+    Generation of correct man pages in UTF-8 format requires perl >= 5.10.1.
 
     The manual pages in text and html format are by default only
     created in English language. To create text and html manuals
@@ -199,12 +190,11 @@ DOCUMENTATION
         make txt
         make html
 
+    Generation of correct man pages in HTML format requires perl >= 5.18.
+
     Once the manuals in non-English languages have been created,
     they will also be installed under share/doc/ when you type
     'make install'
-
-    Creation of non-English manuals in text or html format require
-    an installation of iconv.
 
     Manuals in PDF format are by default not created.
     To create manuals in PDF format type:
@@ -223,9 +213,10 @@ WINDOWS 32 BIT PORT
         make -f mingw.mak strip
         make -f mingw.mak install
 
-    Using Mingw-w64 compiler <http://mingw-w64.sourceforge.net>:
-    I used Ruben van Boxem release installed in c:\mingw32
-    32 bit host, 32 bit target: i686-w64-mingw32-gcc-4.6.3-2-release-win32_rubenvb.7z
+    Using MinGW-w64 compiler <http://mingw-w64.sourceforge.net>:
+    I am using the MSYS2 project <http://sourceforge.net/projects/msys2/>
+    which includes the MinGW-w64 compiler and an updated MSYS shell based
+    on Cygwin 1.7.
 
         make -f mingw32.mak clean
         make -f mingw32.mak
@@ -248,26 +239,41 @@ WINDOWS 32 BIT PORT
     The win32 binaries built with MinGW32 are packed with a patched version of
     MinGW's libintl-8.dll that has builtin support for relocation. See also
     http://waterlan.home.xs4all.nl/libintl.html and
-    http://sourceforge.net/tracker/?func=detail&atid=302435&aid=3003879&group_id=2435
+    http://sourceforge.net/p/mingw/bugs/1808/
+    The MSYS2 project has the relocation patch already included.
 
 
 WINDOWS 64 BIT PORT
 
     To compile a version for 64 bit Windows, get the Mingw-w64 compiler
     <http://mingw-w64.sourceforge.net>, and use makefile mingw64.mak:
-    I used Ruben van Boxem release installed in c:\mingw64
-    32 bit host, 64 bit target: x86_64-w64-mingw32-gcc-4.6.3-2-release-win32_rubenvb.7z
+    I am using the MSYS2 project <http://sourceforge.net/projects/msys2/>
+    which includes the MinGW-w64 compiler and an updated MSYS shell based
+    on Cygwin 1.7.
 
         make -f mingw64.mak clean
         make -f mingw64.mak
         make -f mingw64.mak strip
         make -f mingw64.mak install
 
+    Or use Microsoft Visual C++. Visual Studio Express supports
+    out of the box C/C++ compilation for 64-bit applications since
+    version 2012. Start an "x64 Cross Tools Command Prompt" and
+    type:
+
+        nmake /f vc.mak clean
+        nmake /f vc.mak
+        nmake /f vc.mak install
+
 
 DOS PORT, 32 BIT
 
     To compile a version for DOS, get the DJGPP compiler
-    <http://www.delorie.com/djgpp/>, and use makefile djgpp.mak:
+    <http://www.delorie.com/djgpp/>, and use makefile djgpp.mak.
+    DJGPP gcc >= 4.6 seems to cause problems. Crashes of gcc itself,
+    or crashing dos2unix binaries (seen in DOSBox and DOSEMU).
+    Use DJGPP gcc <= 4.5.3.
+
 
         make -f djgpp.mak clean
         make -f djgpp.mak
@@ -275,6 +281,7 @@ DOS PORT, 32 BIT
         make -f djgpp.mak install
 
     Or use Open Watcom
+    Cross compiling from Windows 32 bit. This works.
 
         wmake -f wccdos32.mak clean
         wmake -f wccdos32.mak

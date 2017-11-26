@@ -137,13 +137,20 @@ static const char * const local_patches[] = {
 	,"uncommitted-changes"
 #endif
 	PERL_GIT_UNPUSHED_COMMITS    	/* do not remove this line */
-        ,"Bug#55162 File::Spec::case_tolerant performance"
-        ,"CYG07 $vendorarch/auto/.rebase"
-        ,"CYG15 static Win32CORE"
-        ,"CYG17 cyg-1.7 paths-utf8" 
-        ,"0c612ce82 Fix building static extensions on cygwin, -UUSEIMPORTLIB"
-        ,"1bac5ecc1 Fix 64-bit threading sv.c: S_anonymise_cv_maybe"
-        ,"Cygwin::sync_winenv added"
+        ,"rurban/0c612ce82        Fix building static extensions on cygwin, -UUSEIMPORTLIB"
+        ,"perl.cygwin_autorebase  Rebase DLL after building (skip for cygport builds)"
+        ,"v5.14.0-RC2-6-gfc6f691  skip testing cygwin utf8 readdir() with Win32 ANSI API"
+        ,"v5.14.0-RC2-7-g3877b86  Fix test 50 on cygwin: \\WINDOWS"
+        ,"v5.14.0-RC2-10-gd22b5bd revert +x global.sym from 3691eaa79cc6a"
+        ,"v5.15.0-579-g8375c93    Export store_cop_label for the perl compiler"
+        ,"v5.15.3-232-g1bac5ec    sv.c: S_anonymise_cv_maybe UTF8 cleanup."
+        ,"v5.15.7-75-g803e389     CYG17 utf8 paths"
+        ,"v5.15.7-302-g5bc802d    Revise perlcygwin.pod for cygwin-1.7"
+        ,"v5.15.7-303-g286f819    add Cygwin::sync_winenv [perl #110190]"
+        ,"v5.19.8-494-g6cc44f6    avoid a \"FILE\" name conflict with cygwin's wchar.h"
+        ,"v5.19.8-496-g3383030    [perl #120936] op/taint.t handling of no ipcsysv on cygwin"
+        ,"v5.19.8-509-g288d0d9    cygwin doesn't implement $^E (except as a read of $!)"
+        ,"v5.21.4-548-g860874c    wrap the failing call_checker test in an eval and TODO it"
 	,NULL
 };
 

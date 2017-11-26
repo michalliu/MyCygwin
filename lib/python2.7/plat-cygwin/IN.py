@@ -6,143 +6,11 @@
 
 # Included from stdint.h
 
-# Included from bits/wordsize.h
-_WORDSIZE_H = 1
-__WORDSIZE = 64
-__WORDSIZE_COMPAT32 = 1
-__WORDSIZE = 32
-def __I64(n): return n ## L
-
-def __U64(n): return n ## UL
-
-def __I64(n): return n ## LL
-
-def __U64(n): return n ## ULL
-
-INT8_MIN = (-128)
-INT16_MIN = (-32768)
-INT32_MIN = (-2147483647 - 1)
-INT64_MIN = (-__I64(9223372036854775807) - 1)
-INT8_MAX = (127)
-INT16_MAX = (32767)
-INT32_MAX = (2147483647)
-INT64_MAX = (__I64(9223372036854775807))
-UINT8_MAX = (255)
-UINT16_MAX = (65535)
-UINT64_MAX = (__U64(18446744073709551615))
-INT_LEAST8_MIN = (-128)
-INT_LEAST16_MIN = (-32768)
-INT_LEAST32_MIN = (-2147483647 - 1)
-INT_LEAST64_MIN = (-__I64(9223372036854775807) - 1)
-INT_LEAST8_MAX = (127)
-INT_LEAST16_MAX = (32767)
-INT_LEAST32_MAX = (2147483647)
-INT_LEAST64_MAX = (__I64(9223372036854775807))
-UINT_LEAST8_MAX = (255)
-UINT_LEAST16_MAX = (65535)
-UINT_LEAST64_MAX = (__U64(18446744073709551615))
-INT_FAST8_MIN = (-128)
-INT_FAST16_MIN = (-__I64(9223372036854775807) - 1)
-INT_FAST32_MIN = (-__I64(9223372036854775807) - 1)
-INT_FAST16_MIN = (-2147483647 - 1)
-INT_FAST32_MIN = (-2147483647 - 1)
-INT_FAST64_MIN = (-__I64(9223372036854775807) - 1)
-INT_FAST8_MAX = (127)
-INT_FAST16_MAX = (__I64(9223372036854775807))
-INT_FAST32_MAX = (__I64(9223372036854775807))
-INT_FAST16_MAX = (2147483647)
-INT_FAST32_MAX = (2147483647)
-INT_FAST64_MAX = (__I64(9223372036854775807))
-UINT_FAST8_MAX = (255)
-UINT_FAST16_MAX = (__U64(18446744073709551615))
-UINT_FAST32_MAX = (__U64(18446744073709551615))
-UINT_FAST64_MAX = (__U64(18446744073709551615))
-INTPTR_MIN = (-__I64(9223372036854775807) - 1)
-INTPTR_MAX = (__I64(9223372036854775807))
-UINTPTR_MAX = (__U64(18446744073709551615))
-INTPTR_MIN = (-2147483647 - 1)
-INTPTR_MAX = (2147483647)
-INTMAX_MIN = (-__I64(9223372036854775807) - 1)
-INTMAX_MAX = (__I64(9223372036854775807))
-UINTMAX_MAX = (__U64(18446744073709551615))
-PTRDIFF_MIN = (-9223372036854775807L - 1)
-PTRDIFF_MAX = (9223372036854775807L)
-PTRDIFF_MIN = (-2147483647 - 1)
-PTRDIFF_MAX = (2147483647)
-SIG_ATOMIC_MIN = (-2147483647 - 1)
-SIG_ATOMIC_MAX = (2147483647)
-WCHAR_MIN = (0)
-WCHAR_MAX = (65535)
-def INT8_C(x): return x
-
-def INT16_C(x): return x
-
-def INT32_C(x): return x
-
-def INT64_C(x): return x ## L
-
-def INT64_C(x): return x ## LL
-
-def UINT8_C(x): return x
-
-def UINT16_C(x): return x
-
-def UINT32_C(x): return x ## U
-
-def UINT64_C(x): return x ## UL
-
-def UINT64_C(x): return x ## ULL
-
-def INTMAX_C(x): return x ## L
-
-def UINTMAX_C(x): return x ## UL
-
-def INTMAX_C(x): return x ## LL
-
-def UINTMAX_C(x): return x ## ULL
-
-_SS_MAXSIZE = 128
-
-# Included from asm/socket.h
-
-# Included from cygwin/if.h
-
-# Included from sys/types.h
-
-# Included from _ansi.h
-
-# Included from newlib.h
-__NEWLIB_H__ = 1
-_NEWLIB_VERSION = "2.0.0"
-_WANT_IO_C99_FORMATS = 1
-_WANT_IO_LONG_LONG = 1
-_WANT_IO_LONG_DOUBLE = 1
-_WANT_IO_POS_ARGS = 1
-_MB_CAPABLE = 1
-_MB_LEN_MAX = 8
-_ATEXIT_DYNAMIC_ALLOC = 1
-_HAVE_LONG_DOUBLE = 1
-_FVWRITE_IN_STREAMIO = 1
-_FSEEK_OPTIMIZATION = 1
-_WIDE_ORIENT = 1
-_UNBUF_STREAM_OPT = 1
-
-# Included from sys/config.h
-
-# Included from machine/ieeefp.h
-Sudden_Underflow = 1
-def isfinite(__y): return \
-
-def __ieeefp_isnanf(x): return 0
-
-def __ieeefp_isinff(x): return 0
-
-def __ieeefp_finitef(x): return 1
-
-_FLOAT_ARG = float
-_FLOAT_ARG = float
+# Included from machine/_default_types.h
 
 # Included from sys/features.h
+__NEWLIB__ = 2
+__NEWLIB_MINOR__ = 2
 _POSIX_JOB_CONTROL = 1
 _POSIX_SAVED_IDS = 1
 _POSIX_VERSION = 199309L
@@ -247,65 +115,6 @@ _POSIX_C_SOURCE = 200809L
 _POSIX_C_SOURCE = 200112L
 _POSIX_C_SOURCE = 199506L
 _POSIX_C_SOURCE = 2
-MALLOC_ALIGNMENT = 16
-H8300 = 1
-INT_MAX = 32767
-UINT_MAX = 65535
-H8300 = 1
-INT_MAX = 32767
-INT_MAX = 2147483647
-__LARGE64_FILES = 1
-_LARGEFILE64_SOURCE = 1
-MALLOC_ALIGNMENT = 8
-__BUFSIZ__ = 16
-_POINTER_INT = long
-_POINTER_INT = int
-MALLOC_ALIGNMENT = 8
-_POINTER_INT = long
-__BUFSIZ__ = 16
-MALLOC_ALIGNMENT = 16
-__INT_MAX__ = INT_MAX
-__INT_MAX__ = 2147483647
-__LONG_MAX__ = 9223372036854775807L
-__LONG_MAX__ = 2147483647L
-_POINTER_INT = long
-__RAND_MAX = 32767
-__RAND_MAX = 0x7fffffff
-
-# Included from cygwin/config.h
-__SYMBOL_PREFIX = "_"
-def _SYMSTR(x): return __SYMBOL_PREFIX #x
-
-__FILENAME_MAX__ = 4096
-__LARGE64_FILES = 1
-__USE_INTERNAL_STAT64 = 1
-__LINUX_ERRNO_EXTENSIONS__ = 1
-_MB_EXTENDED_CHARSETS_ALL = 1
-__HAVE_LOCALE_INFO__ = 1
-__HAVE_LOCALE_INFO_EXTENDED__ = 1
-_WANT_C99_TIME_FORMATS = 1
-_GLIBC_EXTENSION = 1
-DEFAULT_LOCALE = "C.UTF-8"
-__USE_XOPEN2K = 1
-__FILENAME_MAX__ = 255
-_READ_WRITE_RETURN_TYPE = int
-_MB_EXTENDED_CHARSETS_ISO = 1
-_MB_EXTENDED_CHARSETS_WINDOWS = 1
-def _DEFUN_VOID(name): return name(_NOARGS)
-
-def _PARAMS(paramlist): return paramlist
-
-def _DEFUN_VOID(name): return name()
-
-_LONG_LONG_TYPE = long
-def _PARAMS(paramlist): return ()
-
-def _ATTRIBUTE(attrs): return __attribute__ (attrs)
-
-
-# Included from machine/_types.h
-
-# Included from machine/_default_types.h
 def __EXP(x): return __##x##__
 
 def __EXP(x): return x
@@ -319,6 +128,12 @@ def __EXP(x): return x
 def __PMT(args): return args
 
 __flexarr = [0]
+def __has_feature(x): return 0
+
+def __has_include(x): return 0
+
+def __has_builtin(x): return 0
+
 __GNUCLIKE_ASM = 3
 __GNUCLIKE_ASM = 2
 __GNUCLIKE___TYPEOF = 1
@@ -357,11 +172,11 @@ def __aligned(x): return __attribute__((__aligned__(x)))
 
 def __section(x): return __attribute__((__section__(x)))
 
-def _Alignas(e): return alignas(e)
-
-def _Alignof(e): return alignof(e)
+def _Alignas(x): return alignas(x)
 
 def _Alignas(x): return __aligned(x)
+
+def _Alignof(x): return alignof(x)
 
 def _Alignof(x): return __alignof(x)
 
@@ -377,6 +192,9 @@ def __predict_false(exp): return (exp)
 
 def __format_arg(fmtarg): return __attribute__((__format_arg__ (fmtarg)))
 
+_XOPEN_SOURCE = 700
+__BSD_VISIBLE = 1
+__GNU_VISIBLE = 1
 _POSIX_C_SOURCE = 199009
 _POSIX_C_SOURCE = 199209
 __XSI_VISIBLE = 700
@@ -400,28 +218,19 @@ __POSIX_VISIBLE = 199009
 __ISO_C_VISIBLE = 1990
 __POSIX_VISIBLE = 198808
 __ISO_C_VISIBLE = 0
-__POSIX_VISIBLE = 0
-__XSI_VISIBLE = 0
-__BSD_VISIBLE = 0
-__ISO_C_VISIBLE = 1990
-__POSIX_VISIBLE = 0
-__XSI_VISIBLE = 0
-__BSD_VISIBLE = 0
+__ISO_C_VISIBLE = 2011
 __ISO_C_VISIBLE = 1999
-__POSIX_VISIBLE = 0
-__XSI_VISIBLE = 0
-__BSD_VISIBLE = 0
+__ISO_C_VISIBLE = 1990
 __ISO_C_VISIBLE = 2011
 __POSIX_VISIBLE = 200809
 __XSI_VISIBLE = 700
 __BSD_VISIBLE = 1
-__ISO_C_VISIBLE = 2011
-def __has_feature(x): return 0
 
-def __has_include(x): return 0
-
-def __has_builtin(x): return 0
-
+# Included from bits/wordsize.h
+_WORDSIZE_H = 1
+__WORDSIZE = 64
+__WORDSIZE_COMPAT32 = 1
+__WORDSIZE = 32
 MB_LEN_MAX = 8
 SCHAR_MIN = (-128)
 SCHAR_MAX = 127
@@ -434,7 +243,6 @@ SHRT_MIN = (-32768)
 SHRT_MAX = 32767
 USHRT_MAX = 65535
 __INT_MAX__ = 2147483647
-INT_MIN = (-INT_MAX-1)
 INT_MAX = __INT_MAX__
 __LONG_MAX__ = 9223372036854775807L
 __LONG_MAX__ = 2147483647L
@@ -534,26 +342,286 @@ NL_SETMAX = 255
 NL_TEXTMAX = _POSIX2_LINE_MAX
 NZERO = 20
 ___int8_t_defined = 1
+___int8_t_defined = 1
 ___int16_t_defined = 1
 ___int16_t_defined = 1
 ___int16_t_defined = 1
-___int_least16_t_defined = 1
+___int16_t_defined = 1
+___int32_t_defined = 1
+___int32_t_defined = 1
+___int32_t_defined = 1
+___int32_t_defined = 1
+___int32_t_defined = 1
+___int64_t_defined = 1
+___int64_t_defined = 1
+___int64_t_defined = 1
+___int64_t_defined = 1
+___int64_t_defined = 1
 ___int_least8_t_defined = 1
-___int32_t_defined = 1
-___int32_t_defined = 1
-___int32_t_defined = 1
-___int32_t_defined = 1
+___int_least8_t_defined = 1
+___int_least8_t_defined = 1
+___int_least8_t_defined = 1
+___int_least8_t_defined = 1
+___int_least16_t_defined = 1
+___int_least16_t_defined = 1
+___int_least16_t_defined = 1
+___int_least16_t_defined = 1
 ___int_least32_t_defined = 1
-___int_least8_t_defined = 1
-___int_least16_t_defined = 1
-___int64_t_defined = 1
-___int64_t_defined = 1
-___int64_t_defined = 1
-___int64_t_defined = 1
+___int_least32_t_defined = 1
+___int_least32_t_defined = 1
+___int_least64_t_defined = 1
+___int_least64_t_defined = 1
+
+# Included from sys/_intsup.h
+def __STDINT_EXP(x): return __##x##__
+
+def __STDINT_EXP(x): return x
+
+__have_longlong64 = 1
+__have_long64 = 1
+__have_long32 = 1
+signed = +0
+int = +0
+long = +1
+
+# Included from sys/_stdint.h
+__int8_t_defined = 1
+__int16_t_defined = 1
+__int32_t_defined = 1
+__int64_t_defined = 1
+__int_least8_t_defined = 1
+__int_least16_t_defined = 1
+__int_least32_t_defined = 1
+__int_least64_t_defined = 1
+__int_fast8_t_defined = 1
+__int_fast8_t_defined = 1
+__int_fast16_t_defined = 1
+__int_fast16_t_defined = 1
+__int_fast32_t_defined = 1
+__int_fast32_t_defined = 1
+__int_fast64_t_defined = 1
+__int_fast64_t_defined = 1
+__int_fast8_t_defined = 1
+__int_fast16_t_defined = 1
+__int_fast32_t_defined = 1
+__int_fast64_t_defined = 1
+INTPTR_MAX = (__STDINT_EXP(LONG_MAX))
+INTPTR_MIN = (-__STDINT_EXP(LONG_MAX) - 1)
+INT8_MIN = (-128)
+INT8_MAX = (127)
+UINT8_MAX = (255)
+INT_LEAST8_MIN = (-128)
+INT_LEAST8_MAX = (127)
+UINT_LEAST8_MAX = (255)
+INT16_MIN = (-32768)
+INT16_MAX = (32767)
+UINT16_MAX = (65535)
+INT_LEAST16_MIN = (-32768)
+INT_LEAST16_MAX = (32767)
+UINT_LEAST16_MAX = (65535)
+INT32_MIN = (-2147483647L-1)
+INT32_MAX = (2147483647L)
+INT32_MIN = (-2147483647-1)
+INT32_MAX = (2147483647)
+INT_LEAST32_MIN = (-2147483647L-1)
+INT_LEAST32_MAX = (2147483647L)
+INT_LEAST32_MIN = (-2147483647-1)
+INT_LEAST32_MAX = (2147483647)
+INT64_MIN = (-9223372036854775807L-1L)
+INT64_MAX = (9223372036854775807L)
+INT_LEAST64_MIN = (-9223372036854775807L-1L)
+INT_LEAST64_MAX = (9223372036854775807L)
+INT_FAST8_MIN = (-__STDINT_EXP(INT_MAX)-1)
+INT_FAST8_MAX = (__STDINT_EXP(INT_MAX))
+INT_FAST8_MIN = INT_LEAST8_MIN
+INT_FAST8_MAX = INT_LEAST8_MAX
+UINT_FAST8_MAX = UINT_LEAST8_MAX
+INT_FAST16_MIN = (-__STDINT_EXP(INT_MAX)-1)
+INT_FAST16_MAX = (__STDINT_EXP(INT_MAX))
+INT_FAST16_MIN = INT_LEAST16_MIN
+INT_FAST16_MAX = INT_LEAST16_MAX
+UINT_FAST16_MAX = UINT_LEAST16_MAX
+INT_FAST32_MIN = (-__STDINT_EXP(INT_MAX)-1)
+INT_FAST32_MAX = (__STDINT_EXP(INT_MAX))
+INT_FAST32_MIN = INT_LEAST32_MIN
+INT_FAST32_MAX = INT_LEAST32_MAX
+INT_FAST64_MIN = (-__STDINT_EXP(INT_MAX)-1)
+INT_FAST64_MAX = (__STDINT_EXP(INT_MAX))
+INT_FAST64_MIN = INT_LEAST64_MIN
+INT_FAST64_MAX = INT_LEAST64_MAX
+INTMAX_MAX = INT64_MAX
+INTMAX_MIN = INT64_MIN
+SIG_ATOMIC_MIN = (-__STDINT_EXP(INT_MAX) - 1)
+SIG_ATOMIC_MAX = (__STDINT_EXP(INT_MAX))
+PTRDIFF_MAX = (__STDINT_EXP(LONG_MAX))
+PTRDIFF_MIN = (-PTRDIFF_MAX - 1)
+def INT8_C(x): return __INT8_C(x)
+
+def UINT8_C(x): return __UINT8_C(x)
+
+def INT8_C(x): return x
+
+def UINT8_C(x): return x
+
+def UINT8_C(x): return x##U
+
+def INT16_C(x): return __INT16_C(x)
+
+def UINT16_C(x): return __UINT16_C(x)
+
+def INT16_C(x): return x
+
+def UINT16_C(x): return x
+
+def UINT16_C(x): return x##U
+
+def INT32_C(x): return __INT32_C(x)
+
+def UINT32_C(x): return __UINT32_C(x)
+
+def INT32_C(x): return x##L
+
+def UINT32_C(x): return x##UL
+
+def INT32_C(x): return x
+
+def UINT32_C(x): return x##U
+
+def INT64_C(x): return __INT64_C(x)
+
+def UINT64_C(x): return __UINT64_C(x)
+
+def INT64_C(x): return x##L
+
+def UINT64_C(x): return x##UL
+
+def INT64_C(x): return x##LL
+
+def UINT64_C(x): return x##ULL
+
+def INTMAX_C(x): return __INTMAX_C(x)
+
+def UINTMAX_C(x): return __UINTMAX_C(x)
+
+def INTMAX_C(x): return x##L
+
+def UINTMAX_C(x): return x##UL
+
+def INTMAX_C(x): return x##LL
+
+def UINTMAX_C(x): return x##ULL
+
+_SS_MAXSIZE = 128
+
+# Included from asm/socket.h
+
+# Included from cygwin/if.h
+
+# Included from sys/types.h
+
+# Included from _ansi.h
+
+# Included from newlib.h
+__NEWLIB_H__ = 1
+_NEWLIB_VERSION = "2.2.0"
+_WANT_IO_C99_FORMATS = 1
+_WANT_IO_LONG_LONG = 1
+_WANT_IO_LONG_DOUBLE = 1
+_WANT_IO_POS_ARGS = 1
+_MB_CAPABLE = 1
+_MB_LEN_MAX = 8
+_ATEXIT_DYNAMIC_ALLOC = 1
+_HAVE_LONG_DOUBLE = 1
+_HAVE_CC_INHIBIT_LOOP_TO_LIBCALL = 1
+_FVWRITE_IN_STREAMIO = 1
+_FSEEK_OPTIMIZATION = 1
+_WIDE_ORIENT = 1
+_UNBUF_STREAM_OPT = 1
+
+# Included from sys/config.h
+
+# Included from machine/ieeefp.h
+Sudden_Underflow = 1
+def isfinite(__y): return \
+
+def __ieeefp_isnanf(x): return 0
+
+def __ieeefp_isinff(x): return 0
+
+def __ieeefp_finitef(x): return 1
+
+_FLOAT_ARG = float
+_FLOAT_ARG = float
+MALLOC_ALIGNMENT = 16
+H8300 = 1
+INT_MAX = 32767
+UINT_MAX = 65535
+H8300 = 1
+INT_MAX = __INT_MAX__
+INT_MAX = 32767
+INT_MAX = 2147483647
+INT_MAX = __INT_MAX__
+INT_MAX = __INT_MAX__
+__LARGE64_FILES = 1
+_LARGEFILE64_SOURCE = 1
+INT_MAX = __INT_MAX__
+MALLOC_ALIGNMENT = 8
+__BUFSIZ__ = 16
+_POINTER_INT = long
+_POINTER_INT = int
+INT_MAX = __INT_MAX__
+MALLOC_ALIGNMENT = 8
+_POINTER_INT = long
+__BUFSIZ__ = 16
+MALLOC_ALIGNMENT = 16
+__INT_MAX__ = INT_MAX
+__INT_MAX__ = 2147483647
+__LONG_MAX__ = LONG_MAX
+__LONG_MAX__ = 9223372036854775807L
+__LONG_MAX__ = 2147483647L
+_POINTER_INT = long
+__RAND_MAX = 32767
+__RAND_MAX = 0x7fffffff
+
+# Included from cygwin/config.h
+__SYMBOL_PREFIX = "_"
+def _SYMSTR(x): return __SYMBOL_PREFIX #x
+
+__FILENAME_MAX__ = 4096
+__LARGE64_FILES = 1
+__USE_INTERNAL_STAT64 = 1
+__LINUX_ERRNO_EXTENSIONS__ = 1
+_MB_EXTENDED_CHARSETS_ALL = 1
+__HAVE_LOCALE_INFO__ = 1
+__HAVE_LOCALE_INFO_EXTENDED__ = 1
+_WANT_C99_TIME_FORMATS = 1
+_GLIBC_EXTENSION = 1
+_STDIO_BSD_SEMANTICS = 1
+DEFAULT_LOCALE = "C.UTF-8"
+__USE_XOPEN2K = 1
+__FILENAME_MAX__ = 255
+_READ_WRITE_RETURN_TYPE = int
+_READ_WRITE_BUFSIZE_TYPE = int
+_MB_EXTENDED_CHARSETS_ISO = 1
+_MB_EXTENDED_CHARSETS_WINDOWS = 1
+_SIGNED = signed
+def _DEFUN_VOID(name): return name(_NOARGS)
+
+def _PARAMS(paramlist): return paramlist
+
+def _DEFUN_VOID(name): return name()
+
+def _PARAMS(paramlist): return ()
+
+def _ATTRIBUTE(attrs): return __attribute__ (attrs)
+
+
+# Included from machine/_types.h
 
 # Included from sys/_types.h
 
 # Included from sys/lock.h
+unsigned = signed
 
 # Included from machine/types.h
 _TIME_T_ = long
@@ -561,6 +629,8 @@ NBBY = 8
 FD_SETSIZE = 64
 
 # Included from sys/sched.h
+
+# Included from sys/_timespec.h
 SCHED_OTHER = 3
 SCHED_OTHER = 0
 SCHED_FIFO = 1
@@ -797,6 +867,7 @@ IP_DROP_SOURCE_MEMBERSHIP = 16
 IP_BLOCK_SOURCE = 17
 IP_UNBLOCK_SOURCE = 18
 IP_PKTINFO = 19
+IP_UNICAST_IF = 31
 IPV6_HOPOPTS = 1
 IPV6_UNICAST_HOPS = 4
 IPV6_MULTICAST_IF = 9
@@ -811,8 +882,11 @@ IPV6_PKTINFO = 19
 IPV6_HOPLIMIT = 21
 IPV6_CHECKSUM = 26
 IPV6_V6ONLY = 27
+IPV6_UNICAST_IF = 31
 IPV6_RTHDR = 32
 IPV6_RECVRTHDR = 38
+IPV6_TCLASS = 39
+IPV6_RECVTCLASS = 40
 MCAST_JOIN_GROUP = 41
 MCAST_LEAVE_GROUP = 42
 MCAST_BLOCK_SOURCE = 43

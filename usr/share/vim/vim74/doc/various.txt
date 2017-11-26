@@ -320,6 +320,7 @@ N  *+dialog_con*	Support for |:confirm| with console dialog.
 N  *+dialog_con_gui*	Support for |:confirm| with GUI and console dialog.
 N  *+diff*		|vimdiff| and 'diff'
 N  *+digraphs*		|digraphs| *E196*
+m  *+directx*		Win32 GUI only: DirectX and |'renderoptions'|
    *+dnd*		Support for DnD into the "~ register |quote_~|.
 B  *+emacs_tags*	|emacs-tags| files
 N  *+eval*		expression evaluation |eval.txt|
@@ -426,6 +427,7 @@ S  *+windows*		more than one window
 m  *+writebackup*	|'writebackup'| is default on
 m  *+xim*		X input method |xim|
    *+xfontset*		X fontset support |xfontset|
+   *+xpm*		pixmap support
 m  *+xpm_w32*		Win32 GUI only: pixmap support |w32-xpm-support|
    *+xsmp*		XSMP (X session management) support
    *+xsmp_interact*	interactive XSMP (X session management) support

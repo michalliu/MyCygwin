@@ -3,7 +3,7 @@
  */
 
 /* 
- * Copyright (C) 2012, 2013 the Free Software Foundation, Inc.
+ * Copyright (C) 2012-2015 the Free Software Foundation, Inc.
  * 
  * This file is part of GAWK, the GNU implementation of the
  * AWK Programming Language.
@@ -30,7 +30,6 @@
  *
  * FILE			- <stdio.h>
  * NULL			- <stddef.h>
- * malloc()		- <stdlib.h>
  * memset(), memcpy()	- <string.h>
  * size_t		- <sys/types.h>
  * struct stat		- <sys/stat.h>
@@ -62,7 +61,7 @@
  *
  * Additional important information:
  *
- * 1. ALL string values in awk_value_t objects need to come from malloc().
+ * 1. ALL string values in awk_value_t objects need to come from api_malloc().
  * Gawk will handle releasing the storage if necessary.  This is slightly
  * awkward, in that you can't take an awk_value_t that you got from gawk
  * and reuse it directly, even for something that is conceptually pass
@@ -143,8 +142,8 @@ typedef struct awk_input {
 	 * so there is no need to set it unless an error occurs.
 	 *
 	 * If an error does occur, the function should return EOF and set
-	 * *errcode to a non-zero value.  In that case, if *errcode does not
-	 * equal -1, gawk will automatically update the ERRNO variable based
+	 * *errcode to a positive value.  In that case, if *errcode is greater
+	 * than zero, gawk will automatically update the ERRNO variable based
 	 * on the value of *errcode (e.g., setting *errcode = errno should do
 	 * the right thing).
 	 */
@@ -264,7 +263,7 @@ typedef struct awk_two_way_processor {
 /* Current version of the API. */
 enum {
 	GAWK_API_MAJOR_VERSION = 1,
-	GAWK_API_MINOR_VERSION = 0
+	GAWK_API_MINOR_VERSION = 1
 };
 
 /* A number of typedefs related to different types of values. */
@@ -343,7 +342,7 @@ typedef struct awk_element {
 		AWK_ELEMENT_DELETE = 1		/* set by extension if
 						   should be deleted */
 	} flags;
-	awk_value_t	index;
+	awk_value_t	index;			/* guaranteed to be a string! */
 	awk_value_t	value;
 } awk_element_t;
 
@@ -665,6 +664,16 @@ typedef struct gawk_api {
 	awk_bool_t (*api_release_flattened_array)(awk_ext_id_t id,
 			awk_array_t a_cookie,
 			awk_flat_array_t *data);
+
+	/*
+	 * Hooks to provide access to gawk's memory allocation functions.
+	 * This ensures that memory passed between gawk and the extension
+	 * is allocated and released by the same library.
+	 */
+	void *(*api_malloc)(size_t size);
+	void *(*api_calloc)(size_t nmemb, size_t size);
+	void *(*api_realloc)(void *ptr, size_t size);
+	void (*api_free)(void *ptr);
 } gawk_api_t;
 
 #ifndef GAWK	/* these are not for the gawk code itself! */
@@ -736,6 +745,11 @@ typedef struct gawk_api {
 #define release_flattened_array(array, data) \
 	(api->api_release_flattened_array(ext_id, array, data))
 
+#define gawk_malloc(size)		(api->api_malloc(size))
+#define gawk_calloc(nmemb, size)	(api->api_calloc(nmemb, size))
+#define gawk_realloc(ptr, size)		(api->api_realloc(ptr, size))
+#define gawk_free(ptr)			(api->api_free(ptr))
+
 #define create_value(value, result) \
 	(api->api_create_value(ext_id, value,result))
 
@@ -747,13 +761,13 @@ typedef struct gawk_api {
 
 #define emalloc(pointer, type, size, message) \
 	do { \
-		if ((pointer = (type) malloc(size)) == 0) \
+		if ((pointer = (type) gawk_malloc(size)) == 0) \
 			fatal(ext_id, "%s: malloc of %d bytes failed\n", message, size); \
 	} while(0)
 
 #define erealloc(pointer, type, size, message) \
 	do { \
-		if ((pointer = (type) realloc(pointer, size)) == 0) \
+		if ((pointer = (type) gawk_realloc(pointer, size)) == 0) \
 			fatal(ext_id, "%s: realloc of %d bytes failed\n", message, size); \
 	} while(0)
 
@@ -832,7 +846,7 @@ make_number(double num, awk_value_t *result)
 extern int dl_load(const gawk_api_t *const api_p, awk_ext_id_t id);
 
 #if 0
-/* Boiler plate code: */
+/* Boilerplate code: */
 int plugin_is_GPL_compatible;
 
 static gawk_api_t *const api;
@@ -851,17 +865,17 @@ static awk_bool_t (*init_func)(void) = NULL;
 /* OR: */
 
 static awk_bool_t
-init_my_module(void)
+init_my_extension(void)
 {
 	...
 }
 
-static awk_bool_t (*init_func)(void) = init_my_module;
+static awk_bool_t (*init_func)(void) = init_my_extension;
 
 dl_load_func(func_table, some_name, "name_space_in_quotes")
 #endif
 
-#define dl_load_func(func_table, module, name_space) \
+#define dl_load_func(func_table, extension, name_space) \
 int dl_load(const gawk_api_t *const api_p, awk_ext_id_t id)  \
 { \
 	size_t i, j; \
@@ -872,7 +886,7 @@ int dl_load(const gawk_api_t *const api_p, awk_ext_id_t id)  \
 \
 	if (api->major_version != GAWK_API_MAJOR_VERSION \
 	    || api->minor_version < GAWK_API_MINOR_VERSION) { \
-		fprintf(stderr, #module ": version mismatch with gawk!\n"); \
+		fprintf(stderr, #extension ": version mismatch with gawk!\n"); \
 		fprintf(stderr, "\tmy version (%d, %d), gawk version (%d, %d)\n", \
 			GAWK_API_MAJOR_VERSION, GAWK_API_MINOR_VERSION, \
 			api->major_version, api->minor_version); \
@@ -884,7 +898,7 @@ int dl_load(const gawk_api_t *const api_p, awk_ext_id_t id)  \
 		if (func_table[i].name == NULL) \
 			break; \
 		if (! add_ext_func(name_space, & func_table[i])) { \
-			warning(ext_id, #module ": could not add %s\n", \
+			warning(ext_id, #extension ": could not add %s\n", \
 					func_table[i].name); \
 			errors++; \
 		} \
@@ -892,7 +906,7 @@ int dl_load(const gawk_api_t *const api_p, awk_ext_id_t id)  \
 \
 	if (init_func != NULL) { \
 		if (! init_func()) { \
-			warning(ext_id, #module ": initialization function failed\n"); \
+			warning(ext_id, #extension ": initialization function failed\n"); \
 			errors++; \
 		} \
 	} \

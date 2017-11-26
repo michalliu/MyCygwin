@@ -23,7 +23,7 @@ Canonical homepage:
   http://waterlan.home.xs4all.nl/dos2unix.html
 
 Canonical download:
-  http://waterlan.home.xs4all.nl/dos2unix/dos2unix-6.0.4.tar.gz
+  http://waterlan.home.xs4all.nl/dos2unix/dos2unix-7.2.2.tar.gz
 
 License:
   2-clause BSD (FreeBSD) style
@@ -34,15 +34,15 @@ Language:
 ================================================================================
 
 Build instructions:
-  unpack dos2unix-6.0.4-X-src.tar.bz2
+  unpack dos2unix-7.2.2-X-src.tar.xz
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport dos2unix-6.0.4-X.cygport all
+  cygport dos2unix-7.2.2-X.cygport all
 
 This will create:
-  /usr/src/dos2unix-6.0.4-X.tar.bz2
-  /usr/src/dos2unix-6.0.4-X-src.tar.bz2
+  /usr/src/dos2unix-7.2.2-X.tar.xz
+  /usr/src/dos2unix-7.2.2-X-src.tar.xz
 
 ================================================================================
 
@@ -57,8 +57,7 @@ Files in dos2unix:
   /usr/share/doc/dos2unix/*
   /usr/share/locale/*/LC_MESSAGES/dos2unix.mo
   /usr/share/man/man1/*
-  /usr/share/man/nl/man1/*
-  /usr/share/man/es/man1/*
+  /usr/share/man/*/man1/*
 
 ================================================================================
 
@@ -66,11 +65,13 @@ Port Notes:
 
 
 Changes in this release:
-  * New options -ul and -ub to convert UTF-16 files without BOM.
-  * New Russian translation of the messages.
-  * When a binary symbol is encountered the value is printed.
+  * Fix: Fixed symlink support on FreeBSD.
+  * Fix: Skip GB18030 test on FreeBSD.
+  * Fix: When conversion of an UTF-16 file with binary symbols was forced,
+    null characters were not written in the output.
+  * Fix: Check UTF-16 input for invalid surrogate pairs.
 
----------- dos2unix-6.0.4-1 -- 2013 Dec 30 -----------
+---------- dos2unix-7.2.2-1 -- 2015 May 22 -----------
 
 ================================================================================
 Cygwin port maintained by: Erwin Waterlander <waterlan@xs4all.nl>

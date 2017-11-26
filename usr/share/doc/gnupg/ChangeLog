@@ -1,3 +1,380 @@
+2015-02-27  Werner Koch  <wk@gnupg.org>
+
+	Release 1.4.19.
+
+	po: Update German translation.
+
+2015-02-26  David Prévot  <taffit@debian.org>
+
+	po: Update French translation.
+
+2015-02-26  Roman Pavlik  <rp@tns.cz>
+
+	po: Update Czech translation.
+
+2015-02-26  Frans Spiesschaert  <Frans.Spiesschaert@yucom.be>
+
+	po: Update Dutch translation.
+
+2015-02-26  Manuel \"Venturi\" Porras Peralta  <venturi@openmailbox.org>
+
+	po: Update Spanish translation.
+
+2015-02-26  Jakub Bogusz  <qboosh@pld-linux.org>
+
+	po: Update Polish translation.
+
+2015-02-26  Ineiev  <ineiev@gnu.org>
+
+	po: Update Russian translation.
+
+2015-02-26  Yuri Chornoivan  <yurchor@ukr.net>
+
+	po: Update Ukrainian translation.
+
+2015-02-26  Milo Casagrande  <milo@milo.name>
+
+	po: Update Italian translation.
+
+2015-02-26  Jedi Lin  <Jedi@Jedi.org>
+
+	Update Chinese (traditional) translation.
+
+2015-02-26  Werner Koch  <wk@gnupg.org>
+
+	Fix for building without DNS support.
+	* util/cert.c (get_cert) [!USE_DNS_CERT]: Add want_ipgp.
+
+	po,intl: Update to 0.19.3.
+
+	Switch to a hash and CERT record based PKA system.
+	* util/pka.c: Rewrite.
+	(get_pka_info): Add arg fprbuflen.  Change callers to pass this.
+	* util/strgutil.c (ascii_strlwr): New.
+	* configure.ac: Remove option --disable-dns-pka.
+	(USE_DNS_PKA): Remove ac_define.
+	* g10/getkey.c (parse_auto_key_locate): Always include PKA.
+
+	Move two functions from g10/ to util/.
+	* g10/misc.c (has_invalid_email_chars, is_valid_mailbox): Move to ...
+	* util/strgutil.c: here.
+
+	Add new function strconcat.
+	* include/util.h (GNUPG_GCC_A_SENTINEL): New.
+	* util/strgutil.c (do_strconcat, strconcat): New.
+
+	Add convenience function to hash a buffer.
+	* cipher/sha1.c (sha1_hash_buffer): New.
+
+	Allow requesting only an IPGP certtype with dns_cert().
+	* util/cert.c (get_cert): Add arg want_ipgp.  Change callers.
+
+2015-02-26  NIIBE Yutaka  <gniibe@fsij.org>
+
+	mpi: Avoid data-dependent timing variations in mpi_powm.
+	* include/mpi.h, mpi/mpiutils.c (mpi_set_cond): New.
+	* mpi/mpi-pow.c (SIZE_PRECOMP): Rename from SIZE_B_2I3.
+	(mpi_powm): Access all data in the table and use mpi_set_cond.
+
+2015-02-23  Werner Koch  <wk@gnupg.org>
+
+	Protect against NULL return of mpi_get_opaque.
+	* g10/seckey-cert.c (do_check): Call BUG for NULL return of
+	get_opaque.
+
+2015-02-23  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	gpg: Fix segv due to NULL value stored as opaque MPI.
+	* g10/build-packet.c (do_secret_key): Check for NULL return from
+	gcry_mpi_get_opaque.
+	* g10/keyid.c (hash_public_key): Ditto.
+
+2015-02-23  Werner Koch  <wk@gnupg.org>
+
+	gpg: Remove an unused variable.
+	* g10/import.c (import): Remove need_armor.
+
+	[dkg: rebased to STABLE-BRANCH-1-4]
+
+2015-02-23  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	curl-shim: clean up varargs.
+	* keyserver/curl-shim.c (curl_easy_setopt) : ensure that va_end is
+	  called.
+
+2015-02-23  Werner Koch  <wk@gnupg.org>
+
+	gpg: Print better diagnostics for keyserver operations.
+	* g10/armor.c (parse_key_failed_line): New.
+	(check_input): Watch out for gpgkeys_ error lines.
+	* g10/filter.h (armor_filter_context_t): Add field key_failed_code.
+	* g10/import.c (import): Add arg r_gpgkeys_err.
+	(import_keys_internal): Ditto.
+	(import_keys_stream): Ditto.
+	* g10/keyserver.c (keyserver_errstr): New.
+	(keyserver_spawn): Detect "KEY " lines while sending.  Get gpgkeys_err
+	while receiving keys.
+	(keyserver_work): Add kludge for better error messages.
+
+	Use inline functions to convert buffer data to scalars.
+	* include/host2net.h (buf16_to_ulong, buf16_to_uint): New.
+	(buf16_to_ushort, buf16_to_u16): New.
+	(buf32_to_size_t, buf32_to_ulong, buf32_to_uint, buf32_to_u32): New.
+
+	gpg: Prevent an invalid memory read using a garbled keyring.
+	* g10/keyring.c (keyring_get_keyblock): Whitelist allowed packet
+	types.
+
+	gpg: Fix a NULL-deref in export due to invalid packet lengths.
+	* g10/build-packet.c (write_fake_data): Take care of a NULL stored as
+	opaque MPI.
+
+	gpg: Fix a NULL-deref due to empty ring trust packets.
+	* g10/parse-packet.c (parse_trust): Always allocate a packet.
+
+	gpg: Limit the size of key packets to a sensible value.
+	* g10/parse-packet.c (MAX_KEY_PACKET_LENGTH): New.
+	(MAX_UID_PACKET_LENGTH): New.
+	(MAX_COMMENT_PACKET_LENGTH): New.
+	(MAX_ATTR_PACKET_LENGTH): New.
+	(parse_key): Limit the size of a key packet to 256k.
+	(parse_user_id): Use macro for the packet size limit.
+	(parse_attribute): Ditto.
+	(parse_comment): Ditto.
+
+	gpg: Allow predefined names as answer to the keygen.algo prompt.
+	* g10/keygen.c (ask_algo): Add list of strings.
+
+	gpg: Print a warning if the subkey expiration may not be what you want.
+	* g10/keyedit.c (subkey_expire_warning): New.
+	keyedit_menu): Call it when needed.
+
+2015-02-11  Werner Koch  <wk@gnupg.org>
+
+	Use ciphertext blinding for Elgamal decryption.
+	* cipher/elgamal.c (USE_BLINDING): New.
+	(decrypt): Rewrite to use ciphertext blinding.
+
+2015-01-19  Werner Koch  <wk@gnupg.org>
+
+	Modernize to automake 1.14.
+	* Makefile.am (AUTOMAKE_OPTIONS): Move to ...
+	* configure.ac (AM_INIT_AUTOMAKE): here and add serial-tests.
+
+	* keyserver/Makefile.am: Replace INCLUDES by AM_CPPFLAGS.
+	* mpi/Makefile.am: Ditto.
+	* util/Makefile.am: Ditto.
+	* keyserver/Makefile.am: Ditto.  Adjusted other things.
+
+	* m4/intl.m4, m4/po.m4: Use autoconf's AC_PROG_MKDIR_P.
+
+	Fix a problem with select and high fds.
+	* cipher/rndlinux.c (rndlinux_gather_random): Check fd before using
+	FD_SET.
+
+2015-01-13  Werner Koch  <wk@gnupg.org>
+
+	doc: Formatting fixes.
+	* doc/gpl.texi: Fix enumerate and re-indent examples.
+
+2015-01-13  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	avoid future chance of using uninitialized memory.
+	* util/iobuf.c: (iobuf_open): initialize len
+
+2015-01-13  Werner Koch  <wk@gnupg.org>
+
+	doc: Fix memory leak in yat2m.
+	* doc/yat2m.c (write_th): Free NAME.
+
+	gpg: Fix possible read of unallocated memory.
+	* g10/parse-packet.c (can_handle_critical): Check content length
+	before calling can_handle_critical_notation.
+
+2015-01-09  Werner Koch  <wk@gnupg.org>
+
+	scd: Fix possibly inhibited checkpin of the admin pin.
+	* scd/app-openpgp.c (do_check_pin): Do not check a byte of a released
+	buffer.
+
+2015-01-08  Joshua Rogers  <git@internot.info>
+
+	scd: fix get_public_key for OpenPGPcard v1.0.
+	* scd/app-openpgp.c (get_public_key): correctly close 'fp' upon use.
+
+2014-12-12  NIIBE Yutaka  <gniibe@fsij.org>
+
+	gpg: release DEK soon after its use.
+	* g10/keygen.c (generate_subkeypair): Release DEK soon.
+
+2014-11-24  Werner Koch  <wk@gnupg.org>
+
+	gpg: Fix use of uninit.value in listing sig subpkts.
+	* g10/parse-packet.c (dump_sig_subpkt): Print regex subpacket
+	sanitized.
+
+	gpg: Fix off-by-one read in the attribute subpacket parser.
+	* g10/parse-packet.c (parse_attribute_subpkts): Check that the
+	attribute packet is large enough for the subpacket type.
+
+	gpg: Fix a NULL-deref for invalid input data.
+	* g10/mainproc.c (proc_encrypted): Take care of canceled passpharse
+	entry.
+
+2014-11-14  Werner Koch  <wk@gnupg.org>
+
+	gpg: Make the use of "--verify FILE" for detached sigs harder.
+	* g10/openfile.c (open_sigfile): Factor some code out to ...
+	(get_matching_datafile): new function.
+	* g10/plaintext.c (hash_datafiles): Do not try to find matching file
+	in batch mode.
+	* g10/mainproc.c (check_sig_and_print): Print a warning if a possibly
+	matching data file is not used by a standard signatures.
+
+2014-11-12  Werner Koch  <wk@gnupg.org>
+
+	gpg: Add import option "keep-ownertrust".
+	* g10/options.h (IMPORT_KEEP_OWNERTTRUST): New.
+	* g10/import.c (parse_import_options): Add "keep-ownertrust".
+	(import_one): Act upon new option.
+
+2014-10-03  Werner Koch  <wk@gnupg.org>
+
+	mpi: Fix compiler warning.
+	* mpi/mpi-inv.c (mpi_invm): Do not return a value.
+
+2014-10-03  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	gpg: Add build and runtime support for larger RSA keys.
+	* configure.ac: Added --enable-large-secmem option.
+	* g10/options.h: Add opt.flags.large_rsa.
+	* g10/gpg.c: Contingent on configure option: adjust secmem size,
+	add gpg --enable-large-rsa, bound to opt.flags.large_rsa.
+	* g10/keygen.c: Adjust max RSA size based on opt.flags.large_rsa
+	* doc/gpg.texi: Document --enable-large-rsa.
+
+2014-09-29  Werner Koch  <wk@gnupg.org>
+
+	doc: Final update from master (gnupg 2.1)
+	* doc/Makefile.am (sources_from_trunk): Remove.
+	(update-source): Make it a dummy.
+	* doc/gpg.texi: Update.
+	* doc/yat2m.c: Update.
+
+	Allow use of --debug-level=LEVEL without '='.
+	* g10/gpg.c (opts): Fix "debug-level".
+
+2014-09-11  Werner Koch  <wk@gnupg.org>
+
+	mpi: Improve mpi_invm to detect bad input.
+	* mpi/mpi-inv.c (mpi_invm): Return 0 for bad input.
+
+2014-08-20  Werner Koch  <wk@gnupg.org>
+
+	mpi: Suppress set-but-unused-variables warnings.
+	* include/types.h (GNUPG_GCC_ATTR_UNUSED): Define for gcc >= 3.5.
+	* mpi/mpih-div.c (mpihelp_divmod_1, mpihelp_mod_1): Mark dummy as
+	 unused.
+	* mpi/mpi-internal.h (UDIV_QRNND_PREINV): Mark _ql as unused.
+
+	Fix strict-alias warnings for rijndael.c.
+	* cipher/rijndael.c (do_setkey, prepare_decryption): Use u32_a_t cast.
+
+	gpg: Allow compressed data with algorithm 0.
+	* g10/mainproc.c (proc_compressed): Remove superfluous check for
+	an algorithm number of 0.
+
+2014-08-06  Werner Koch  <wk@gnupg.org>
+
+	gpg: Fix regression due to the keyserver import filter.
+	* g10/keyserver.c (keyserver_retrieval_filter): Change args.  Rewrite
+	to take subpakets in account.
+	* g10/import.c (import_one, import_secret_one): Pass keyblock to
+	filter.
+
+	Add kbnode_t for easier backporting.
+	* g10/global.h (kbnode_t): New.
+
+2014-06-30  Werner Koch  <wk@gnupg.org>
+
+	Release 1.4.18.
+
+	Limit keysize for unattended key generation to useful values.
+	* g10/keygen.c (gen_elg): Enforce keysize 1024 to 4096.
+	(gen_rsa): Enforce keysize 1024 to 4096.
+	(gen_dsa): Enforce keysize 768 to 3072.
+
+	Make screening of keyserver result work with multi-key commands.
+	* g10/keyserver.c (ks_retrieval_filter_arg_s): new.
+	(keyserver_retrieval_filter): Use new struct and check all
+	descriptions.
+	(keyserver_spawn): Pass filter arg suing the new struct.
+
+2014-06-23  Werner Koch  <wk@gnupg.org>
+
+	Release 1.4.17.
+
+	doc: Update from master.
+
+	Fix syntax error introduced with 60bd6488.
+	* g10/apdu.c (pcsc_dword_t): Fix syntax error.
+
+2014-06-23  Stefan Tomanek  <tomanek@internet-sicherheit.de>
+
+	Screen keyserver responses.
+	* g10/main.h: Typedef import_filter for filter callbacks.
+	* g10/import.c (import): Add filter callbacks to param list.
+	(import_one): Ditto.
+	(import_secret_one): Ditto.
+	(import_keys_internal): Ditto.
+	(import_keys_stream): Ditto.
+	* g10/keyserver.c (keyserver_retrieval_filter): New.
+	(keyserver_spawn): Pass filter to import_keys_stream()
+
+2014-06-23  Werner Koch  <wk@gnupg.org>
+
+	Print hash algorithm in sig records.
+	* g10/keylist.c (list_keyblock_colon): Print field 16.
+
+	Remove useless diagnostic in MDC verification.
+	* g10/encr-data.c (decrypt_data): Do not distinguish between a bad MDC
+	packet header and a bad MDC.
+
+	intl: Fix for uClibc.
+	* intl/localename.c (gl_locale_name_thread_unsafe): Take care of
+	uCLIBC.
+
+	PC/SC cleanup.
+	* g10/apdu.c (pcsc_dword_t): New.  It was named as DWORD (double-word)
+	when a word was 16-bit.
+	(struct reader_table_s): Fixes for types.
+	(struct pcsc_readerstate_s) [__APPLE__]: Enable #pragma pack(1).
+	Throughout: Fixes for types.
+
+	gpg: Use more specific reason codes for INV_RECP.
+	* g10/pkclist.c (build_pk_list): Use more specific reasons codes for
+	INV_RECP.
+
+	doc: Remove outdated Russian man page.
+	* configure.ac (DOCBOOK_TO_MAN): Remove.
+	* doc/gpg.ru.sgml: Remove.
+	* doc/Makefile.am: Remove all gpg.ru related code.
+
+2014-06-20  Werner Koch  <wk@gnupg.org>
+
+	gpg: Avoid infinite loop in uncompressing garbled packets.
+	* g10/compress.c (do_uncompress): Limit the number of extra FF bytes.
+
+2014-03-06  Werner Koch  <wk@gnupg.org>
+
+	gpg: Need to init the trustdb for import.
+	* g10/trustdb.c (clear_ownertrusts): Init trustdb.
+
+2014-01-23  Werner Koch  <wk@gnupg.org>
+
+	Support building using the latest mingw-w64 toolchain.
+	* acinclude.m4 (GNUPG_SYS_SYMBOL_UNDERSCORE): Change mingw detection.
+
 2013-12-13  Werner Koch  <wk@gnupg.org>
 
 	Release 1.4.16.

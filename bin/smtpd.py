@@ -1,4 +1,4 @@
-#! /usr/bin/python2.7
+#!/usr/bin/python2.7.exe
 """An RFC 2821 smtp proxy.
 
 Usage: %(program)s [options] [localhost:localport [remotehost:remoteport]]

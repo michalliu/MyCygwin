@@ -59,6 +59,7 @@ typedef	quad_t *	qaddr_t;
 
 #define _SYS_TYPES_H
 #include <sys/_types.h>
+#include <sys/_stdint.h>
 
 #ifdef __i386__
 #if defined (GO32) || defined (__MSDOS__)
@@ -122,21 +123,6 @@ typedef _CLOCK_T_ clock_t;
 typedef _TIME_T_ time_t;
 #define __time_t_defined
 #endif
-
-#ifndef __timespec_defined
-#define __timespec_defined
-/* Time Value Specification Structures, P1003.1b-1993, p. 261 */
-
-struct timespec {
-  time_t  tv_sec;   /* Seconds */
-  long    tv_nsec;  /* Nanoseconds */
-};
-#endif
-
-struct itimerspec {
-  struct timespec  it_interval;  /* Timer period */
-  struct timespec  it_value;     /* Timer expiration */
-};
 
 #ifndef __daddr_t_defined
 typedef	long	daddr_t;
@@ -282,7 +268,13 @@ typedef _TIMER_T_ timer_t;
 #endif
 
 typedef unsigned long useconds_t;
-typedef long suseconds_t;
+
+#ifndef _SUSECONDS_T_DECLARED
+typedef	__suseconds_t	suseconds_t;
+#define	_SUSECONDS_T_DECLARED
+#endif
+
+typedef	__int64_t	sbintime_t;
 
 #include <sys/features.h>
 

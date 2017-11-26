@@ -1,3 +1,33 @@
+2014-09-06  Achim Gratz <Stromeko@Stromeko.DE>
+
+	* configure.ac: Bump version number.  Correct some type, header
+	and function checks.
+	* src/run.c: Add "-quote" option.  Use run2_quote_strdup function
+	to (maybe) quote the input string.
+	* src/util.c: New function run2_quote_strdup.  If the quote
+	argument is false, then just copy the input string via
+	run2_strdup.  Otherwise, check if the input string needs quoting.
+	If yes, then surround the string with double quotes and quote all
+	embedded double quotes and backslahses with a backslash.
+	* src/util.h: New function run2_quote_strdup.
+
+2014-09-06  Achim Gratz <Stromeko@Stromeko.DE>
+
+	* src/run.c: Revert indiscriminate argument quoting.  This also
+	quotes options and apparently some programs process options before
+	quote removal.
+
+2014-06-09  Achim Gratz <Stromeko@Stromeko.DE>
+
+	* configure.ac: Bump version number.
+	* src/run.c: Correct some calls to error, obviously these were
+	meant to call errorMsg.
+
+2013-11-30  Max Polk  <maxpolk@gmail.com>
+
+	* src/run.c: account for NULL argv list terminator.  Surround
+	arguments with double quotes in case of space in original arg.
+
 2013-07-24  Charles Wilson  <cygwin@cwilson.fastmail.fm>
 
 	Release 1.3.0. Massive refactoring.

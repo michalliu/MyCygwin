@@ -32,8 +32,6 @@
 # We don't have complete option coverage on eqn because this is primarily
 # intended as a pic translator; we can live with eqn defaults. 
 #
-# $Id: pic2graph.sh,v 1.9 2010/02/25 20:17:13 wl Exp $
-#
 groffpic_opts=""
 gs_opts=""
 convert_opts=""
@@ -52,7 +50,7 @@ do
 	eqndelim=$2
 	shift;;
     -v | --version)
-	echo "GNU pic2graph (groff) version 1.22.2"
+	echo "GNU pic2graph (groff) version 1.22.3"
 	exit 0;;
     --help)
 	echo "usage: pic2graph [ option ...] < in > out"

@@ -1,4 +1,4 @@
-#! /usr/bin/python2.7
+#!/usr/bin/python2.7.exe
 
 import pydoc
 if __name__ == '__main__':

@@ -5,7 +5,7 @@
 <!-- saved from url=(0017)http://localhost/ -->
 <title>Error - Error/exception handling in an OO-ish way</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rev="made" href="mailto:Yaakov@yaakov04.nonet" />
+<link rev="made" href="mailto:ASSI@cygwin.nonet" />
 </head>
 
 <body style="background-color: white">
@@ -72,7 +72,7 @@
 <hr />
 <h1><a name="warning">WARNING</a></h1>
 <p>Using the &quot;Error&quot; module is <strong>no longer recommended</strong> due to the black-magical
-nature of its syntactic sugar, which often tends to break. Its maintainers 
+nature of its syntactic sugar, which often tends to break. Its maintainers
 have stopped actively writing code that uses it, and discourage people
 from doing so. See the &quot;SEE ALSO&quot; section below for better recommendations.</p>
 <p>
@@ -89,8 +89,8 @@ from doing so. See the &quot;SEE ALSO&quot; section below for better recommendat
         ...
         record Error::Simple(&quot;A simple error&quot;)
             and return;
-    }
- 
+    }</pre>
+<pre>
     unlink($file) or throw Error::Simple(&quot;$file: $!&quot;,$!);</pre>
 <pre>
     try {
@@ -362,7 +362,7 @@ constructor takes two arguments. The first is a text value, the second
 is a numeric value. These values are what will be returned by the
 overload methods.</p>
 <p>If the text value ends with <code>at file line 1</code> as $@ strings do, then
-this infomation will be used to set the <a href="#file"><code>-file</code></a> and <a href="#line"><code>-line</code></a> arguments
+this information will be used to set the <a href="#file"><code>-file</code></a> and <a href="#line"><code>-line</code></a> arguments
 of the error object.</p>
 <p>This class is used internally if an eval'd block die's with an error
 that is a plain string. (Unless <code>$Error::ObjectifyCallback</code> is modified)</p>
@@ -373,8 +373,8 @@ that is a plain string. (Unless <code>$Error::ObjectifyCallback</code> is modifi
 <h1><a name="_error__objectifycallback">$Error::ObjectifyCallback</a></h1>
 <p>This variable holds a reference to a subroutine that converts errors that
 are plain strings to objects. It is used by Error.pm to convert textual
-errors to objects, and can be overrided by the user.</p>
-<p>It accepts a single argument which is a hash reference to named parameters. 
+errors to objects, and can be overridden by the user.</p>
+<p>It accepts a single argument which is a hash reference to named parameters.
 Currently the only named parameter passed is <a href="#text"><code>'text'</code></a> which is the text
 of the error, but others may be available in the future.</p>
 <p>For example the following code will cause Error.pm to throw objects of the
@@ -449,14 +449,14 @@ avoided, then the tag can be explicitly <code>import</code>ed later</p>
 </p>
 <hr />
 <h1><a name="see_also">SEE ALSO</a></h1>
-<p>See <a href="../../Exception/Class.html">the Exception::Class manpage</a> for a different module providing Object-Oriented
+<p>See <a href="/Exception/Class.html">the Exception::Class manpage</a> for a different module providing Object-Oriented
 exception handling, along with a convenient syntax for declaring hierarchies
 for them. It doesn't provide Error's syntactic sugar of <a href="#try"><code>try { ... }</code></a>,
 <code>catch { ... }</code>, etc. which may be a good thing or a bad thing based
 on what you want. (Because Error's syntactic sugar tends to break.)</p>
-<p><a href="../../Error/Exception.html">the Error::Exception manpage</a> aims to combine <a href="../../lib/perl5/5.14/CPANPLUS/Error.html">the Error manpage</a> and <a href="../../Exception/Class.html">the Exception::Class manpage</a>
+<p><a href="/Error/Exception.html">the Error::Exception manpage</a> aims to combine <a href="/lib/perl5/5.14/CPANPLUS/Error.html">the Error manpage</a> and <a href="/Exception/Class.html">the Exception::Class manpage</a>
 &quot;with correct stringification&quot;.</p>
-<p><em>TryCatch</em> and <a href="../../Try/Tiny.html">the Try::Tiny manpage</a> are similar in concept to Error.pm only providing 
+<p><em>TryCatch</em> and <a href="/Try/Tiny.html">the Try::Tiny manpage</a> are similar in concept to Error.pm only providing
 a syntax that hopefully breaks less.</p>
 <p>
 <a href="#__index__"><small>Back to Top</small></a>

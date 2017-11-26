@@ -1,3 +1,79 @@
+Revision history for URI
+
+2015-02-24   Karen Etheridge <ether@cpan.org>
+
+  Release 1.67
+
+  Karen Etheridge:
+    - properly skip author test for normal user installs
+
+
+2015-02-24   Karen Etheridge <ether@cpan.org>
+
+  Release 1.66
+
+  Adam Herzog:
+    - reorganize .pm files under lib/ (github #20)
+
+
+2014-11-05   Karen Etheridge <ether@cpan.org>
+
+  Release 1.65
+
+  Karen Etheridge:
+    - add a TO_JSON method, to assist JSON serialization
+
+
+2014-07-13   Karen Etheridge <ether@cpan.org>
+
+  Release 1.64
+
+  Eric Brine:
+    - better fix for RT#96941, that also works around utf8 bugs on older perls
+
+
+2014-07-13   Karen Etheridge <ether@cpan.org>
+
+  Release 1.63
+
+  Karen Etheridge:
+    - mark utf8-related test failures on older perls caused by recent string
+      parsing changes as TODO (RT#97177, RT#96941)
+
+
+2014-07-12   Karen Etheridge <ether@cpan.org>
+
+  Release 1.62
+
+  Karen Etheridge (2):
+    - use strict and warnings in all modules, tests and scripts
+    - remove all remaining uses of "use vars"
+
+  Eric Brine:
+    - fixed new "\C is deprecated in regex" warning in 5.21.2 (RT#96941)
+
+
+2014-07-01   Karen Etheridge <ether@cpan.org>
+
+  Release 1.61
+
+  David Schmidt:
+      Fix test failure if local hostname is 'foo' [RT#75519]
+
+  Gisle Aas (2):
+      New 'has_recognized_scheme' interface [RT#71204]
+      Interfaces that return a single value now return undef rather than an
+      empty list in list context
+
+  Slaven Rezic:
+      Fix bad regex when parsing hostnames
+
+  Piotr Roszatycki:
+      Preferentially use $ENV{TMPDIR} for temporary test files over /tmp
+      (fixes tests on Android)
+
+
+
 2012-03-25   Gisle Aas <gisle@ActiveState.com>
 
   Release 1.60

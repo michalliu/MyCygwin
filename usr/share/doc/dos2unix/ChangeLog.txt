@@ -1,3 +1,405 @@
+2015-05-22 Erwin Waterlander <waterlan@xs4all.nl>
+	* Version 7.2.2
+	* djgpp.mak: Fixed target strip.
+
+2015-05-11 Erwin Waterlander <waterlan@xs4all.nl>
+	* test/utf16.t: Added 2 tests with invalid surrogate pair.
+	* dos2unix.c, unix2dos.c: Print line number when UTF-16 conversion
+	  error occurs.
+	* dos2unix.c, unix2dos.c: Don't print number of converted lines in
+	  verbose mode when error occurs.
+
+2015-05-10 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: Print system error when conversion from UTF-16 fails.
+	* common.c: Check for invalid surrogate pairs in UTF-16 input.
+
+2015-05-07 Erwin Waterlander <waterlan@xs4all.nl>
+	* test/wcstombs_test.c: New test that shows that wcstombs() is broken
+	  on FreeBSD for CJK characters in a zh_CN.GB18030 locale.
+	* test/Makefile: New target 'wcstombs' that runs wcstombs_test.
+	* test/README.txt: New file.
+	* test/misc.t, test/utf16.t: new tests for unix2dos to check
+	  conversion of binary files with null characters.
+
+2015-05-03 Erwin Waterlander <waterlan@xs4all.nl>
+	* test/Makefile: Disable GB18030 tests for FreeBSD. Tests which convert
+	  UTF-16 with surrogate pairs to GB18030 fail. Seen on FreeBSD 10.1.
+	  Issue in wcstombs()?
+	* common.h: Removed define of _XOPEN_SOURCE. When _XOPEN_SOURCE is
+	  defined, the function lstat() is not found on FreeBSD 10.1.
+	* common.c: Bug fix. When conversion of an UTF-16 file with binary
+	  symbols was forced, null characters were not written in the output.
+	* test: Added new test for UTF-16 file with null characters.
+
+2015-04-01 Erwin Waterlander <waterlan@xs4all.nl>
+	* Version 7.2.1
+
+2015-02-15 Erwin Waterlander <waterlan@xs4all.nl>
+	* test/misc.t: Fix test for -f option.
+	* test/chk_loc.sh: New script to test if locale is supported.
+	* test/Makefile: Skip gb18030 test if zh_CN.gb18030 locale is not supported.
+	* man/man1/dos2unix.pod: Update section GB18030 and option -m.
+
+2015-02-11 Erwin Waterlander <waterlan@xs4all.nl>
+	* Version 7.2
+
+2015-01-15 Armin Müller
+	* common.c,dos2unix.c,unix2dos.c: Use %u in format strings for
+	  unsigned ints.
+	* common.c: Fixed typo in if condition in write_bom().
+
+2015-01-15 Erwin Waterlander <waterlan@xs4all.nl>
+	* test/gb18030.t: Added more tests.
+
+2015-01-03 Erwin Waterlander <waterlan@xs4all.nl>
+	* Makefile: Fixed wrong encoded titles in HTML manuals when Perl 5.18
+	  pod2html was used. Thanks to Tom Christiansen.
+
+2015-01-02 Erwin Waterlander <waterlan@xs4all.nl>
+	* Makefile, man/man1/Makefile: add option --no-wrap to xgettext and
+	  msgmerge. Translation Project standard is not to wrap.
+
+2015-01-02 Erwin Waterlander <waterlan@xs4all.nl>
+	* man/man1/dos2unix.pod: Point to gettext manual html nodes instead of
+	  the full gettext manual.
+
+2014-12-31 Erwin Waterlander <waterlan@xs4all.nl>
+	* man/man1/dos2unix.pod: Cleanup man page. Thanks to Benno Schulenberg.
+
+2014-12-30 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: Changed some messages for better translations.
+
+2014-12-26 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: Fix. On Windows when option -gb is used, option -m must
+	  add GB18030 BOM i.s.o. UTF-8 BOM.
+	* test/gb18030.t: Make tests working for Windows version.
+
+2014-12-24 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: Fix. In a GB18030 locale, option -m must add GB18030 BOM
+	  i.s.o. UTF-8 BOM.
+	* test/gb18030.t: New tests for GB18030.
+
+2014-12-23 Erwin Waterlander <waterlan@xs4all.nl>
+	* man/man1/dos2unix.pod: Update section GB18030.
+
+2014-12-08 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: When the input file is UTF-16, the input and output
+	  formats are printed.
+
+2014-12-06 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: On Unix/Linux convert UTF-16 to the locale encoding. It is
+	  no longer required that the locale encoding is UTF-8. When
+	  conversion is not possible an error will occur and conversion will be
+	  skipped.
+
+2014-12-06 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c, common.h: Support conversion of UTF-16 to GB18030.
+	* man/man1/dos2unix.pod: Update with info about GB18030.
+
+2014-11-09 Yasuaki Taniguchi <yasuakit@gmail.com>
+	* po/ja.po: New Japanese translation of the UI messages.
+
+2014-10-06 Erwin Waterlander <waterlan@xs4all.nl>
+	* Version 7.1
+
+2014-09-29 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: Fixed possible uninitialized use of variable bomtype_orig.
+	* djgpp.mak: Fix time stamps mac2unix/unix2mac after make strip.
+
+2014-09-22 Erwin Waterlander <waterlan@xs4all.nl>
+	* mingw32.mak, mingw64.mak: Fixed setting path to CRT_glob.o.
+	  Works now independent of MSYS2 install path.
+
+2014-09-22 Helmut Karlowski
+	* Makefile: Added settings for freeMiNT, and cleanup setting
+	  OS specific settings.
+	* common.c: PrintVersion() updated for freeMiNT.
+
+2014-09-18 Erwin Waterlander <waterlan@xs4all.nl>
+	* test/misc.t: Added a test for option -i, --info.
+	* *.po: Included several translation updates.
+
+2014-09-17 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: Program terminates when wrong flag is given for option
+	  -i or --info.
+	* common.c: Option -i, flag c: don't print binary files when conversion
+	  of binaries is not forced.
+
+2014-09-16 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: Options -i, --info can have extra flags to change the
+	  output. For instance to print only the number of Unix line breaks,
+	  or print only the files that have DOS line breaks.
+	* man/man1/dos2unix.pod: Updated.
+
+2014-09-11 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: New option -i, --info, display file information.
+	  This new option prints number of line breaks, the byte order
+	  mark, and if the file is text or binary.
+	* man/man1/dos2unix.pod: Added option -i.
+	* test/*.t: Use Test::Simple iso Test::More.
+
+2014-09-09 Erwin Waterlander <waterlan@xs4all.nl>
+	* Version 7.0
+
+2014-09-08 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: Option -V prints home page.
+
+2014-09-03 Erwin Waterlander <waterlan@xs4all.nl>
+	* dos2unix.c, unix2dos.c: Return an error number in stdio mode when the
+	  input is binary. In stdio mode an input stream with a binary symbol
+	  produces broken output. In file mode the binary file is skipped.
+	* test/misc.t: Added tests for above.
+	* dos2unix.c, unix2dos.c, common.c: Bug fix. System error number was not
+	  always returned. When disk is full and output can't be written,
+	  or when resolving a symlink fails.
+
+2014-09-01 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: Bug fix. Option -u disabled -m for ASCII or UTF-8 input
+	  files without BOM. Bug was introduced on 2014-08-05.
+	* dos2unix.c, unix2dos.c, common.c: Bug fix. An Unicode input file
+	  disabled 7bit and iso mode also for next input files. Bug was
+	  introduced in version 6.0.1 on 2012-03-23.
+	* common.c: Cleanup. Don't write BOM when conversion will be cancelled.
+	* test/misc.t: Added tests for the two bug fixes.
+
+2014-08-28 Erwin Waterlander <waterlan@xs4all.nl>
+	* dos2unix.c, unix2dos.c, common.c: Code cleanup. Moved more code
+	  to common.c.
+	* common.c: Bug fix mac2unix help text, options -b and -r. Bug was
+	  introduced in 6.0.6.
+	* *.po: Included updated pt_BR translations.
+
+2014-08-26 Erwin Waterlander <waterlan@xs4all.nl>
+	* dos2unix.c, unix2dos.c, common.c: stdio mode does not automatically
+	  set quiet mode. stdio mode prints errors and returns error code.
+	* dos2unix.c, unix2dos.c: stdio mode does not automatically force
+	  conversion of binaries.
+
+2014-08-25 Erwin Waterlander <waterlan@xs4all.nl>
+	* test/symlink.t: New tests for options -F, -R, -S
+	* *.po: Included updated nl,nb ,vi translations.
+
+2014-08-22 Erwin Waterlander <waterlan@xs4all.nl>
+	* *.po: Included updated nl,pl,ru translations.
+
+2014-08-18 Erwin Waterlander <waterlan@xs4all.nl>
+	* unix2dos.c: Fix: Unix2dos did not count UTF-16 line break conversions.
+	* INSTALL.txt: Update for running self-tests.
+	* *.po: Included updated fr,de,uk translations.
+	* test: Added more tests.
+
+2014-08-17 Erwin Waterlander <waterlan@xs4all.nl>
+	* test: Use TAP (Test Anything Protocol) to run tests.
+	  Requires perl module perl-Test-Simple.
+
+2014-08-11 Erwin Waterlander <waterlan@xs4all.nl>
+	* test: Added automated tests.
+
+2014-08-10 Erwin Waterlander <waterlan@xs4all.nl>
+	* dos2unix.c: Bug fix: dos2unix -l created DOS line breaks
+	  from Mac line breaks. This bug was introduced in version 3.2,
+	  by safeconv patch.
+	* INSTALL.txt: Update for DJGPP. Use gcc <= 4.5.3.
+
+2014-08-08 Erwin Waterlander <waterlan@xs4all.nl>
+	* man/man1/dos2unix.pod: Update manual wrt Unicode.
+	* common.c: Update help message for option -m.
+
+2014-08-06 Erwin Waterlander <waterlan@xs4all.nl>
+	* New option -v, --verbose: Print extra information about
+	  number of converted line breaks and BOMs.
+
+2014-08-05 Erwin Waterlander <waterlan@xs4all.nl>
+	* New option -u, --keep_utf16: Keep UTF-16 encoding of the
+	  input file. This prevents transformation to UTF-8.
+
+2014-08-03 Erwin Waterlander <waterlan@xs4all.nl>
+	* Version 6.0.6
+
+2014-08-03 Enrique Lazcorreta Puigmartí <enrique.lazcorreta@gmail.com>
+	* po/es.po : Updated Spanish translation of messages.
+	* man/es/man1/dos2unix.po : Updated Spanish translation of manual.
+
+2014-07-12 Various authors
+	* po/*.po, man/*/man1/*.po: Update translations.
+	  See README.txt for details.
+
+2014-07-12 Yuri Kozlov <yuray@komyakino.ru>
+	* po/ru.po: Update Russian translation of messages.
+
+2014-07-09 Erwin Waterlander <waterlan@xs4all.nl>
+	* dos2unix.c, unix2dos.c: Option -r also disables option
+	  -m (add BOM).
+
+2014-07-07 Erwin Waterlander <waterlan@xs4all.nl>
+	* dos2unix.c, unix2dos.c, common.c: New options -b (keep BOM)
+	  and -r (remove BOM).
+
+2014-07-06 Erwin Waterlander <waterlan@xs4all.nl>
+	* dos2unix.c: Bug fix mac2unix conversion of UTF-16 files.
+	  Mac to Unix conversion produced corrupted output.
+	  Thanks to report of Alan S. Jones.
+	  This bug was introduced in version 6.0.
+
+2014-05-24  Åka Sikrom <a4@hush.com>
+	* po/nb.po: New Norwegian Bokmaal translation.
+
+2014-05-17 Mario Blättermann <mario.blaettermann@gmail.com>
+	* po/de.po: Update German messages.
+
+2014-05-12 Erwin Waterlander <waterlan@xs4all.nl>
+	* INSTALL.txt: Updated for building 64-bit applications
+	  with Microsoft Visual C++ Express.
+
+2014-05-12 Frédéric Marchal <fmarchal@perso.be>
+	* man/fr/man1/dos2unix.po: Fixed minor translation error.
+
+2014-04-23 Erwin Waterlander <waterlan@xs4all.nl>
+	* man/man1/Makefile: Removed dependency on GNU sed.
+	  Thanks to Daniel Macks.
+	* BUGS.txt: Update URL to bug tracker.
+
+2014-04-17 Erwin Waterlander <waterlan@xs4all.nl>
+	* Version 6.0.5
+
+2014-04-09 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: Fix symbolic_link(), don't print error when file
+	  does not exist (problem was introduced on 2014-03-21).
+
+2014-04-08 Erwin Waterlander <waterlan@xs4all.nl>
+	* Makefile: Fix for GNU make < 3.82. For rules with multiple
+	  patterns, put rule with shortest stem first.
+
+2014-04-04 Erwin Waterlander <waterlan@xs4all.nl>
+	* vc.mak, wcc.mif: Only generate English manuals. Target clean
+	  does not delete the manuals, new target maintainer-clean does.
+
+2014-03-23 Jakub Bogusz <qboosh@pld-linux.org>
+	* man/pl/dos2unix.po: New Polish translation of the manual.
+
+2014-03-23 Benno Schulenberg <benno@vertaalt.nl>
+	* man/nl/dos2unix.po: Update Dutch manual.
+
+2014-03-22 Balázs Úr <urbalazs@gmail.com>
+	* po/hu.po: New Hungarian translation of UI messages.
+
+2014-03-21 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: Windows version of function symbolic_link().
+	  Now Windows version also skips symbolic links by default.
+	* man/man1/dos2unix.pod: Update wrt Windows symbolic links,
+	  and some minor updates.
+	* Makefile: Fix some dependencies for man page creation.
+
+2014-03-18 Rafael Ferreira <rafael.f.f1@gmail.com>
+	* man/pt_BR/man1/dos2unix.po: New Brazilian Portuguese
+	  translation of the manual.
+
+2014-03-18 Frédéric Marchal <fmarchal@perso.be>
+	* man/fr/man1/dos2unix.po: New French translation of the manual.
+
+2014-03-16 Yuri Chornoivan <yurchor@ukr.net>
+	* man/uk/man1/dos2unix.po: New Ukrainian translation of the manual.
+
+2014-03-16 Erwin Waterlander <waterlan@xs4all.nl>
+	* Makefile: New target 'getpoman' to get .po files for the manuals
+	  from the Translation Project.
+
+2014-03-15 Mario Blättermann <mario.blaettermann@gmail.com>
+	* man/de/man1/dos2unix.po: New German translation of the
+	  manual.
+
+2014-03-14 Erwin Waterlander <waterlan@xs4all.nl>
+	* man/man1/Makefile: Generate pod files from gettext
+	  po files with po4a, for easier translation. Thanks to
+	  Mario Blätterman.
+	  See also http://po4a.alioth.debian.org/
+	* man/nl/man1/dos2unix.po, man/es/man/dos2unix.po:
+	  New po files, created from original pod.
+	  Thanks to Mario Blätterman.
+	* man/nl/man1/dos2unix.pod, man/es/man/dos2unix.pod:
+	  Deleted. These are generated now.
+	* Makefile: Update for manual generation from .po files.
+	* Makefile, man/man1/Makefile: All man pages are now in
+	  UTF-8 format.
+	* Makefile: Esperanto x notation no longer supported.
+	  Conversion from UTF-8 is troublesome and gettext will
+	  automatically translate to caret (^) notation when UTF-8
+	  is not supported by the system.
+	* po/eo-x.po: Deleted.
+
+2014-03-14 mail6543210 <mail6543210@yahoo.com.tw>
+	* po/zh_TW.po: New Chinese (traditional) translation.
+
+2014-03-06 Thomas Pryds <thomas@pryds.eu>
+	* po/da.po: New Danish translation.
+
+2014-03-06 Мирослав Николић <miroslavnikolic@rocketmail.com>
+	* po/sr.po: New Serbian translation.
+
+2014-02-24 Frédéric Marchal <fmarchal@perso.be>
+	* po/fr.po: New French translation.
+
+2014-02-05 Erwin Waterlander <waterlan@xs4all.nl>
+	* README.txt: List all the new translators.
+	* Makefile: New target 'getpo' to get .po file from the
+	  Translation Project. New target po/eo-x.po to generate
+	  eo-x.po from eo.po.
+
+2014-02-05 Enrico Nicoletto <liverig@gmail.com>
+	* po/pt_BR.po: New Brazilian Portuguese translation
+
+2014-02-05 Jakub Bogusz <qboosh@pld-linux.org>
+	* po/pl.po: New Polish translation
+
+2014-02-05 Yuri Chornoivan <yurchor@ukr.net>
+	* po/uk.po: New Ukrainian translation
+
+2014-02-05 Trần Ngọc Quân <vnwildman@gmail.com>
+	* po/vi.po: New Vietnamese translation
+
+2014-02-05 Benno Schulenberg <benno@vertaalt.nl>
+	* po/nl.po: Updated Dutch translation
+	* po/eo.po: Updated Esperanto translation
+
+2014-02-02 Erwin Waterlander <waterlan@xs4all.nl>
+	* *.c: Print help and version info to stdout iso stderr.
+	  Thanks to Benno Schulenberg.
+
+2014-01-31 Erwin Waterlander <waterlan@xs4all.nl>
+	* *.c,po/*.po: cleanup messages. Thanks to Benno Schulenberg.
+
+2014-01-29 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c, po/*.po: Split large help text in smaller pieces.
+	  This is easier for the translators. Thanks to Benno Schulenberg.
+
+2014-01-18 Erwin Waterlander <waterlan@xs4all.nl>
+	* Makefile, *.mak: Removed MAN_NONLATIN variable.
+	* INSTALL.txt: Update section INTERNATIONAL MAN PAGES.
+
+2014-01-10 Erwin Waterlander <waterlan@xs4all.nl>
+	* mingw32.mak, mingw64.mak: Update for easier use in MSYS2. Added
+	  extra include path to find libintl.h.
+
+2014-01-04 Erwin Waterlander <waterlan@xs4all.nl>
+	* Makefile: Also include English manuals in source the package.
+	  Adding man files to the source package, which have been generated with
+	  a high version of perl/pod2man, is a favour to users, because newer
+	  perl/pod2man versions produce better output (also for old systems).
+	  Tip from pod2man maintainer Russ Allbery.
+	  When you want to generate man pages yourself just run first 'make
+	  maintainer-clean'.
+
+2014-01-03 Erwin Waterlander <waterlan@xs4all.nl>
+	* man/nl/man1/dos2unix.pod, man/es/man1/dos2unix.pod: Add =encoding
+	  latin1 command. Perl 5.18 requires =encoding for all non-ASCII pod
+	  files.
+	  See also https://rt.cpan.org/Public/Bug/Display.html?id=91805
+	  Minimal perl version is now 5.10.1.
+	* Makefile: Target clean keeps generated non-English manual files to
+	  avoid problems with old perl version. Target maintainer-clean will
+	  erase the generated non-English manual files.
+	* INSTALL.txt: Update for new required perl version.
+
 2013-12-30 Erwin Waterlander <waterlan@xs4all.nl>
 	* Version 6.0.4
 	* man/nonlatin/man1/ru/dos2unix.pod: Removed. Russian

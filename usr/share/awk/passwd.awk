@@ -7,7 +7,7 @@
 
 BEGIN {
     # tailor this to suit your system
-    _pw_awklib = "/usr/lib/awk/"
+    _pw_awklib = "/usr/libexec/awk/"
 }
 
 function _pw_init(    oldfs, oldrs, olddol0, pwcat, using_fw, using_fpat)

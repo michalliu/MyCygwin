@@ -12,10 +12,12 @@ EXPORTS
     lzma_block_header_encode
     lzma_block_header_size
     lzma_block_total_size
+    lzma_block_uncomp_encode
     lzma_block_unpadded_size
     lzma_check_is_supported
     lzma_check_size
     lzma_code
+    lzma_cputhreads
     lzma_crc32
     lzma_crc64
     lzma_easy_buffer_encode
@@ -31,6 +33,7 @@ EXPORTS
     lzma_filters_copy
     lzma_filters_update
     lzma_get_check
+    lzma_get_progress
     lzma_index_append
     lzma_index_block_count
     lzma_index_buffer_decode
@@ -82,6 +85,8 @@ EXPORTS
     lzma_stream_buffer_encode
     lzma_stream_decoder
     lzma_stream_encoder
+    lzma_stream_encoder_mt
+    lzma_stream_encoder_mt_memusage
     lzma_stream_flags_compare
     lzma_stream_footer_decode
     lzma_stream_footer_encode

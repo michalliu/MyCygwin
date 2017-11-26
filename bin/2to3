@@ -1,4 +1,4 @@
-#! /usr/bin/python2.7
+#!/usr/bin/python2.7.exe
 import sys
 from lib2to3.main import main
 

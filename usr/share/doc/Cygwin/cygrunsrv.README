@@ -340,7 +340,7 @@ that is, if svc_A depends on svc_B, but svc_B depends on svc_A...
 -------------------------------
 -n, --neverexits
 
-  Optional flag that causes cygrunsrv to only report a succesful
+  Optional flag that causes cygrunsrv to only report a successful
 shutdown of the service to windows when cygrunsrv itself was told
 to shutdown and the exec'ed process exited with a zero status. Use
 this option when the service should only be started or stopped via

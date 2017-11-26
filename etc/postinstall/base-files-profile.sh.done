@@ -6,7 +6,7 @@
 # with this software. 
 # If not, see <http://creativecommons.org/publicdomain/zero/1.0/>. 
 
-# base-files version 4.1-1
+# base-files version 4.2-3
 
 MANIFEST="/etc/preremove/base-files-manifest.lst"
 
@@ -21,7 +21,7 @@ while read f; do
     /usr/bin/touch ${fDest}
     /usr/bin/cp ${fSrc} ${fDest}
   else
-    echo "${fDest} is already in existance, not overwriting."
+    echo "${fDest} is already in existence, not overwriting."
   fi
 done < ${MANIFEST}
 

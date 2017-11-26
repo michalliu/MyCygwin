@@ -1,3 +1,67 @@
+2015-05-22: Version 7.2.2
+
+  * Fix: Fixed symlink support on FreeBSD.
+  * Fix: Skip GB18030 test on FreeBSD.
+  * Fix: When conversion of an UTF-16 file with binary symbols was forced,
+    null characters were not written in the output.
+  * Fix: Check UTF-16 input for invalid surrogate pairs.
+
+2015-04-01: Version 7.2.1
+
+  * Fix: Skip the GB18030 tests when the system does not support the
+    Chinese locale with GB18030 character encoding.
+  * Fix: Small corrections in the manual in section GB18030 and OPTIONS -m.
+
+2015-02-11: Version 7.2
+
+  * New: Japanese translation of the UI messages.
+  * New: Support Chinese GB18030 locale.
+  * Change: On Unix/Linux convert UTF-16 to the locale encoding. It is
+    no longer required that the locale encoding is UTF-8.
+
+2014-10-06: Version 7.1
+
+  * New: Option -i, --info to print file information.
+    This new option prints number of DOS, Unix, and Mac line breaks, the byte
+    order mark, and if the file is text or binary. And it can print the names
+    of files that would be converted.
+
+2014-09-09: Version 7.0
+
+  * New: automated self-tests.
+  * New: option -u to keep UTF-16 encoding.
+  * New: option -v to print information about BOMs and converted line breaks.
+  * Change: stdio mode does not automatically set quiet mode.
+  * Change: stdio mode does not automatically force conversion of binaries.
+    An error is returned when the stdin stream contains a binary symbol.
+  * Bugfix: dos2unix -l created DOS line breaks from Mac line breaks.
+  * Bugfix: system error number was not always returned.
+  * Bugfix: an Unicode input file disabled 7bit and iso mode for next input files.
+  * Bugfix: mac2unix help text, options -b and -r.
+  * The code has been cleaned up.
+
+2014-08-03: Version 6.0.6
+
+  * Bugfix: mac2unix conversion produced corrupted output from UTF-16 input file.
+  * New options -b (keep BOM) and -r (remove BOM).
+  * New translation of the UI messages: Norwegian Bokmaal.
+
+2014-04-17: Version 6.0.5
+
+  * Dos2unix is part of the Translation Project (TP).
+    All translations go via the Translation Project.
+    See http://translationproject.org/
+  * New translations of UI messages: Brazilian Portuguese, Chinese (traditional),
+    Danish, French, Hungarian, Polish, Serbian, Ukrainian, Vietnamese.
+  * New translations of the manual: Brazilian Portuguese, French, German,
+    Polish, Ukrainian.
+  * Generated man pages are included in the source package to prevent
+    compilation problems with very old or very new perl/pod2man versions.
+  * Manuals are now generated from gettext PO files with po4a for easier
+    translation.
+  * All manuals are now in UTF-8 encoding.
+  * Skip symbolic links on Windows by default (same as on Unix).
+
 2013-12-30: Version 6.0.4
 
   * New options -ul and -ub to convert UTF-16 files without BOM.

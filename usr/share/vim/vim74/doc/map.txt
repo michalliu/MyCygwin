@@ -380,7 +380,7 @@ it's just used here for this situation.
    The simplest way to load a set of related language mappings is by using the
 'keymap' option.  See |45.5|.
    In Insert mode and in Command-line mode the mappings can be disabled with
-the CTRL-^ command |i_CTRL-^| |c_CTRL-^| These commands change the value of
+the CTRL-^ command |i_CTRL-^| |c_CTRL-^|. These commands change the value of
 the 'iminsert' option.  When starting to enter a normal command line (not a
 search pattern) the mappings are disabled until a CTRL-^ is typed.  The state
 last used is remembered for Insert mode and Search patterns separately.  The
@@ -593,7 +593,7 @@ illogical when compared to other commands.
 When you have a mapping that contains an Ex command, you need to put a line
 terminator after it to have it executed.  The use of <CR> is recommended for
 this (see |<>|).  Example: >
-   :map  _ls  :!ls -l %<CR>:echo "the end"<CR>
+   :map  _ls  :!ls -l %:S<CR>:echo "the end"<CR>
 
 To avoid mapping of the characters you type in insert or Command-line mode,
 type a CTRL-V first.  The mapping in Insert mode is disabled if the 'paste'
@@ -1343,6 +1343,19 @@ Possible attributes are:
 
 Note that -range=N and -count=N are mutually exclusive - only one should be
 specified.
+
+					*E889* *:command-addr*
+It is possible that the special characters in the range like ., $ or % which
+by default correspond to the current line, last line and the whole buffer,
+relate to arguments, (loaded) buffers, windows or tab pages.
+
+Possible values are:
+	-addr=lines		Range of lines (this is the default)
+	-addr=arguments		Range for arguments
+	-addr=buffers		Range for buffers (also not loaded buffers)
+	-addr=loaded_buffers	Range for loaded buffers
+	-addr=windows		Range for windows
+	-addr=tabs		Range for tab pages
 
 Special cases				*:command-bang* *:command-bar*
 					*:command-register* *:command-buffer*

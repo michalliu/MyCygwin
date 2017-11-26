@@ -135,41 +135,8 @@ sub dynamic_lib {
     return '' unless $s;
     return $s unless %{$self->{XS}};
 
-    my $ori = "$self->{INSTALLARCHLIB}/auto/$self->{FULLEXT}/$self->{BASEEXT}.$self->{DLEXT}";
-    my $rebase = "$self->{INSTALLVENDORARCH}/auto/.rebase";
-    my $imagebase = '';
-    my $rebaseverstr = -f '/bin/rebase' ? `/bin/rebase -V 2>&1` : '0';
-    my ($rebasever) = $rebaseverstr =~ /rebase version ([0-9.]+)/;
-    $rebasever =~ s/(\d\.\d+)\./$1/;
-    if (-f $rebase and $rebasever < 3.02) {
-      $imagebase = `/bin/cat $rebase`;
-      chomp $imagebase;
-    }
-    if (-e $ori) {
-      $imagebase = `/bin/objdump -p $ori | /bin/grep ImageBase | /bin/cut -c12-`;
-      chomp $imagebase;
-      if ($imagebase gt "40000000" and $imagebase lt "80000000") {
-        my $LDDLFLAGS = $self->{LDDLFLAGS};
-        $LDDLFLAGS =~ s/-Wl,--enable-auto-image-base/-Wl,--image-base=0x$imagebase/;
-        $s =~ s/ \$\(LDDLFLAGS\) / $LDDLFLAGS /m;
-      }
-    } elsif ($imagebase gt "40000000" and $imagebase lt "80000000") {
-      my $LDDLFLAGS = $self->{LDDLFLAGS};
-      $LDDLFLAGS =~ s/-Wl,--enable-auto-image-base/-Wl,--image-base=0x$imagebase/ or
-        $LDDLFLAGS .= " -Wl,--image-base=0x$imagebase";
-      $s =~ s/ \$\(INST_DYNAMIC_DEP\)/ \$(INST_DYNAMIC_DEP) _rebase/;
-      $s =~ s/ \$\(LDDLFLAGS\) / $LDDLFLAGS /m;
-      # Here we create all DLL's per project with the same imagebase. With rebase 3.0.2 we do better
-      $s .= "\t/bin/rebase -v -b 0x$imagebase \$@ | ";
-      $s .= "\$(FULLPERL) -n _rebase > \$(INSTALLVENDORARCH)/auto/.rebase\n";
-      # Need a tempfile, because gmake expands $_ in the perl cmdline
-      $s .= "\n_rebase : \$(OBJECT)\n";
-      $s .= "\t\$(NOECHO) \$(ECHO) '/new base = (.+), new size = (.+)/ && printf \"%x\\n\",hex(\$1)+hex(\$2);' > _rebase\n";
-    } else {
-      if ($rebasever < 3.02) {  # new rebase 3.0.2 with database
-        warn "Hint: run perlrebase to initialize $rebase or upgrade to rebase 3.0.2\n";
-      }
-    }
+    # do an ephemeral rebase so the new DLL fits to the current rebase map
+    $s .= "\t/bin/find \$\(INST_ARCHLIB\)/auto -xdev -name \\*.$self->{DLEXT} | /bin/rebase -sOT -" if (( $Config{myarchname} eq 'i686-cygwin' ) and not ( exists $ENV{CYGPORT_PACKAGE_VERSION} ));
     $s;
 }
 
@@ -185,18 +152,13 @@ sub install {
     return '' unless $s;
     return $s unless %{$self->{XS}};
 
-    my $rebaseverstr = -f '/bin/rebase' ? `/bin/rebase -V 2>&1` : '0';
-    my ($rebasever) = $rebaseverstr =~ /rebase version ([0-9.]+)/;
-    $rebasever =~ s/(\d\.\d+)\./$1/;
-    if ($rebasever > 3.01) {  # new rebase 3.0.2 with database
-      my $INSTALLDIRS = $self->{INSTALLDIRS};
-      my $INSTALLLIB = $self->{"INSTALL". ($INSTALLDIRS eq 'perl' ? 'ARCHLIB' : uc($INSTALLDIRS)."ARCH")};
-      my $dll = "$INSTALLLIB/auto/$self->{FULLEXT}/$self->{BASEEXT}.$self->{DLEXT}";
-      $s =~ s|^(pure_install :: pure_\$\(INSTALLDIRS\)_install\n\t)\$\(NOECHO\) \$\(NOOP\)\n|$1\$(CHMOD) \$(PERM_RWX) \$(DESTDIR)$dll\n\ttest -n "\$(DESTDIR)\" \|\| /bin/rebase -s $dll\n|m;
-    }
+    my $INSTALLDIRS = $self->{INSTALLDIRS};
+    my $INSTALLLIB = $self->{"INSTALL". ($INSTALLDIRS eq 'perl' ? 'ARCHLIB' : uc($INSTALLDIRS)."ARCH")};
+    my $dop = "\$\(DESTDIR\)$INSTALLLIB/auto/";
+    my $dll = "$dop/$self->{FULLEXT}/$self->{BASEEXT}.$self->{DLEXT}";
+    $s =~ s|^(pure_install :: pure_\$\(INSTALLDIRS\)_install\n\t)\$\(NOECHO\) \$\(NOOP\)\n|$1\$(CHMOD) \$(PERM_RWX) $dll\n\t/bin/find $dop -xdev -name \\*.$self->{DLEXT} /bin/rebase -sOT -\n|m if (( $Config{myarchname} eq 'i686-cygwin') and not ( exists $ENV{CYGPORT_PACKAGE_VERSION} ));
     $s;
 }
-
 =item all_target
 
 Build man pages, too

@@ -91,28 +91,30 @@
 # \rm will call the real rm not the alias.
 #
 # Interactive operation...
-# alias rm='rm -i'
-# alias cp='cp -i'
-# alias mv='mv -i'
+ alias rm='rm -i'
+ alias cp='cp -i'
+ alias mv='mv -i'
 #
 # Default to human readable figures
-# alias df='df -h'
-# alias du='du -h'
+ alias df='df -h'
+ alias du='du -h'
 #
 # Misc :)
-# alias less='less -r'                          # raw control characters
+ alias less='less -r'                          # raw control characters
 # alias whence='type -a'                        # where, of a sort
-# alias grep='grep --color'                     # show differences in colour
+ alias grep='grep --color'                     # show differences in colour
 # alias egrep='egrep --color=auto'              # show differences in colour
 # alias fgrep='fgrep --color=auto'              # show differences in colour
 #
 # Some shortcuts for different directory listings
 # alias ls='ls -hF --color=tty'                 # classify files in colour
-# alias dir='ls --color=auto --format=vertical'
-# alias vdir='ls --color=auto --format=long'
-# alias ll='ls -l'                              # long list
-# alias la='ls -A'                              # all but . and ..
-# alias l='ls -CF'                              #
+# avoid question marks on CJK filename
+ alias ls='ls --color=auto --show-control-chars'
+ alias dir='ls --color=auto --format=vertical'
+ alias vdir='ls --color=auto --format=long'
+ alias ll='ls -l'                              # long list
+ alias la='ls -A'                              # all but . and ..
+ alias l='ls -CF'                              #
 
 # Umask
 #
@@ -196,3 +198,10 @@
 # }
 # 
 # alias cd=cd_func
+
+# avoid CJK filename display error
+export LC_CTYPE=zh_CN.gbk
+export CHARSET=GBK
+SAVED_PATH="$PATH"
+FIXED_PATH='~/bin:/usr/local/bin:/usr/bin:/cygdrive/c/Python27/Lib/site-packages/PyQt4:/cygdrive/c/Python27/Lib/site-packages/PyQt4:/cygdrive/c/Python27/Lib/site-packages/PyQt4:/cygdrive/c/Windows/system32:/cygdrive/c/Windows:/cygdrive/c/Windows/System32/Wbem:/cygdrive/c/Windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Program Files/Microsoft/Web Platform Installer:/cygdrive/c/Program Files (x86)/Microsoft ASP.NET/ASP.NET Web Pages/v1.0:/cygdrive/c/Program Files (x86)/Windows Kits/8.0/Windows Performance Toolkit:/cygdrive/c/Program Files/Microsoft SQL Server/110/Tools/Binn:/cygdrive/c/Program Files/TortoiseSVN/bin:/cygdrive/c/Python27:/cygdrive/c/Python27/Scripts:/cygdrive/c/Program Files (x86)/Java/jdk1.6.0_45/bin:/cygdrive/c/android-sdk/tools:/cygdrive/c/android-sdk/platform-tools:/cygdrive/c/Program Files/TortoiseGit/bin:/cygdrive/c/Program Files/nodejs:/cygdrive/c/Program Files (x86)/Visual Leak Detector/bin/Win32:/cygdrive/c/Program Files (x86)/Visual Leak Detector/bin/Win64C:/Program Files (x86)/Apache Software Foundation/php-5.5.18:/cygdrive/c/Program Files (x86)/Apache Software Foundation/php-5.5.18-Win32-VC11-x86:/cygdrive/c/wamp/bin/php/php5.5.12:/cygdrive/c/ProgramData/ComposerSetup/bin:/cygdrive/c/Program Files (x86)/Microsoft SDKs/TypeScript/1.0:/cygdrive/c/Program Files (x86)/SlikSvn/bin:/cygdrive/c/Ruby200-x64/bin:/cygdrive/c/Users/michalliu/AppData/Roaming/npm:/cygdrive/c/Program Files (x86)/SammaulTech/PhoenixSuit:/cygdrive/c/Program Files (x86)/Google/google_appengine:/cygdrive/c/android-sdk/platform-tools:/cygdrive/c/Program Files (x86)/SlikSvn/bin:/cygdrive/f/apache-ant-1.9.4/bin:/cygdrive/c/Users/michalliu/AppData/Local/atom/bin:/cygdrive/c/go/bin'
+export PATH="$FIXED_PATH:$SAVED_PATH"

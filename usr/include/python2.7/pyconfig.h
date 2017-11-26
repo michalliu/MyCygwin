@@ -56,6 +56,9 @@
 /* Define to 1 if you have the `alarm' function. */
 #define HAVE_ALARM 1
 
+/* Define to 1 if you have the <alloca.h> header file. */
+#define HAVE_ALLOCA_H 1
+
 /* Define this if your time.h defines altzone. */
 /* #undef HAVE_ALTZONE */
 
@@ -157,7 +160,7 @@
 
 /* Define to 1 if you have the declaration of `tzname', and to 0 if you don't.
    */
-#define HAVE_DECL_TZNAME 1
+/* #undef HAVE_DECL_TZNAME */
 
 /* Define to 1 if you have the device macros. */
 #define HAVE_DEVICE_MACROS 1
@@ -277,6 +280,9 @@
 
 /* Define this if you have flockfile(), getc_unlocked(), and funlockfile() */
 #define HAVE_GETC_UNLOCKED 1
+
+/* Define to 1 if you have the `getentropy' function. */
+/* #undef HAVE_GETENTROPY */
 
 /* Define to 1 if you have the `getgroups' function. */
 #define HAVE_GETGROUPS 1
@@ -473,6 +479,9 @@
 /* Define to 1 if you have the `mktime' function. */
 #define HAVE_MKTIME 1
 
+/* Define to 1 if you have the `mmap' function. */
+#define HAVE_MMAP 1
+
 /* Define to 1 if you have the `mremap' function. */
 /* #undef HAVE_MREMAP */
 
@@ -518,6 +527,9 @@
 /* Define if you have GNU PTH threads. */
 /* #undef HAVE_PTH */
 
+/* Define to 1 if you have the `pthread_atfork' function. */
+#define HAVE_PTHREAD_ATFORK 1
+
 /* Defined for Solaris 2.6 bug in pthread header. */
 /* #undef HAVE_PTHREAD_DESTRUCTOR */
 
@@ -535,6 +547,9 @@
 
 /* Define to 1 if you have the `putenv' function. */
 #define HAVE_PUTENV 1
+
+/* Define if the libcrypto has RAND_egd */
+#define HAVE_RAND_EGD 1
 
 /* Define to 1 if you have the `readlink' function. */
 #define HAVE_READLINK 1
@@ -654,7 +669,7 @@
 #define HAVE_SOCKETPAIR 1
 
 /* Define to 1 if you have the <spawn.h> header file. */
-/* #undef HAVE_SPAWN_H */
+#define HAVE_SPAWN_H 1
 
 /* Define if your compiler provides ssize_t */
 #define HAVE_SSIZE_T 1
@@ -712,7 +727,7 @@
 #define HAVE_STRUCT_STAT_ST_RDEV 1
 
 /* Define to 1 if `tm_zone' is a member of `struct tm'. */
-/* #undef HAVE_STRUCT_TM_TM_ZONE */
+#define HAVE_STRUCT_TM_TM_ZONE 1
 
 /* Define to 1 if your `struct stat' has `st_blocks'. Deprecated, use
    `HAVE_STRUCT_STAT_ST_BLOCKS' instead. */
@@ -842,14 +857,14 @@
 
 /* Define to 1 if your `struct tm' has `tm_zone'. Deprecated, use
    `HAVE_STRUCT_TM_TM_ZONE' instead. */
-/* #undef HAVE_TM_ZONE */
+#define HAVE_TM_ZONE 1
 
 /* Define to 1 if you have the `truncate' function. */
 #define HAVE_TRUNCATE 1
 
 /* Define to 1 if you don't have `tm_zone' but do have the external array
    `tzname'. */
-#define HAVE_TZNAME 1
+/* #undef HAVE_TZNAME */
 
 /* Define this if you have tcl and TCL_UTF_MAX==6 */
 /* #undef HAVE_UCS4_TCL */

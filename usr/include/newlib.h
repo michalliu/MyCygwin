@@ -11,7 +11,7 @@
 /* #undef _ELIX_LEVEL */
 
 /* Newlib version */
-#define _NEWLIB_VERSION "2.1.0"
+#define _NEWLIB_VERSION "2.2.0"
 
 /* C99 formats support (such as %a, %zu, ...) in IO functions like
  * printf/scanf enabled */
@@ -79,6 +79,9 @@
 
 /* Define if declare atexit data as global.  */
 /* #undef _REENT_GLOBAL_ATEXIT */
+
+/* Define if small footprint nano-formatted-IO implementation used.  */
+/* #undef _NANO_FORMATTED_IO */
 
 /*
  * Iconv encodings enabled ("to" direction)

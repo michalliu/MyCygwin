@@ -1,3 +1,137 @@
+2015-02-23  Achim Gratz  <Stromeko@NexGo.DE>
+
+	* cygwin-service-installation-helper.sh (csih_use_file_etc):
+	Correct the return value in the case that /etc/nsswitch.conf
+	exists, but has no active line for that file.  The default
+	contains db, so use_file=1 must be maintained.  Add a comment for
+	that case.
+
+2015-02-20  Achim Gratz  <Stromeko@NexGo.DE>
+
+	* cygwin-service-installation-helper.sh
+	(csih_get_system_and_admins_ids): Remove reference to
+	/etc/{passwd/group} files.
+	(csih_check_passwd_and_group): Branch code based on the result of
+	csih_old_cygwin.  Correct comment about the version that change
+	happened in Cygwin.
+	(csih_old_cygwin): Factor out check for Cygwin version that do not
+	have DB-based user/group lookup. Correct version that code
+	actually went into Cygwin.
+	(csih_use_file_etc): Use csih_old_cygwin.  Correct the check for
+	nsswitch.conf content so that it confroms to the intended and
+	commented behaviour.
+	* cygwin-service-installation-helper.sh: Whitespace cleanup (only
+	trailing spaces, consider tabification).  Register new function
+	"csih_old_cygwin".
+
+2015-01-08  Henri ???  <houder@xs4all.nl>
+
+	* cygwin-service-installation-helper.sh (csih_use_file_etc): Fix regular
+	expression to catch commented out "db" entry correctly.
+
+2015-01-07  Corinna Vinschen  <vinschen@redhat.com>
+
+	* version.h (VERSION_MICRO): Revert version bump.
+
+2015-01-07  Corinna Vinschen  <vinschen@redhat.com>
+
+	* cygwin-service-installation-helper.sh (csih_privileged_accounts):
+	Fix copy/paste bug.
+	(csih_create_privileged_user): Evaluate local Windows administrators
+	group name instead of relying on Cygwin group name.  Fix error message.
+	* version.h (VERSION_MICRO): Bump to 9.
+
+2014-12-11  Christian Franke  <Christian.Franke@t-online.de>
+
+	* cygwin-service-installation-helper.sh (csih_create_local_group): Fix
+	typo.
+
+2014-12-10  Corinna Vinschen  <vinschen@redhat.com>
+
+	* native/Makefile: More changes to allow cross-building (barely).
+
+2014-12-10  Corinna Vinschen  <vinschen@redhat.com>
+
+	* version.h (VERSION_MICRO): Bump to 8.
+	* native/Makefile (LIBS): Drop default-manifest file.
+	* native/Win32Error.h: Downcase header filenames to enable cross
+	compiling.
+	* native/getAccountName.cpp: Drop useless tchar.h include.
+
+2014-12-10  Corinna Vinschen  <vinschen@redhat.com>
+
+	* Makefile: Remove stray trailing backslash.
+	* winProductName.c (GetOSDisplayString): Always call GetNativeSystemInfo
+	since we're only supporting XP and later anyway.  Drop checks for
+	older OS-versions.  Rearrange Major/Minor OS number check to accommodate
+	the menacing OS version 10.x for Windows 10.
+
+2014-11-24  Corinna Vinschen  <vinschen@redhat.com>
+
+	* cygwin-service-installation-helper.sh: Drop global checks for NT and
+	Cygwin version 1.7.
+	(csih_VERSION): Bump to 0.9.8.
+	(csih_PRIVILEGED_USERWINNAME): New global variable.
+	(csih_PRIVILEGED_USERDOMAIN): Ditto.
+	(csih_UNPRIVILEGED_USERNAME): Ditto.
+	(csih_UNPRIVILEGED_USERWINNAME): Ditto.
+	(csih_UNPRIVILEGED_USERDOMAIN): Ditto.
+	(csih_LOCAL_GROUPNAME): Ditto.
+	(csih_LOCAL_GROUPWINNAME): Ditto.
+	(csih_LOCAL_GROUPDOMAIN): Ditto.
+	(_csih_well_known_privileged_accounts): Add machinename-prefixed names.
+	(_csih_well_known_privileged_accounts_quoted): Ditto.
+	(_csih_sanity_check): Check for getent.
+	(_csih_nt): Remove.
+	(_csih_2k): Remove.
+	(_csih_windows8_1): Add.
+	(_csih_windows10): Add.
+	(_csih_exactly_windows8_1): Add.
+	(_csih_exactly_windows10): Add.
+	(csih_is_nt): Always return 0.
+	(csih_is_2k): Ditto.
+	(csih_is_xp): Ditto.
+	(csih_is_windows8_1): New function.
+	(csih_is_windows10): Ditto.
+	(csih_cygver_is_oneseven): Always return 0.
+	(csih_is_exactly_windows8_1): New function.
+	(csih_is_exactly_server2012r2): Ditto.
+	(csih_is_exactly_windows10): Ditto.
+	(csih_is_exactly_server2014): Ditto.
+	(csih_check_sys_mount): Always return 0.
+	(csih_use_file_etc): New function to check for /etc/passwd or
+	/etc/group requirement.
+	(csih_get_system_and_admins_ids): Don't require /etc/passwd or
+	/etc/group.  Allow new Cygwin usernames generated from Windows account
+	DBs.
+	(csih_check_passwd_and_group): Ditto.
+	(csih_check_user): Ditto.
+	(csih_privileged_accounts): Ditto.
+	(csih_account_has_necessary_privileges): Ditto.
+	(csih_select_privileged_username): Ditto.
+	(csih_create_privileged_user): Ditto.
+	(csih_create_unprivileged_user): Ditto.
+	(csih_service_should_run_as): Ditto.
+	(csih_create_local_group): New function.
+	(_csih_late_initialization_code): Set new OS variables.
+
+2014-11-10  Corinna Vinschen  <vinschen@redhat.com>
+
+	* native/Makefile (LIBS): Add default-manifest file.
+	(NTDLL): Define.
+	(getAccountName): Add $(CFLAGS).  Fix usage of $(LIBS) for
+	PE/COFF platform.
+	(winProductName): Ditto.  Add $(NTDLL).
+	* native/winProductName.c: Re-indent for better readability.  Remove
+	not working tchar.h overhead.
+	(products): Drop "note"-type comments.
+	(RtlGetVersion): Declare.
+	(RtlGetProductInfo): Declare.
+	(GetOSDisplayString): Use RtlGetVersion and RtlGetProductInfo.  Explain
+	why.  Use switch statements rather than if/else if chains where
+	applicable.  Add support for Windows 8.1, Server 2012 R2, Windows 10 and
+	Server 2014(?).  Drop support for Windows versions prior to Windows XP.
+
 2013-04-09  Charles Wilson  <...>
 
 	0.9.7 release

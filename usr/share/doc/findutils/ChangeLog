@@ -1,3 +1,356 @@
+2013-09-22  James Youngman  <jay@gnu.org>
+
+	Release findnutils-4.5.12.
+	* configure.ac (AC_INIT): Change version number to 4.5.12.
+	* NEWS: Change version number of most recent release to 4.5.12.
+
+	Issue an error message when fts_read fails. Fixes bug #39324.
+	* find/ftsfind.c (find): when fts_read fails, issue an error
+	message, set the exit status to zero and stop.  Previously the
+	program would just stop (i.e. it failed to distinguish "done" from
+	"failed").
+	* find/find.1 (-exec): explain that on failure, some pending
+	command launches may not happen.  The Texinfo documentation
+	already pointed this out, so that didn't need to be changed.
+	* NEWS: Mention this bugfix.
+
+	Add a bug number for bug #40088.
+	* NEWS: Add a bug number for bug #40088: potential buffer overflow
+	in -execdir and -okdir.  Re-order the bugs listed to be
+	decreasing numerically by ID.
+
+2013-09-21  James Youngman  <jay@gnu.org>
+
+	find: state that -execdir command is run locally to the matched file.
+	* doc/find.texi (Single File): Correct the description of what the
+	current directory will be when the command specified by -execdir
+	gets run.  This fixes a documentation but reported by Eric
+	Hanchrow.
+	* NEWS: Mention this fix.
+
+2013-09-21  Bernhard Voelker  <mail@bernhard-voelker.de>
+
+	xargs: wait for process before prompting in interactive mode (-p)
+	* xargs/xargs.c (xargs_do_exec): Move the code for waiting for
+	forked processes up, so that the child process terminates before
+	we prompt for the next command.
+	* NEWS: Mention the fix.
+
+2013-09-21  Dmitry V. Levin  <ldv@altlinux.org>
+
+	find: fix potential buffer overflow in -execdir and -okdir.
+	* lib/buildcmd.c (bc_push_arg): Take prefix length into account
+	to avoid state->argbuf overflow.
+	* NEWS: Mention this fix.
+
+2013-09-21  James Youngman  <jay@gnu.org>
+
+	Make sv-34976-execdir-fd-leak.sh test more POSIX-compliant.
+	* find/testsuite/sv-34976-execdir-fd-leak.sh: Avoid using seq;
+	instead, use pre-generated lists of test file names.  Also avoid
+	using file descriptors 0, 1, 2 in the test.
+
+	Fix typo "sturct".
+	* find/exec.c (impl_pred_exec): Typo fix: struct/struct.
+	* ChangeLog (2007-03-28): Likewise.
+
+2013-09-20  Bernhard Voelker  <mail@bernhard-voelker.de>
+
+	find: fix fd leak with --execdir option (bug#34976)
+	* find/exec.c (impl_pred_exec): Free the working directory if find
+	executes the command in the local dir, i.e. if it has been saved
+	by record_exec_dir().  Re-indent code.
+	* find/testsuite/sv-34976-execdir-fd-leak.sh: Add test.
+	* find/testsuite/Makefile.am (test_shell_progs): Mention the test.
+	* NEWS: Mention the fix.
+
+2013-09-20  James Youngman  <jay@gnu.org>
+
+	Updated Greek translation.
+	* po/el.po: Updated Greek translation from the Translation
+	Project.
+
+2013-09-20  Bernhard Voelker  <mail@bernhard-voelker.de>
+
+	xargs: Fix integer overflow in implicit conversion in do_exec.
+	* xargs/xargs.c (xargs_do_exec): Change type of r from int to
+	size_t, since that is the type that safe_read actually returns.
+
+2013-09-20  James Youngman  <jay@gnu.org>
+
+	Add Bernhard Voelker to AUTHORS.
+	* AUTHORS: Add Bernhard Voelker.
+
+	* configure.ac: Check for prefixed versions of ranlib, too.
+
+2013-09-20  Benedikt Morbach  <benedikt.morbach@googlemail.com> (tiny change)
+
+	Check for both prefixed and unprefixed versions of "ar".
+	* configure.ac: Look for '${host}-ar' as set by AC_CANONICAL_HOST
+	before looking for the unprefixed 'ar'.  This is useful when
+	cross-compiling when all your binutils are prefixed.
+
+2013-09-20  James Youngman  <jay@gnu.org>
+
+	Fix compilation error where struct dirent lacks a d_ino member.
+	* find/find.c (NOT_AN_INODE_NUMBER): Add missing identifier which
+	(when missing) caused a compilation error on system where struct
+	dirent lacks a d_ino member.
+
+	Be consistent about what we call the places the search starts.
+	* find/find.1: Consistently describe the paths at which the search
+	begins as "satrting points".
+
+	Refer to the info manual in a clearer and more explicit way.
+	* find/find.1 (SEE ALSO): Explain how to invoke info to read the
+	Texinfo manual.
+	* locate/locate.1 (SEE ALSO): Likewise.
+	* locate/updatedb.1 (SEE ALSO): Likewise.
+	* xargs/xargs.1 (SEE ALSO): Likewise.
+
+2013-06-02  James Youngman  <jay@gnu.org>
+
+	Add unlinkat moduile.
+	* import-gnulib.config (modules): Add unlinkat module, following
+	bug report from Martin von Gagern.
+
+2013-04-22  Paul Eggert  <eggert@cs.ucla.edu>
+
+	More removal of support for -perm +MODE.
+	* find/parser.c (parse_perm): Remove no-longer-needed local var
+	and associated code.  Reported by Eric Blake in
+	<http://savannah.gnu.org/bugs/?38474#comment9>.
+
+2013-04-21  Paul Eggert  <eggert@cs.ucla.edu>
+
+	Remove support for obsolete -perm +MODE syntax.
+	Also, do not reject -perm /MODE merely because of POSIXLY_CORRECT.
+	Problem reported in <https://savannah.gnu.org/bugs/?38474>.
+	* NEWS:
+	* doc/find.texi (Mode Bits): Document this.
+	(Environment Variables): POSIXLY_CORRECT does not affect -perm.
+	* find/parser.c (parse_help): Mention /MODE, not +MODE.
+	(non_posix_mode): Remove.
+	(parse_perm): Remove support for -perm +MODE.
+	Do not reject -perm /MODE merely because POSIXLY_CORRECT is set;
+	POSIXLY_CORRECT is not supposed to be for pedantic checking.
+	* find/find.1 (-perm): describe this change.
+	(HISTORY): update the existing statement about the deprecation of
+	+MODE to explain that support has now been removed.
+
+2013-04-22  James Youngman  <jay@gnu.org>
+
+	Fix documentation typo.
+	* doc/find.texi (Mode Bits): Fix typo "it set" -> "is set".
+
+2013-04-20  Paul Eggert  <eggert@cs.ucla.edu>
+
+	doc: fix typos uncovered by texinfo 5.0
+	* doc/find-maint.texi: Fix typos that cause 'make' to fail
+	if texinfo 5.0 is installed.
+
+2013-04-22  James Youngman  <jay@gnu.org>
+
+	Enable assertions in locate.
+	* locate/locate.c: Don't #define NDEBUG.
+
+2013-04-21  James Youngman  <jay@gnu.org>
+
+	* find/find.1 (-size): explain the rounding-up semantics more
+	clearly.
+
+	Add example for find -printf.
+	* doc/find.texi (Print File Information): Add an example for "find
+	-printf" suggested by Karl Berry.
+
+2011-12-31  Karl Berry  <karl@gnu.org>
+
+	Further documentation improvements.
+	* doc/find.texi: use @code for environment variable names, and
+	other improvements.
+
+2009-08-03  Peter Breitenlohner  <peb@mppmu.mpg.de>
+
+	* locate/locate.c: Simplify handling of slocate databases.
+	Fix the bug assuming second path extends the first one.
+	* locate/testsuite/locate.gnu/slocate.{exp,xo}: New testcase
+	for slocate databse, exposing this bug.
+	* locate/testsuite/Makefile.am: Add new test case.
+
+2009-08-03  Peter Breitenlohner  <peb@mppmu.mpg.de>
+
+	* locate/locate.c: Enable assertions and fix the off-by-one
+	bugs that prevented this.
+
+2009-08-03  Peter Breitenlohner  <peb@mppmu.mpg.de>
+
+	* doc/find.texi: Remove duplicate paragraph and fix a typo.
+
+2013-03-31  James Youngman  <jay@gnu.org>
+
+	Don't use reserved identifiers in macro names; fix other code smells.
+	* build-aux/src-sniff.py (checkers): Check for #define directives
+	which use a macro name which is reserved.
+	(MakefileRegexChecker): New class which performs regex checks on
+	makefiles; this ensures that we don't check Makefile.in if we're
+	going to check Makefile.am anyway.
+	* lib/unused-result.h: Don't use a reserved identifier in the
+	macro name defined as the #include guard.
+	* locate/locatedb.h: Likewise.
+	* Makefile.am (findutils-check-smells): Don't check gnulib code.
+	* import-gnulib.sh (hack_gnulib_tool_output): Move the 'do' of a
+	for loop onto the line following the 'for' (instead of the same
+	line).
+
+2013-03-29  James Youngman  <jay@gnu.org>
+
+	Document that -0/-d turns off logical end-of-file processing.
+	* doc/find.texi (xargs options): Explain that the logical end of
+	file marker string set with -E is not special if -d or -0 was
+	specified.
+	* xargs/xargs.c (usage): Mention this in the --help output.
+	(read_string): Correct the function header comment to point out
+	that there is no logical end-of-file processing for this case.
+	Also point out that the delimiter may not always be NUL.
+	This documentation update fixes Savannah bug #36652.
+	(main): Emit a warning message if -0/-d is specified and -E was
+	also used.
+	* xargs/testsuite/xargs.gnu/E_-0.exp: Don't compare stderr output,
+	since for this case xargs now emits a warning message.
+	* NEWS: Mention this change.
+
+2013-03-29  James Youngman  <jay@gnu.org>
+
+	Updated the Galician translation.
+	* gl.po: Updated Galician translation.
+
+2013-03-26  James Youngman  <jay@gnu.org>
+
+	Updated a number of translations.
+	* cs.po: Updated Czech translation.
+	* et.po: Updated Estonian translation.
+	* fi.po: Updated Finnish translation.
+	* fr.po: Updated French translation.
+	* nl.po: Updated Dutch translation.
+	* pl.po: Updated Polish translation.
+	* ru.po: Updated Russian translation.
+	* uk.po: Updated Ukrainian translation.
+	* vi.po: Updated Vietnamese translation.
+	* zh_CN.po: Updated Chinese (simplified) translation.
+
+2013-03-26  Kamil Dudka  <kdudka@redhat.com>
+
+	Fix compile-time warnings.
+	* find/defs.h (struct predicate): Add a missing const modifier.
+	* find/find.c (wd_sanity_check): Suppress a warning in #else branch.
+	(process_dir): Remove an unused variables and statements.
+	* find/pred.c (pred_context): Use const modifier in the prototype.
+	* lib/buildcmd.{c,h} (bc_args_exceed_testing_limit): Remove a const
+	modifier causing unnecessary warnings.
+	* xargs/xargs.c (main): Add explicit type-casts.
+
+2013-03-24  James Youngman  <jay@gnu.org>
+
+	Expand on warning about xargs -P and stdout, including in Info.
+	* xargs/xargs.1: Expand on the warning about sharing stdout for
+	"xargs -P".
+	* doc/find.texi (Controlling Parallelism): Add a suitable warning
+	about sharing resources here, too.
+	* NEWS: Mention that all relevant documentation was updated with
+	this warning.
+
+2013-03-24  Bernhard Voelker  <mail@bernhard-voelker.de>
+
+	Improve error message for find -type X (X = an unknown file type).
+	* find/parser.c (insert_type): Give a more comprehensible error
+	message when the type letter following -type or -xtype corresponds
+	to a type of file which was unknown on the system which compiled
+	the find binary.
+	* NEWS: Mention this improvement.
+
+	xargs: split usage text to help translators, and clarify it.
+	* xargs/xargs.c (usage):  Define HTL macro to print one help text
+	line (or entry).  Split the option descriptions up by using the
+	above macro.  Refine the messages to adapt to the common way:
+	change the start of each option's description to lower case, do
+	not use periods at the end, use semicolons where needed, indent
+	secondary lines, several other minor improvements.
+	* NEWS: Mention this improvement.
+
+	* xargs/xargs.1: Add note for -P suggesting the use of a locking
+	system to avoid corrupted stdout.
+
+2013-03-24  James Youngman  <jay@gnu.org>
+
+	Fix Savannah bug #38583: errno-buffer read failed in xargs_do_exec
+	* import-gnulib.config (modules): Import the safe-read module.
+	* xargs/xargs.c (xargs_do_exec): Use safe_read so that the read
+	system-call is retried if we handle a signal (for example
+	SIGUSR[12]) while we are trying to read the errno vlaue from the
+	child process.
+
+	Fix misleading message from import-gnulib.sh; allow .git symlink.
+	* import-gnulib.sh (check_old_gnulib_dir_layout): Really apply the
+	bugfix by Kamil Dudka which eliminates a misleading message of
+	import-gnulib.sh on a fresh repository obtained by 'git clone
+	--recursive', by requiring gnulib/.git to exist but not requiring
+	it to be a directory.
+
+	Bugfix to "make clean": do not delete header files.
+	* lib/Makefile.am (coverage-clean): Remove output files left
+	behind by gcc -fprofile-arcs -ftest-coverage by using $(RM) with a
+	glob pattern rather than a $(libfindtools_a_SOURCES.c=.gcno)
+	Makefile substitution, because the latter caused us to delete
+	header files entirely (their names do not end in .c).  This had
+	meant that it was impossible to compile findutils after "make
+	clean".  Bug report by David Gilbert.
+	* find/Makefile.am (coverage-clean): Likewise.
+	* xargs/Makefile.am (coverage-clean): Likewise.
+	* locate/Makefile.am (coverage-clean): Likewise.
+	* Makefile.am (coverage-clean): Likewise, but also do this in the
+	subdirectories whose Makefile.am files are generated by
+	gnulib-tool.
+
+	Move on from 4.5.11, to 4.5.12-git
+	* NEWS: Add a new section for 4.5.12-git.  Mention the bugfix to
+	find/testsuite/sv-bug-32043.sh.
+	* configure.ac: Update the version number.
+
+	Fix Bash-ism [[ ... ]].
+	* find/testsuite/sv-bug-32043.sh: Change [[ ... ]] to [ ... ]
+	because the first pattern is a Bash-ism.  Bug reported by David
+	Gilbert.
+
+2013-02-03  Kamil Dudka  <kdudka@redhat.com>
+
+	Avoid using 'INCLUDES =' in automake templates.
+	* find/Makefile.am: Use AM_CPPFLAGS instead of deprecated INCLUDES.
+	* lib/Makefile.am: Likewise.
+	* locate/Makefile.am: Likewise.
+	* xargs/Makefile.am: Likewise.
+
+	Eliminate a misleading message of import-gnulib.sh on a fresh
+	repository obtained by 'git clone --recursive'.
+	* import-gnulib.sh (check_old_gnulib_dir_layout): Do not require
+	./gnulib/.git to be a directory.
+
+2013-02-03  James Youngman  <jay@gnu.org>
+
+	Fix Savannah bug #38239, missing variable initialisation in locate
+	* locate/locate.c (cleanup_quote_opts): New atexit function, frees
+	quote_opts which otherwise would leak.
+	(dolocate): Eliminate the redundant boolean variable
+	they_chose_db, whose true/false-ness followed the not-NULL-ness of
+	locate_path.  Rename locate_path to user_selected_locate_path to
+	make this explicit.
+	(dolocate): When we get to the bottom of the loop, don't try to
+	check for a further element in user_selected_locate_path if it is
+	NULL (that is, $LOCATE_PATH was unset and the -d option was not
+	used).
+
+	* po/findutils.pot: Updated template file from the Translation
+	Project
+
 2013-02-02  James Youngman  <jay@gnu.org>
 
 	Release findutils-4.5.11.
@@ -5370,7 +5723,7 @@
 2007-03-28  James Youngman  <jay@gnu.org>
 
 	* find/defs.h (set_stat_placeholders): utility function for
-	initialising the sturct stat fields that NetBSD doesn't always set
+	initialising the struct stat fields that NetBSD doesn't always set
 	(like st_birthtime where the file is on a filesystem not
 	supporting birthtime).
 	* find/util.c: set_stat_placeholders(): new function
